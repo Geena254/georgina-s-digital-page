@@ -125,6 +125,8 @@
     @apply bg-sidebar text-sidebar-foreground;
     @apply transition-all duration-500 ease-out;
     width: 4rem;
+    box-shadow: 4px 0 24px -4px hsl(30 10% 12% / 0.2), 
+                8px 0 40px -8px hsl(30 10% 12% / 0.1);
   }
 
   .nav-sidebar:hover {
