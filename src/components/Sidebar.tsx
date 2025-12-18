@@ -15,19 +15,10 @@ const navItems = [
 
 const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
   return (
-    <nav className="nav-sidebar">
-      <div className="flex flex-col h-full py-8">
-        {/* Logo/Initials */}
-        <div className="px-5 mb-12">
-          <div className="w-10 h-10 rounded-full bg-sidebar-primary flex items-center justify-center">
-            <span className="text-sidebar-primary-foreground font-serif text-lg font-semibold">
-              GK
-            </span>
-          </div>
-        </div>
-
+    <nav className="nav-sidebar rounded-r-2xl">
+      <div className="flex flex-col h-full justify-center py-8">
         {/* Navigation Links */}
-        <div className="flex-1 flex flex-col gap-1">
+        <div className="flex flex-col gap-1">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -38,15 +29,6 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
               <span className="nav-label">{item.label}</span>
             </button>
           ))}
-        </div>
-
-        {/* Footer */}
-        <div className="px-5 mt-auto">
-          <div className="nav-sidebar:hover:opacity-100 opacity-0 transition-opacity duration-300">
-            <p className="text-xs text-sidebar-foreground/50 nav-label">
-              © 2024 Georgina Kimani
-            </p>
-          </div>
         </div>
       </div>
     </nav>
