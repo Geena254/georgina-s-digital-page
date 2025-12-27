@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import Sidebar from "@/components/Sidebar";
 import PageTransition from "@/components/PageTransition";
 import ParallaxBackground from "@/components/ParallaxBackground";
@@ -8,16 +8,40 @@ import ProjectsPage from "@/components/pages/ProjectsPage";
 import CertificationsPage from "@/components/pages/CertificationsPage";
 import ContactPage from "@/components/pages/ContactPage";
 import ScrollToTop from "@/components/ScrollToTop";
+import { useSwipe } from "@/hooks/use-swipe";
+
+const pageOrder = ["home", "about", "projects", "certifications", "contact"];
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState("home");
 
-  const handleNavigate = (page: string) => {
+  const handleNavigate = useCallback((page: string) => {
     if (page !== currentPage) {
       setCurrentPage(page);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  };
+  }, [currentPage]);
+
+  const handleSwipeLeft = useCallback(() => {
+    const currentIndex = pageOrder.indexOf(currentPage);
+    if (currentIndex < pageOrder.length - 1) {
+      handleNavigate(pageOrder[currentIndex + 1]);
+    }
+  }, [currentPage, handleNavigate]);
+
+  const handleSwipeRight = useCallback(() => {
+    const currentIndex = pageOrder.indexOf(currentPage);
+    if (currentIndex > 0) {
+      handleNavigate(pageOrder[currentIndex - 1]);
+    }
+  }, [currentPage, handleNavigate]);
+
+  const swipeHandlers = useMemo(() => ({
+    onSwipeLeft: handleSwipeLeft,
+    onSwipeRight: handleSwipeRight,
+  }), [handleSwipeLeft, handleSwipeRight]);
+
+  useSwipe(swipeHandlers, 80);
 
   const renderPage = () => {
     switch (currentPage) {
