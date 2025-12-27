@@ -39,7 +39,7 @@ const Index = () => {
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Main Content with Page Transitions */}
-      <main className="ml-16">
+      <main className="ml-16 h-screen overflow-y-auto">
         <PageTransition pageKey={currentPage}>
           {renderPage()}
         </PageTransition>
