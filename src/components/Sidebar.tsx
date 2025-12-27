@@ -29,7 +29,7 @@ const Sidebar = ({
   onNavigate
 }: SidebarProps) => {
   return <nav className="nav-sidebar rounded-r-2xl">
-      <div className="flex flex-col h-full justify-center py-0">
+      <div className="flex flex-col h-full justify-center py-0 mx-[32px] my-[32px]">
         {/* Navigation Links */}
         <div className="flex flex-col gap-1">
           {navItems.map(item => <button key={item.id} onClick={() => onNavigate(item.id)} className={`nav-link ${currentPage === item.id ? "active" : ""}`}>
