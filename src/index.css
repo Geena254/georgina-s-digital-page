@@ -140,6 +140,20 @@
     @apply border-l-2 border-transparent;
   }
 
+  .nav-link svg {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .nav-sidebar:not(:hover) .nav-link:hover svg {
+    @apply scale-125;
+    filter: drop-shadow(0 0 8px hsl(var(--terracotta) / 0.6));
+    color: hsl(var(--terracotta));
+  }
+
+  .nav-sidebar:not(:hover) .nav-link:hover {
+    @apply bg-sidebar-accent/80;
+  }
+
   .nav-link.active {
     @apply text-sidebar-primary border-l-2 border-sidebar-primary;
     @apply bg-sidebar-accent;
