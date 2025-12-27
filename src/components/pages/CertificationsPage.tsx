@@ -23,8 +23,8 @@ const certifications = [
     icon: "⚛️",
   },
   {
-    title: "MongoDB Certified Developer",
-    issuer: "MongoDB University",
+    title: "ALX AI For Developers",
+    issuer: "ALX Africa",
     date: "2022",
     credentialId: "MDB-DEV-2022-3456",
     icon: "🍃",
