@@ -208,6 +208,54 @@
   }
 }
 
+  /* Custom Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--paper-aged));
+    border-left: 1px solid hsl(var(--border));
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--terracotta) / 0.4);
+    border-radius: 5px;
+    border: 2px solid hsl(var(--paper-aged));
+    transition: background 0.3s ease;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--terracotta) / 0.7);
+  }
+
+  /* Firefox scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--terracotta) / 0.4) hsl(var(--paper-aged));
+  }
+
+  /* Scroll to Top Button */
+  .scroll-to-top {
+    @apply fixed bottom-6 right-6 z-50;
+    @apply w-12 h-12 rounded-full;
+    @apply flex items-center justify-center;
+    @apply bg-primary text-primary-foreground;
+    @apply shadow-lg cursor-pointer;
+    @apply opacity-0 translate-y-4 pointer-events-none;
+    @apply transition-all duration-300 ease-out;
+    border: none;
+  }
+
+  .scroll-to-top:hover {
+    @apply scale-110;
+    box-shadow: 0 6px 24px hsl(var(--terracotta) / 0.4);
+  }
+
+  .scroll-to-top.visible {
+    @apply opacity-100 translate-y-0 pointer-events-auto;
+  }
+
 @layer utilities {
   /* Page turn animation */
   @keyframes page-turn-out {
