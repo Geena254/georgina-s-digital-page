@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import PageTransition from "@/components/PageTransition";
 import ParallaxBackground from "@/components/ParallaxBackground";
@@ -11,12 +11,11 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState("home");
-  const mainRef = useRef<HTMLElement>(null);
 
   const handleNavigate = (page: string) => {
     if (page !== currentPage) {
       setCurrentPage(page);
-      mainRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -44,15 +43,16 @@ const Index = () => {
 
       {/* Sidebar Navigation */}
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
+
       {/* Main Content with Page Transitions */}
-      <main ref={mainRef} className="ml-16 h-screen overflow-y-auto custom-scrollbar">
+      <main className="md:ml-16 pb-20 md:pb-0 min-h-screen relative z-10">
         <PageTransition pageKey={currentPage}>
           {renderPage()}
         </PageTransition>
       </main>
 
       {/* Scroll to Top Button */}
-      <ScrollToTop scrollContainerRef={mainRef} />
+      <ScrollToTop />
     </div>
   );
 };

@@ -1,36 +1,26 @@
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 
-interface ScrollToTopProps {
-  scrollContainerRef?: React.RefObject<HTMLElement>;
-}
-
-const ScrollToTop = ({ scrollContainerRef }: ScrollToTopProps) => {
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const container = scrollContainerRef?.current;
-    if (!container) return;
-
     const handleScroll = () => {
-      setIsVisible(container.scrollTop > 300);
+      setIsVisible(window.scrollY > 300);
     };
 
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [scrollContainerRef]);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const scrollToTop = () => {
-    const container = scrollContainerRef?.current;
-    if (container) {
-      container.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <button
       onClick={scrollToTop}
-      className={`scroll-to-top ${isVisible ? "visible" : ""}`}
+      className={`scroll-to-top bottom-24 md:bottom-6 ${isVisible ? "visible" : ""}`}
       aria-label="Scroll to top"
     >
       <ArrowUp className="w-5 h-5" />
