@@ -281,7 +281,7 @@
 
   /* Scroll to Top Button */
   .scroll-to-top {
-    @apply fixed bottom-6 right-6 z-50;
+    @apply fixed right-6 z-40;
     @apply w-12 h-12 rounded-full;
     @apply flex items-center justify-center;
     @apply bg-primary text-primary-foreground;
@@ -298,6 +298,11 @@
 
   .scroll-to-top.visible {
     @apply opacity-100 translate-y-0 pointer-events-auto;
+  }
+
+  /* Safe area for mobile bottom nav */
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
   }
 
 @layer utilities {
