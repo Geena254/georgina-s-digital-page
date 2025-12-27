@@ -24,7 +24,7 @@ const navItems = [
   },
   {
     id: "certifications",
-    label: "Certifications",
+    label: "Certs",
     icon: Award,
   },
   {
@@ -66,7 +66,7 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 className={`nav-link ${currentPage === item.id ? "active" : ""}`}
               >
                 <item.icon className="w-5 h-5 flex-shrink-0" />
-                <span className="nav-label">{item.label}</span>
+                <span className="nav-label">{item.label === "Certs" ? "Certifications" : item.label}</span>
               </button>
             ))}
           </div>
@@ -89,33 +89,87 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
       </nav>
 
       {/* Mobile/Tablet Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-sidebar border-t border-sidebar-border safe-area-bottom">
-        <div className="flex items-center justify-around py-2">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all duration-200 ${
-                currentPage === item.id 
-                  ? "text-sidebar-primary bg-sidebar-accent" 
-                  : "text-sidebar-foreground/70 hover:text-sidebar-foreground"
-              }`}
-            >
-              <item.icon className="w-5 h-5" />
-              <span className="text-xs font-medium">{item.label}</span>
-            </button>
-          ))}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden safe-area-bottom">
+        {/* Glassmorphism background */}
+        <div className="absolute inset-0 bg-sidebar/90 backdrop-blur-xl border-t border-sidebar-border/50" />
+        
+        <div className="relative flex items-center justify-around px-2 py-3">
+          {navItems.map((item) => {
+            const isActive = currentPage === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => onNavigate(item.id)}
+                className="relative flex flex-col items-center gap-0.5 min-w-[3.5rem] group"
+              >
+                {/* Active indicator pill */}
+                <div 
+                  className={`absolute -top-1 w-8 h-1 rounded-full transition-all duration-300 ${
+                    isActive 
+                      ? "bg-sidebar-primary opacity-100 scale-100" 
+                      : "opacity-0 scale-0"
+                  }`} 
+                />
+                
+                {/* Icon container with glow effect */}
+                <div 
+                  className={`relative p-2 rounded-xl transition-all duration-300 ${
+                    isActive 
+                      ? "bg-sidebar-primary/20 scale-110" 
+                      : "group-hover:bg-sidebar-accent/50"
+                  }`}
+                >
+                  <item.icon 
+                    className={`w-5 h-5 transition-all duration-300 ${
+                      isActive 
+                        ? "text-sidebar-primary" 
+                        : "text-sidebar-foreground/60 group-hover:text-sidebar-foreground"
+                    }`} 
+                  />
+                  
+                  {/* Glow effect for active item */}
+                  {isActive && (
+                    <div className="absolute inset-0 bg-sidebar-primary/30 rounded-xl blur-md -z-10" />
+                  )}
+                </div>
+                
+                {/* Label */}
+                <span 
+                  className={`text-[10px] font-medium transition-all duration-300 ${
+                    isActive 
+                      ? "text-sidebar-primary" 
+                      : "text-sidebar-foreground/50 group-hover:text-sidebar-foreground/80"
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+          
           {/* Theme Toggle for Mobile */}
           <button
             onClick={toggleTheme}
-            className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-sidebar-foreground/70 hover:text-sidebar-foreground transition-all duration-200"
+            className="relative flex flex-col items-center gap-0.5 min-w-[3.5rem] group"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
-            <div className="relative w-5 h-5">
-              <Sun className={`w-5 h-5 absolute transition-all duration-300 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`} />
-              <Moon className={`w-5 h-5 absolute transition-all duration-300 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`} />
+            <div className="relative p-2 rounded-xl transition-all duration-300 group-hover:bg-sidebar-accent/50">
+              <div className="relative w-5 h-5">
+                <Sun 
+                  className={`w-5 h-5 absolute text-sidebar-foreground/60 group-hover:text-sidebar-foreground transition-all duration-300 ${
+                    isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
+                  }`} 
+                />
+                <Moon 
+                  className={`w-5 h-5 absolute text-sidebar-foreground/60 group-hover:text-sidebar-foreground transition-all duration-300 ${
+                    isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
+                  }`} 
+                />
+              </div>
             </div>
-            <span className="text-xs font-medium">{isDark ? "Light" : "Dark"}</span>
+            <span className="text-[10px] font-medium text-sidebar-foreground/50 group-hover:text-sidebar-foreground/80 transition-all duration-300">
+              {isDark ? "Light" : "Dark"}
+            </span>
           </button>
         </div>
       </nav>
