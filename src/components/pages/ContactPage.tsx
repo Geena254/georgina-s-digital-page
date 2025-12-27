@@ -17,13 +17,10 @@ const ContactPage = () => {
           {/* Contact Info */}
           <div className="space-y-8 opacity-0 animate-fade-in-up animation-delay-100">
             <div>
-              <h3 className="font-serif text-2xl font-semibold mb-6">
-                Let's Connect
-              </h3>
+              <h3 className="font-serif text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you have a project in mind, want to collaborate, or just 
-                want to say hello, I'd love to hear from you. I'm always open to 
-                discussing new opportunities and ideas.
+                Whether you have a project in mind, want to collaborate, or just want to say hello, I'd love to hear
+                from you. I'm always open to discussing new opportunities and ideas.
               </p>
             </div>
 
@@ -35,8 +32,11 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <a href="mailto:hello@georginakimani.com" className="text-foreground hover:text-primary transition-colors">
-                    hello@georginakimani.com
+                  <a
+                    href="mailto:hello@georginakimani.com"
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    njokikimani001@gmail.com
                   </a>
                 </div>
               </div>
@@ -57,19 +57,19 @@ const ContactPage = () => {
               <p className="text-sm text-muted-foreground mb-4">Find me on</p>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/georgina-kimani"
                   className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.github.com/Geena254"
                   className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.x.com/KimaniSWE"
                   className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <Twitter className="w-5 h-5" />
@@ -85,34 +85,21 @@ const ContactPage = () => {
                 <label htmlFor="name" className="text-sm font-medium text-foreground">
                   Your Name
                 </label>
-                <Input
-                  id="name"
-                  placeholder="John Doe"
-                  className="bg-background border-border"
-                />
+                <Input id="name" placeholder="John Doe" className="bg-background border-border" />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">
                   Email Address
                 </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="john@example.com"
-                  className="bg-background border-border"
-                />
+                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium text-foreground">
                   Subject
                 </label>
-                <Input
-                  id="subject"
-                  placeholder="Project inquiry"
-                  className="bg-background border-border"
-                />
+                <Input id="subject" placeholder="Project inquiry" className="bg-background border-border" />
               </div>
 
               <div className="space-y-2">
@@ -138,9 +125,7 @@ const ContactPage = () => {
         <div className="mt-16 text-center opacity-0 animate-fade-in-up animation-delay-300">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-secondary rounded-full">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-secondary-foreground">
-              Currently available for freelance projects
-            </span>
+            <span className="text-sm text-secondary-foreground">Currently available for freelance projects</span>
           </div>
         </div>
       </div>
