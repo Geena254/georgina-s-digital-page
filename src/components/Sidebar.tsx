@@ -16,7 +16,7 @@ const navItems = [
 const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
   return (
     <nav className="nav-sidebar rounded-r-2xl">
-      <div className="flex flex-col h-3/4 justify-center py-8">
+      <div className="flex flex-col h-1/2 justify-center py-8">
         {/* Navigation Links */}
         <div className="flex flex-col gap-1">
           {navItems.map((item) => (
