@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import PageTransition from "@/components/PageTransition";
+import ParallaxBackground from "@/components/ParallaxBackground";
 import HomePage from "@/components/pages/HomePage";
 import AboutPage from "@/components/pages/AboutPage";
 import ProjectsPage from "@/components/pages/ProjectsPage";
@@ -37,10 +38,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Parallax Background Elements */}
+      <ParallaxBackground />
+
       {/* Sidebar Navigation */}
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
-
       {/* Main Content with Page Transitions */}
       <main ref={mainRef} className="ml-16 h-screen overflow-y-auto custom-scrollbar">
         <PageTransition pageKey={currentPage}>
