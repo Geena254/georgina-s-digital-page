@@ -46,6 +46,7 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
               <span className="nav-label">{item.label}</span>
             </button>
           ))}
+        </div>
       </div>
     </nav>
   );
