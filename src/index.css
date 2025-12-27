@@ -107,6 +107,14 @@
 }
 
 @layer components {
+  .page-transition-container {
+    @apply w-full min-h-full;
+  }
+
+  .page-content {
+    @apply w-full min-h-full bg-background;
+  }
+
   .page-container {
     @apply min-h-screen w-full relative;
     perspective: 2000px;
