@@ -26,12 +26,9 @@ const PageTransition = ({ children, pageKey }: PageTransitionProps) => {
   }, [pageKey, displayedKey, children]);
 
   return (
-    <div className="page-container overflow-hidden">
+    <div className="page-transition-container">
       <div
-        className={`page ${isAnimating ? "page-turn-out" : "page-turn-in"}`}
-        style={{
-          transformOrigin: "left center",
-        }}
+        className={`page-content ${isAnimating ? "page-turn-out" : "page-turn-in"}`}
       >
         {displayedChildren}
       </div>
