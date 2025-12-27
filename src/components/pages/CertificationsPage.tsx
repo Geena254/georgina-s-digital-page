@@ -67,7 +67,7 @@ const CertificationsPage = () => {
                 style={{ animationDelay: `${(index + 2) * 100}ms` }}
               >
                 <div className="flex gap-4">
-                  <div className="text-4xl flex-shrink-0">{cert.icon}</div>
+                  <div className="text-4xl flex-shrink-0 cert-icon">{cert.icon}</div>
                   <div className="flex-1 space-y-2">
                     <h4 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {cert.title}
@@ -103,7 +103,7 @@ const CertificationsPage = () => {
                 key={badge.name}
                 className="badge-item group cursor-pointer"
               >
-                <div className={`w-2 h-2 rounded-full ${badge.color}`} />
+                <div className={`w-2 h-2 rounded-full badge-dot ${badge.color}`} />
                 <span className="group-hover:text-primary transition-colors">
                   {badge.name}
                 </span>
