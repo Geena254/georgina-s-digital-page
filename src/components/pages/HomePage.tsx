@@ -13,6 +13,11 @@ const roleGradients = [
   "bg-gradient-to-r from-accent via-gold to-primary",
   "bg-gradient-to-r from-gold via-primary to-accent",
 ];
+const roleGlows = [
+  "drop-shadow-[0_0_25px_hsl(var(--primary)/0.5)]",
+  "drop-shadow-[0_0_25px_hsl(var(--accent)/0.5)]",
+  "drop-shadow-[0_0_25px_hsl(var(--gold)/0.5)]",
+];
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
   const { currentText, currentTextIndex, isFading } = useTypingAnimation({
@@ -48,10 +53,10 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               {/* Roles - Typing Animation with Gradient */}
               <div className="h-16 flex items-center text-2xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
                 <span 
-                  className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} bg-clip-text text-transparent ${isFading ? 'opacity-50' : 'opacity-100'}`}
+                  className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? 'opacity-50' : 'opacity-100'}`}
                 >
                   {currentText}
-                  <span className="animate-pulse ml-1 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">|</span>
+                  <span className="animate-pulse ml-1 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">|</span>
                 </span>
               </div>
 
