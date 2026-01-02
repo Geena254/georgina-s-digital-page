@@ -48,13 +48,13 @@ const Index = () => {
       case "home":
         return <HomePage onNavigate={handleNavigate} />;
       case "about":
-        return <AboutPage />;
+        return <AboutPage onNavigate={handleNavigate} />;
       case "projects":
-        return <ProjectsPage />;
+        return <ProjectsPage onNavigate={handleNavigate} />;
       case "certifications":
-        return <CertificationsPage />;
+        return <CertificationsPage onNavigate={handleNavigate} />;
       case "contact":
-        return <ContactPage />;
+        return <ContactPage onNavigate={handleNavigate} />;
       default:
         return <HomePage onNavigate={handleNavigate} />;
     }

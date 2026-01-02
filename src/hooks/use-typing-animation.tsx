@@ -16,6 +16,7 @@ export const useTypingAnimation = ({
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const fullText = texts[currentTextIndex];
@@ -26,7 +27,13 @@ export const useTypingAnimation = ({
           if (currentText.length < fullText.length) {
             setCurrentText(fullText.slice(0, currentText.length + 1));
           } else {
-            setTimeout(() => setIsDeleting(true), pauseTime);
+            setTimeout(() => {
+              setIsFading(true);
+              setTimeout(() => {
+                setIsDeleting(true);
+                setIsFading(false);
+              }, 300);
+            }, pauseTime);
           }
         } else {
           if (currentText.length > 0) {
@@ -43,5 +50,5 @@ export const useTypingAnimation = ({
     return () => clearTimeout(timeout);
   }, [currentText, isDeleting, currentTextIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
 
-  return { currentText, currentTextIndex };
+  return { currentText, currentTextIndex, isFading };
 };

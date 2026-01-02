@@ -42,12 +42,21 @@ const badges = [
   { name: "DevOps Foundation Certified", color: "bg-gold" },
 ];
 
-const CertificationsPage = () => {
+interface CertificationsPageProps {
+  onNavigate?: (page: string) => void;
+}
+
+const CertificationsPage = ({ onNavigate }: CertificationsPageProps) => {
   return (
-    <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24">
+    <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
-        <h1 className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer">Georgina</h1>
+        <h1 
+          onClick={() => onNavigate?.("home")}
+          className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
+        >
+          Georgina
+        </h1>
       </div>
       
       <div className="max-w-5xl mx-auto pt-8">
