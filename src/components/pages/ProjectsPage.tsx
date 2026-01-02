@@ -10,6 +10,8 @@ const projects = [
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     role: "Co-Founder & Lead Frontend Developer",
     year: "May 2025 - Present",
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "SafePulse AI",
@@ -18,6 +20,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "MongoDB", "Python", "Lisk"],
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "Ardo Thriving Hub",
@@ -26,6 +30,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Node.js", "n8n"],
     role: "Fullstack Developer",
     year: "May 2025",
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "Amani Assist",
@@ -33,6 +39,8 @@ const projects = [
     tags: ["Next.js", "TypeScript", "n8n"],
     role: "Fullstack Developer",
     year: "Feb 2025",
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "M-TREAT Platform",
@@ -41,6 +49,8 @@ const projects = [
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
+    liveUrl: "",
+    githubUrl: "",
   },
   {
     title: "FinTrack Mobile",
@@ -49,6 +59,8 @@ const projects = [
     tags: ["React Native", "GraphQL", "Firebase"],
     role: "Fullstack Developer",
     year: "2022",
+    liveUrl: "",
+    githubUrl: "",
   },
 ];
 
@@ -104,16 +116,36 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex gap-3 pt-2">
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                  </div>
+                  {(project.githubUrl || project.liveUrl) && (
+                    <div className="flex gap-3 pt-2">
+                      {project.githubUrl && (
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="text-muted-foreground hover:text-foreground"
+                          asChild
+                        >
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
+                      {project.liveUrl && (
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="text-muted-foreground hover:text-foreground"
+                          asChild
+                        >
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </article>
