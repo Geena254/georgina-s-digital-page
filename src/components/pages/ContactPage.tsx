@@ -1,7 +1,9 @@
-import { Mail, MapPin, Linkedin, Github, Twitter } from "lucide-react";
+import { Mail, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import SocialLinks from "@/components/SocialLinks";
+import { CONTACT_INFO } from "@/lib/constants";
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
@@ -11,13 +13,28 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
-      <div className="mb-8 opacity-0 animate-fade-in-up">
+      <div className="mb-8 opacity-0 animate-fade-in-up flex items-center justify-between">
         <h1 
           onClick={() => onNavigate?.("home")}
           className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
         >
           Georgina
         </h1>
+        <div className="flex items-center gap-3">
+          <SocialLinks variant="header" />
+          
+          <div className="w-px h-6 bg-border mx-1" />
+          
+          <Button 
+            variant="outline" 
+            size="sm" 
+            onClick={() => onNavigate?.("contact")}
+            className="group"
+          >
+            Contact Me
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </div>
       </div>
       
       <div className="max-w-5xl mx-auto pt-8">
@@ -47,10 +64,10 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
                   <a
-                    href="mailto:hello@georginakimani.com"
+                    href={`mailto:${CONTACT_INFO.email}`}
                     className="text-foreground hover:text-primary transition-colors"
                   >
-                    njokikimani001@gmail.com
+                    {CONTACT_INFO.email}
                   </a>
                 </div>
               </div>
@@ -61,7 +78,7 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="text-foreground">Nairobi, Kenya</p>
+                  <p className="text-foreground">{CONTACT_INFO.location}</p>
                 </div>
               </div>
             </div>
@@ -69,26 +86,7 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
             {/* Social Links */}
             <div className="pt-6 border-t border-border">
               <p className="text-sm text-muted-foreground mb-4">Find me on</p>
-              <div className="flex gap-3">
-                <a
-                  href="https://www.linkedin.com/in/georgina-kimani"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.github.com/Geena254"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://www.x.com/KimaniSWE"
-                  className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
+              <SocialLinks variant="footer" />
             </div>
           </div>
 
