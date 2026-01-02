@@ -135,16 +135,16 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                   <div className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
 
                   {/* Content Card */}
-                  <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+                  <div className="group bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:scale-[1.02]">
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div className="flex items-start gap-4">
                         {/* Company Icon */}
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${exp.iconBg}`}>
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${exp.iconBg}`}>
                           <exp.icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-foreground mb-1">{exp.title}</h3>
+                          <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary">{exp.title}</h3>
                           <div className="flex items-center gap-2 text-primary">
                             <Building className="w-4 h-4" />
                             <span className="font-medium">{exp.company}</span>
@@ -169,8 +169,8 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     {/* Highlights */}
                     <ul className="space-y-2">
                       {exp.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80 transition-all duration-200 hover:text-foreground hover:translate-x-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-125" />
                           {highlight}
                         </li>
                       ))}
