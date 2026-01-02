@@ -34,7 +34,6 @@ const certifications = [
     viewUrl: "https://www.credential.net/example-gcp",
   },
   {
-    {
     title: "ALX Ventures Founder Academy",
     issuer: "ALX Africa X Mastercard Foundation",
     date: "Oct 2025 - Nov 2025",
