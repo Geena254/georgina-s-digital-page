@@ -8,7 +8,7 @@ interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
-const roles = ["Founder", "Fullstack Developer", "Mentor"];
+const roles = ["Software Engineer", "Founder", "Mentor"];
 const roleGradients = [
   "bg-gradient-to-r from-primary via-accent to-gold",
   "bg-gradient-to-r from-accent via-gold to-primary",
