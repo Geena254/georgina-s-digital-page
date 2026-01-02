@@ -100,19 +100,23 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
         )}
       </div>
 
-      {/* Fullscreen popup overlay */}
+      {/* Fullscreen popup overlay - using portal-like fixed positioning */}
       {isExpanded && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+        <div 
+          className="fixed inset-0 z-[9999] flex items-center justify-center"
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+        >
           {/* Background overlay with blur */}
           <div 
-            className="absolute inset-0 bg-background/80 backdrop-blur-md animate-fade-in"
+            className="fixed inset-0 bg-background/80 backdrop-blur-md animate-fade-in"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
             onClick={() => setIsExpanded(false)}
           />
 
           {/* Centered popup modal */}
           <div 
             className="relative bg-card border border-border rounded-2xl p-6 shadow-2xl
-                       animate-fade-in-up w-[90vw] max-w-4xl max-h-[85vh] overflow-y-auto"
+                       animate-fade-in-up w-[90vw] max-w-4xl max-h-[85vh] overflow-y-auto z-[10000]"
           >
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
