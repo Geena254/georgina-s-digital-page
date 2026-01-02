@@ -112,7 +112,7 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
           {/* Centered popup modal */}
           <div 
             className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-2xl
-                       animate-fade-in-up w-[90vw] max-w-[600px] max-h-[80vh] overflow-y-auto"
+                       animate-fade-in-up w-[90vw] max-w-4xl max-h-[85vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
