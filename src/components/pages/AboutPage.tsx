@@ -63,7 +63,7 @@ const certifications = [
 ];
 
 const badges = [
-  { name: "GitHub Arctic Code Vault Contributor", color: "bg-accent" },
+  { name: "Google Cloud Engineering", color: "bg-primary" },
   { name: "Google Developer Expert", color: "bg-primary" },
   { name: "AWS Community Builder", color: "bg-gold" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
@@ -179,9 +179,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                         </a>
                       </div>
                     </div>
-                    <p className="text-xs text-muted-foreground font-mono">
-                      ID: {cert.credentialId}
-                    </p>
+                    <p className="text-xs text-muted-foreground font-mono">ID: {cert.credentialId}</p>
                   </div>
                 </div>
               </div>
@@ -198,14 +196,9 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
 
           <div className="flex flex-wrap gap-3 opacity-0 animate-fade-in-up animation-delay-400">
             {badges.map((badge) => (
-              <div
-                key={badge.name}
-                className="badge-item group cursor-pointer"
-              >
+              <div key={badge.name} className="badge-item group cursor-pointer">
                 <div className={`w-2 h-2 rounded-full badge-dot ${badge.color}`} />
-                <span className="group-hover:text-primary transition-colors">
-                  {badge.name}
-                </span>
+                <span className="group-hover:text-primary transition-colors">{badge.name}</span>
               </div>
             ))}
           </div>
