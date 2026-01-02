@@ -111,7 +111,7 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
 
           {/* Centered popup modal */}
           <div 
-            className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-2xl
+            className="relative bg-card border border-border rounded-2xl p-6 shadow-2xl
                        animate-fade-in-up w-[90vw] max-w-4xl max-h-[85vh] overflow-y-auto"
           >
             <div className="flex items-center justify-between mb-4">
@@ -131,7 +131,7 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
                   <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2 border-b border-border/50 pb-1">
                     {categoryLabels[category] || category}
                   </h5>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
                     {groupedSkills[category].map((skill, index) => (
                       <div
                         key={skill.name}
@@ -139,8 +139,8 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
                                    transition-all duration-200 animate-fade-in-up opacity-0"
                         style={{ animationDelay: `${index * 30}ms`, animationFillMode: 'forwards' }}
                       >
-                        <SkillIcon skill={skill.name} className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
-                        <span className="text-xs md:text-sm text-foreground truncate">{skill.name}</span>
+                        <SkillIcon skill={skill.name} className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-xs text-foreground truncate">{skill.name}</span>
                       </div>
                     ))}
                   </div>
