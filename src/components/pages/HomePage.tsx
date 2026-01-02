@@ -8,7 +8,11 @@ interface HomePageProps {
 }
 
 const roles = ["Founder", "Fullstack Developer", "Mentor"];
-const roleColors = ["border-primary", "border-accent", "border-gold"];
+const roleGradients = [
+  "bg-gradient-to-r from-primary via-accent to-gold",
+  "bg-gradient-to-r from-accent via-gold to-primary",
+  "bg-gradient-to-r from-gold via-primary to-accent",
+];
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
   const { currentText, currentTextIndex, isFading } = useTypingAnimation({
@@ -41,13 +45,13 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 <br /> Thank you for being here!
               </p>
 
-              {/* Roles - Typing Animation */}
+              {/* Roles - Typing Animation with Gradient */}
               <div className="h-16 flex items-center text-2xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
                 <span 
-                  className={`border-b-3 ${roleColors[currentTextIndex]} pb-2 text-foreground font-medium transition-all duration-300 ${isFading ? 'opacity-50' : 'opacity-100'}`}
+                  className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} bg-clip-text text-transparent ${isFading ? 'opacity-50' : 'opacity-100'}`}
                 >
                   {currentText}
-                  <span className="animate-pulse ml-1 text-primary">|</span>
+                  <span className="animate-pulse ml-1 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">|</span>
                 </span>
               </div>
 
