@@ -11,7 +11,7 @@ const projects = [
     role: "Co-Founder & Lead Frontend Developer",
     year: "May 2025 - Present",
     liveUrl: "https://afyasoko.com",
-    // githubUrl: "https://github.com/afyasoko",
+    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
   },
   {
     title: "SafePulse AI",
@@ -21,7 +21,7 @@ const projects = [
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
-    // githubUrl: "https://github.com/safepulseai",
+    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   },
   {
     title: "Ardo Thriving Hub",
@@ -31,7 +31,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "May 2025",
     liveUrl: "https://ardothrivinghub.org",
-    // githubUrl: "https://github.com/ardothrivinghub",
+    thumbnail: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
   },
   {
     title: "Amani Assist",
@@ -41,6 +41,7 @@ const projects = [
     year: "Feb 2025",
     liveUrl: "https://amaniassist.com",
     githubUrl: "https://github.com/Geena254/amaniassist",
+    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
   },
   {
     title: "M-TREAT Platform",
@@ -50,7 +51,7 @@ const projects = [
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
     liveUrl: "https://mtreat.health",
-    // githubUrl: "https://github.com/mtreat-platform",
+    thumbnail: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
   },
   {
     title: "FinTrack Mobile",
@@ -60,7 +61,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "2022",
     liveUrl: "https://fintrack.app",
-    // githubUrl: "https://github.com/fintrack-mobile",
+    thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
   },
 ];
 
@@ -89,10 +90,18 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
               className={`group certification-card opacity-0 animate-fade-in-up`}
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="flex flex-col md:flex-row md:items-start gap-6">
-                {/* Year */}
-                <div className="md:w-24 flex-shrink-0">
-                  <span className="text-sm font-mono text-muted-foreground">{project.year}</span>
+              <div className="flex flex-col lg:flex-row gap-6">
+                {/* Thumbnail */}
+                <div className="lg:w-64 flex-shrink-0">
+                  <div className="relative overflow-hidden rounded-lg aspect-video bg-secondary">
+                    <img
+                      src={project.thumbnail}
+                      alt={`${project.title} screenshot`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <span className="text-xs font-mono text-muted-foreground mt-2 block">{project.year}</span>
                 </div>
 
                 {/* Content */}
@@ -117,14 +126,22 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
 
                   {/* Actions */}
                   <div className="flex gap-3 pt-2">
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
+                    {project.githubUrl && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.liveUrl && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
