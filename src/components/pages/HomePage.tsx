@@ -11,7 +11,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
     <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8">
       {/* Header */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
-        <h1 className="font-serif text-2xl font-semibold text-foreground">Georgina</h1>
+        <h1 className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer">Georgina</h1>
       </div>
 
       <div className="flex-1 flex items-center justify-center">

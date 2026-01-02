@@ -1,5 +1,5 @@
-import { Home, User, Briefcase, Award, Mail, Moon, Sun } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Home, User, Briefcase, Award, Mail } from "lucide-react";
+import { useEffect } from "react";
 
 interface SidebarProps {
   currentPage: string;
@@ -35,22 +35,10 @@ const navItems = [
 ];
 
 const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return document.documentElement.classList.contains('dark');
-    }
-    return false;
-  });
-
+  // Force dark mode on mount
   useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => setIsDark(!isDark);
+    document.documentElement.classList.add('dark');
+  }, []);
 
   return (
     <>
@@ -71,20 +59,6 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
             ))}
           </div>
 
-          {/* Theme Toggle */}
-          <div className="mt-auto pt-4 border-t border-sidebar-border">
-            <button
-              onClick={toggleTheme}
-              className="nav-link group"
-              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              <div className="relative w-5 h-5 flex-shrink-0">
-                <Sun className={`w-5 h-5 absolute transition-all duration-300 ${isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'}`} />
-                <Moon className={`w-5 h-5 absolute transition-all duration-300 ${isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'}`} />
-              </div>
-              <span className="nav-label">{isDark ? "Light Mode" : "Dark Mode"}</span>
-            </button>
-          </div>
         </div>
       </nav>
 
@@ -147,30 +121,6 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
             );
           })}
           
-          {/* Theme Toggle for Mobile */}
-          <button
-            onClick={toggleTheme}
-            className="relative flex flex-col items-center gap-0.5 min-w-[3.5rem] group"
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-          >
-            <div className="relative p-2 rounded-xl transition-all duration-300 bg-background/50 group-hover:bg-background/70">
-              <div className="relative w-5 h-5">
-                <Sun 
-                  className={`w-5 h-5 absolute text-foreground/70 group-hover:text-foreground transition-all duration-300 ${
-                    isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
-                  }`} 
-                />
-                <Moon 
-                  className={`w-5 h-5 absolute text-foreground/70 group-hover:text-foreground transition-all duration-300 ${
-                    isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
-                  }`} 
-                />
-              </div>
-            </div>
-            <span className="text-[10px] font-medium text-foreground/60 group-hover:text-foreground/80 transition-all duration-300">
-              {isDark ? "Light" : "Dark"}
-            </span>
-          </button>
         </div>
       </nav>
     </>
