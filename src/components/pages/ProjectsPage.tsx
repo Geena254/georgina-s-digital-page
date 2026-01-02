@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ExternalLink, Github, X, ZoomIn } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -76,7 +76,36 @@ interface ProjectsPageProps {
 }
 
 const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
-  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const selectedProject = selectedIndex !== null ? projects[selectedIndex] : null;
+
+  const goToNext = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % projects.length);
+    }
+  }, [selectedIndex]);
+
+  const goToPrev = useCallback(() => {
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + projects.length) % projects.length);
+    }
+  }, [selectedIndex]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      
+      if (e.key === "ArrowRight") {
+        goToNext();
+      } else if (e.key === "ArrowLeft") {
+        goToPrev();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex, goToNext, goToPrev]);
 
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
@@ -102,7 +131,7 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                 {/* Thumbnail */}
                 <div className="lg:w-64 flex-shrink-0">
                   <button
-                    onClick={() => setSelectedImage({ src: project.thumbnail.replace('w=600&h=400', 'w=1200&h=800'), title: project.title })}
+                    onClick={() => setSelectedIndex(index)}
                     className="relative overflow-hidden rounded-lg aspect-video bg-secondary w-full cursor-zoom-in group/thumb"
                   >
                     <img
@@ -164,28 +193,51 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
       </div>
 
       {/* Lightbox Modal */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      <Dialog open={selectedIndex !== null} onOpenChange={() => setSelectedIndex(null)}>
         <DialogContent className="max-w-4xl w-full p-0 bg-background/95 backdrop-blur-sm border-border">
-          <DialogTitle className="sr-only">{selectedImage?.title} - Full Size Image</DialogTitle>
+          <DialogTitle className="sr-only">{selectedProject?.title} - Full Size Image</DialogTitle>
           <div className="relative">
+            {/* Close button */}
             <Button
               variant="ghost"
               size="icon"
               className="absolute top-2 right-2 z-10 bg-background/80 hover:bg-background"
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedIndex(null)}
             >
               <X className="w-5 h-5" />
             </Button>
-            {selectedImage && (
+
+            {/* Navigation buttons */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+              onClick={goToPrev}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-background"
+              onClick={goToNext}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </Button>
+
+            {selectedProject && (
               <img
-                src={selectedImage.src}
-                alt={`${selectedImage.title} - full size`}
+                src={selectedProject.thumbnail.replace('w=600&h=400', 'w=1200&h=800')}
+                alt={`${selectedProject.title} - full size`}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />
             )}
-            {selectedImage && (
+            {selectedProject && (
               <div className="p-4 text-center">
-                <h3 className="font-serif text-lg font-semibold text-foreground">{selectedImage.title}</h3>
+                <h3 className="font-serif text-lg font-semibold text-foreground">{selectedProject.title}</h3>
+                <p className="text-sm text-muted-foreground mt-1">
+                  {selectedIndex !== null ? selectedIndex + 1 : 0} / {projects.length} — Use ← → arrows to navigate
+                </p>
               </div>
             )}
           </div>
