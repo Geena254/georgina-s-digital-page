@@ -61,7 +61,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background relative">
+    <div className="min-h-screen relative">
       {/* Parallax Background Elements */}
       <ParallaxBackground />
 
@@ -69,7 +69,7 @@ const Index = () => {
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Main Content with Page Transitions */}
-      <main className="md:ml-16 pb-20 md:pb-0 min-h-screen relative z-10">
+      <main className="md:ml-16 pb-20 md:pb-0 min-h-screen relative z-10 page-translucent">
         <PageTransition pageKey={currentPage}>
           {renderPage()}
         </PageTransition>

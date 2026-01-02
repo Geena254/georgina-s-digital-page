@@ -112,7 +112,10 @@
   }
 
   .page-content {
-    @apply w-full min-h-full bg-background;
+    @apply w-full min-h-full;
+    background: hsl(var(--background) / 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .page-container {
@@ -121,11 +124,21 @@
   }
 
   .page {
-    @apply absolute inset-0 bg-background;
+    @apply absolute inset-0;
+    background: hsl(var(--background) / 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     transform-origin: left center;
     transform-style: preserve-3d;
     backface-visibility: hidden;
     box-shadow: var(--shadow-page);
+  }
+
+  /* Translucent page backgrounds */
+  .page-translucent {
+    background: hsl(var(--background) / 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .nav-sidebar {

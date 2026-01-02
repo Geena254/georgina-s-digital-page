@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -9,6 +9,15 @@ interface HeaderProps {
 
 const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleDownloadResume = () => {
+    // Create a link to download the resume
+    // For now, this will trigger a download - you can replace with actual resume URL
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Georgina_Resume.pdf';
+    link.click();
+  };
 
   return (
     <div className="mb-8 opacity-0 animate-fade-in-up">
@@ -20,11 +29,21 @@ const Header = ({ onNavigate }: HeaderProps) => {
           Georgina
         </h1>
         
-        {/* Desktop: Social links and contact button */}
+        {/* Desktop: Social links and buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <SocialLinks variant="header" />
           
           <div className="w-px h-6 bg-border mx-1" />
+          
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={handleDownloadResume}
+            className="group"
+          >
+            <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+            Resume
+          </Button>
           
           <Button 
             variant="outline" 
@@ -40,7 +59,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
         {/* Mobile: Hamburger menu */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="sm:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
+          className="sm:hidden p-2 rounded-lg hover:bg-secondary/50 transition-colors"
           aria-label="Toggle menu"
         >
           {menuOpen ? (
@@ -53,24 +72,38 @@ const Header = ({ onNavigate }: HeaderProps) => {
 
       {/* Mobile menu dropdown */}
       {menuOpen && (
-        <div className="sm:hidden mt-4 p-4 bg-card border border-border rounded-xl animate-fade-in">
+        <div className="sm:hidden mt-4 p-4 bg-card/90 backdrop-blur-md border border-border rounded-xl animate-fade-in">
           <div className="flex flex-col gap-4">
             <div>
               <p className="text-sm text-muted-foreground mb-3">Connect with me</p>
               <SocialLinks variant="footer" />
             </div>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              onClick={() => {
-                onNavigate?.("contact");
-                setMenuOpen(false);
-              }}
-              className="group w-full"
-            >
-              Contact Me
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+            <div className="flex flex-col gap-2">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => {
+                  handleDownloadResume();
+                  setMenuOpen(false);
+                }}
+                className="group w-full justify-start"
+              >
+                <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                Download Resume
+              </Button>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => {
+                  onNavigate?.("contact");
+                  setMenuOpen(false);
+                }}
+                className="group w-full"
+              >
+                Contact Me
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
           </div>
         </div>
       )}
