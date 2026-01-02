@@ -6,12 +6,12 @@ const projects = [
   {
     title: "AfyaSoko Technologies Ltd",
     description:
-      "A platform connecting African developers with global opportunities. Features job listings, mentorship programs, and community forums.",
+      "A platform connecting patients to healthcare providers & wellness vendors. Features an e-commerce platform and live consultation sessions.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
     role: "Co-Founder & Lead Frontend Developer",
     year: "May 2025 - Present",
     liveUrl: "https://afyasoko.com",
-    githubUrl: "https://github.com/afyasoko",
+    // githubUrl: "https://github.com/afyasoko",
   },
   {
     title: "SafePulse AI",
@@ -21,17 +21,17 @@ const projects = [
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
-    githubUrl: "https://github.com/safepulseai",
+    // githubUrl: "https://github.com/safepulseai",
   },
   {
     title: "Ardo Thriving Hub",
     description:
-      "An e-learning platform serving 10,000+ students with interactive courses, live sessions, and progress tracking.",
+      "A women-led, dynamic, and comprehensive space designed to empower both individuals and businesses to thrive.",
     tags: ["Next.js", "TypeScript", "Node.js", "n8n"],
     role: "Fullstack Developer",
     year: "May 2025",
     liveUrl: "https://ardothrivinghub.org",
-    githubUrl: "https://github.com/ardothrivinghub",
+    // githubUrl: "https://github.com/ardothrivinghub",
   },
   {
     title: "Amani Assist",
@@ -40,7 +40,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "Feb 2025",
     liveUrl: "https://amaniassist.com",
-    githubUrl: "https://github.com/amaniassist",
+    githubUrl: "https://github.com/Geena254/amaniassist",
   },
   {
     title: "M-TREAT Platform",
@@ -50,7 +50,7 @@ const projects = [
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
     liveUrl: "https://mtreat.health",
-    githubUrl: "https://github.com/mtreat-platform",
+    // githubUrl: "https://github.com/mtreat-platform",
   },
   {
     title: "FinTrack Mobile",
@@ -60,7 +60,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "2022",
     liveUrl: "https://fintrack.app",
-    githubUrl: "https://github.com/fintrack-mobile",
+    // githubUrl: "https://github.com/fintrack-mobile",
   },
 ];
 
