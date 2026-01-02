@@ -25,18 +25,9 @@ const allSkills = [
 
 const certifications = [
   {
-    title: "AWS Solutions Architect Professional",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credentialId: "AWS-SAP-2023-1234",
-    icon: "🏆",
-    verifyUrl: "https://www.credly.com/badges/example-aws",
-    viewUrl: "https://www.credly.com/badges/example-aws",
-  },
-  {
     title: "Google Cloud Professional Developer",
-    issuer: "Google Cloud",
-    date: "2023",
+    issuer: "Google Cloud X ALX Africa",
+    date: "Nov 2025 - Jan 2026",
     credentialId: "GCP-PD-2023-5678",
     icon: "☁️",
     verifyUrl: "https://www.credential.net/example-gcp",
