@@ -1,14 +1,25 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { useTypingAnimation } from "@/hooks/use-typing-animation";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
 
+const roles = ["Founder", "Fullstack Developer", "Mentor"];
+const roleColors = ["border-primary", "border-accent", "border-gold"];
+
 const HomePage = ({ onNavigate }: HomePageProps) => {
+  const { currentText, currentTextIndex } = useTypingAnimation({
+    texts: roles,
+    typingSpeed: 100,
+    deletingSpeed: 50,
+    pauseTime: 2000,
+  });
+
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8">
+    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
       {/* Header */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
         <h1 className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer">Georgina</h1>
@@ -25,13 +36,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 <br /> Thank you for being here!
               </p>
 
-              {/* Roles */}
-              <div className="flex flex-wrap gap-2 sm:gap-4 text-base sm:text-lg md:text-xl text-muted-foreground font-sans opacity-0 animate-fade-in-up animation-delay-200">
-                <span className="border-b-2 border-primary pb-1">Founder</span>
-                <span className="text-border">•</span>
-                <span className="border-b-2 border-accent pb-1">Fullstack Developer</span>
-                <span className="text-border">•</span>
-                <span className="border-b-2 border-gold pb-1">Mentor</span>
+              {/* Roles - Typing Animation */}
+              <div className="h-10 flex items-center text-base sm:text-lg md:text-xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
+                <span className={`border-b-2 ${roleColors[currentTextIndex]} pb-1 text-foreground`}>
+                  {currentText}
+                  <span className="animate-pulse ml-0.5">|</span>
+                </span>
               </div>
 
               {/* Description */}
