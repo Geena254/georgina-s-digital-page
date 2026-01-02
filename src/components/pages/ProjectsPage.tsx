@@ -11,6 +11,7 @@ const projects = [
     role: "Co-Founder & Lead Frontend Developer",
     year: "May 2025 - Present",
     liveUrl: "https://afyasoko.com",
+    githubUrl: "https://github.com/afyasoko",
   },
   {
     title: "SafePulse AI",
@@ -20,6 +21,7 @@ const projects = [
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
+    githubUrl: "https://github.com/safepulseai",
   },
   {
     title: "Ardo Thriving Hub",
@@ -29,13 +31,16 @@ const projects = [
     role: "Fullstack Developer",
     year: "May 2025",
     liveUrl: "https://ardothrivinghub.org",
+    githubUrl: "https://github.com/ardothrivinghub",
   },
   {
     title: "Amani Assist",
-    description: "A modern business website ofr Amani Assist that showcases their professional services.",
+    description: "A modern business website for Amani Assist that showcases their professional services.",
     tags: ["Next.js", "TypeScript", "n8n"],
     role: "Fullstack Developer",
     year: "Feb 2025",
+    liveUrl: "https://amaniassist.com",
+    githubUrl: "https://github.com/amaniassist",
   },
   {
     title: "M-TREAT Platform",
@@ -44,6 +49,8 @@ const projects = [
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
+    liveUrl: "https://mtreat.health",
+    githubUrl: "https://github.com/mtreat-platform",
   },
   {
     title: "FinTrack Mobile",
@@ -52,6 +59,8 @@ const projects = [
     tags: ["React Native", "GraphQL", "Firebase"],
     role: "Fullstack Developer",
     year: "2022",
+    liveUrl: "https://fintrack.app",
+    githubUrl: "https://github.com/fintrack-mobile",
   },
 ];
 
