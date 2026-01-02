@@ -40,8 +40,8 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
               <p className="text-muted-foreground font-sans text-3xl tracking-wide opacity-0 animate-fade-in-up">
-                Hello!
-                <br /> Thank you for being here!
+                Hi!
+                <br /> I am <span className={"font-bold"}>Georgina Kimani!</span>
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
