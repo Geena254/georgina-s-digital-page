@@ -101,52 +101,53 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
         )}
       </div>
 
-      {/* Background overlay with blur */}
+      {/* Fullscreen popup overlay */}
       {isExpanded && (
-        <div 
-          className="fixed inset-0 bg-background/60 backdrop-blur-sm z-10 animate-fade-in"
-          onClick={() => setIsExpanded(false)}
-        />
-      )}
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* Background overlay with blur */}
+          <div 
+            className="absolute inset-0 bg-background/80 backdrop-blur-md animate-fade-in"
+            onClick={() => setIsExpanded(false)}
+          />
 
-      {/* Expanded skills panel - grouped by category */}
-      {isExpanded && (
-        <div 
-          className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-xl p-6 shadow-xl
-                     animate-fade-in-up min-w-[320px] md:min-w-[480px] z-20 max-h-[70vh] overflow-y-auto"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
-              All Skills
-            </h4>
-            <button
-              onClick={() => setIsExpanded(false)}
-              className="p-1 rounded-lg hover:bg-primary/10 transition-colors"
-            >
-              <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
-            </button>
-          </div>
-          <div className="space-y-5">
-            {sortedCategories.map((category) => (
-              <div key={category}>
-                <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2 border-b border-border/50 pb-1">
-                  {categoryLabels[category] || category}
-                </h5>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {groupedSkills[category].map((skill, index) => (
-                    <div
-                      key={skill.name}
-                      className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 
-                                 transition-all duration-200 animate-fade-in-up opacity-0"
-                      style={{ animationDelay: `${index * 30}ms`, animationFillMode: 'forwards' }}
-                    >
-                      <SkillIcon skill={skill.name} className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
-                      <span className="text-xs md:text-sm text-foreground truncate">{skill.name}</span>
-                    </div>
-                  ))}
+          {/* Centered popup modal */}
+          <div 
+            className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-2xl
+                       animate-fade-in-up w-[90vw] max-w-[600px] max-h-[80vh] overflow-y-auto"
+          >
+            <div className="flex items-center justify-between mb-4">
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
+                All Skills
+              </h4>
+              <button
+                onClick={() => setIsExpanded(false)}
+                className="p-1 rounded-lg hover:bg-primary/10 transition-colors"
+              >
+                <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+              </button>
+            </div>
+            <div className="space-y-5">
+              {sortedCategories.map((category) => (
+                <div key={category}>
+                  <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2 border-b border-border/50 pb-1">
+                    {categoryLabels[category] || category}
+                  </h5>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {groupedSkills[category].map((skill, index) => (
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 
+                                   transition-all duration-200 animate-fade-in-up opacity-0"
+                        style={{ animationDelay: `${index * 30}ms`, animationFillMode: 'forwards' }}
+                      >
+                        <SkillIcon skill={skill.name} className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />
+                        <span className="text-xs md:text-sm text-foreground truncate">{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       )}
