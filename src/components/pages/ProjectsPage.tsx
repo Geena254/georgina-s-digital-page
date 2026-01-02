@@ -28,12 +28,12 @@ const projects = [
     year: "2022",
   },
   {
-    title: "HealthConnect",
+    title: "M-TREAT Platform",
     description:
-      "Telemedicine platform enabling remote consultations between patients and healthcare providers across East Africa.",
+      "Telehealth platform enabling remote connection of hospitals, patients and pharmacies as well as consultations between patients and healthcare providers across East Africa.",
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
-    role: "Backend Architect",
-    year: "2022",
+    role: "Lead Frontend Developer",
+    year: "Jan 2025 - April 2025",
   },
 ];
 
