@@ -4,51 +4,44 @@ import SocialLinks from "@/components/SocialLinks";
 
 const certifications = [
   {
-    title: "Google Cloud Professional Developer",
-    issuer: "Google Cloud X ALX Africa",
-    date: "Nov 2025 - Jan 2026",
+    title: "AWS Solutions Architect Professional",
+    issuer: "Amazon Web Services",
+    date: "2023",
     credentialId: "AWS-SAP-2023-1234",
     icon: "🏆",
   },
   {
-    title: "ALX Ventures Founders Academy",
-    issuer: "ALX Africa X Mastercard Foundation",
-    date: "2025",
-    credentialId: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+    title: "Google Cloud Professional Developer",
+    issuer: "Google Cloud",
+    date: "2023",
+    credentialId: "GCP-PD-2023-5678",
+    icon: "☁️",
+  },
+  {
+    title: "Meta Frontend Developer Professional",
+    issuer: "Meta",
+    date: "2022",
+    credentialId: "META-FE-2022-9012",
     icon: "⚛️",
   },
   {
-    title: "ALX AI For Developers II",
+    title: "ALX AI For Developers",
     issuer: "ALX Africa",
-    date: "September 2025",
-    credentialId: "",
-    icon: "⚛️",
-  },
-  {
-    title: "ALX AI For Developers I",
-    issuer: "ALX Africa",
-    date: "June 2025",
-    credentialId: "",
-    icon: "⚛️",
-  },
-  {
-    title: "ALX Software Engineering Programme",
-    issuer: "ALX Africa",
-    date: "May 2023 - October 2024",
+    date: "2022",
     credentialId: "MDB-DEV-2022-3456",
     icon: "🍃",
   },
 ];
 
 const badges = [
-  { name: "GitHub Arctic Code Vault Contributor", color: "bg-accent" },
-  { name: "Google Developer Expert", color: "bg-primary" },
-  { name: "AWS Community Builder", color: "bg-gold" },
+  { name: "Google Cloud Engineering", color: "bg-primary" },
+  { name: "Google Cloud Computing Foundations", color: "bg-gold" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
-  { name: "Certified Scrum Master", color: "bg-accent" },
+  { name: "The Basics of Google Cloud Compute Skill", color: "bg-accent" },
   { name: "Women in Tech Africa Leader", color: "bg-primary" },
-  { name: "DevOps Foundation Certified", color: "bg-gold" },
+  { name: "Deploy Kubernetes on google Cloud Skill", color: "bg-gold" },
+  { name: "Implement Load Balancing on Compute Engine Skill", color: "bg-accent" },
 ];
 
 interface CertificationsPageProps {
