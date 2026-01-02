@@ -90,8 +90,8 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
 
       {/* Mobile/Tablet Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden safe-area-bottom">
-        {/* Glassmorphism background */}
-        <div className="absolute inset-0 bg-sidebar/90 backdrop-blur-xl border-t border-sidebar-border/50" />
+        {/* Transparent background with subtle blur */}
+        <div className="absolute inset-0 backdrop-blur-sm" />
         
         <div className="relative flex items-center justify-around px-2 py-3">
           {navItems.map((item) => {
@@ -106,7 +106,7 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 <div 
                   className={`absolute -top-1 w-8 h-1 rounded-full transition-all duration-300 ${
                     isActive 
-                      ? "bg-sidebar-primary opacity-100 scale-100" 
+                      ? "bg-primary opacity-100 scale-100" 
                       : "opacity-0 scale-0"
                   }`} 
                 />
@@ -115,21 +115,21 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 <div 
                   className={`relative p-2 rounded-xl transition-all duration-300 ${
                     isActive 
-                      ? "bg-sidebar-primary/20 scale-110" 
-                      : "group-hover:bg-sidebar-accent/50"
+                      ? "bg-primary/20 scale-110" 
+                      : "bg-background/50 group-hover:bg-background/70"
                   }`}
                 >
                   <item.icon 
                     className={`w-5 h-5 transition-all duration-300 ${
                       isActive 
-                        ? "text-sidebar-primary" 
-                        : "text-sidebar-foreground/60 group-hover:text-sidebar-foreground"
+                        ? "text-primary" 
+                        : "text-foreground/70 group-hover:text-foreground"
                     }`} 
                   />
                   
                   {/* Glow effect for active item */}
                   {isActive && (
-                    <div className="absolute inset-0 bg-sidebar-primary/30 rounded-xl blur-md -z-10" />
+                    <div className="absolute inset-0 bg-primary/30 rounded-xl blur-md -z-10" />
                   )}
                 </div>
                 
@@ -137,8 +137,8 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 <span 
                   className={`text-[10px] font-medium transition-all duration-300 ${
                     isActive 
-                      ? "text-sidebar-primary" 
-                      : "text-sidebar-foreground/50 group-hover:text-sidebar-foreground/80"
+                      ? "text-primary" 
+                      : "text-foreground/60 group-hover:text-foreground/80"
                   }`}
                 >
                   {item.label}
@@ -153,21 +153,21 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
             className="relative flex flex-col items-center gap-0.5 min-w-[3.5rem] group"
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
           >
-            <div className="relative p-2 rounded-xl transition-all duration-300 group-hover:bg-sidebar-accent/50">
+            <div className="relative p-2 rounded-xl transition-all duration-300 bg-background/50 group-hover:bg-background/70">
               <div className="relative w-5 h-5">
                 <Sun 
-                  className={`w-5 h-5 absolute text-sidebar-foreground/60 group-hover:text-sidebar-foreground transition-all duration-300 ${
+                  className={`w-5 h-5 absolute text-foreground/70 group-hover:text-foreground transition-all duration-300 ${
                     isDark ? 'opacity-0 rotate-90 scale-0' : 'opacity-100 rotate-0 scale-100'
                   }`} 
                 />
                 <Moon 
-                  className={`w-5 h-5 absolute text-sidebar-foreground/60 group-hover:text-sidebar-foreground transition-all duration-300 ${
+                  className={`w-5 h-5 absolute text-foreground/70 group-hover:text-foreground transition-all duration-300 ${
                     isDark ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-0'
                   }`} 
                 />
               </div>
             </div>
-            <span className="text-[10px] font-medium text-sidebar-foreground/50 group-hover:text-sidebar-foreground/80 transition-all duration-300">
+            <span className="text-[10px] font-medium text-foreground/60 group-hover:text-foreground/80 transition-all duration-300">
               {isDark ? "Light" : "Dark"}
             </span>
           </button>

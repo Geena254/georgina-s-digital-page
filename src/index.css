@@ -133,18 +133,15 @@
     @apply text-sidebar-foreground;
     @apply transition-all duration-500 ease-out;
     width: 4.5rem;
-    /* Glassmorphism effect */
-    background: hsl(var(--sidebar-background) / 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-right: 1px solid hsl(var(--sidebar-border) / 0.5);
-    box-shadow: 4px 0 32px -4px hsl(30 10% 12% / 0.15), 
-                8px 0 48px -8px hsl(30 10% 12% / 0.1);
+    /* Transparent background */
+    background: transparent;
   }
 
   .nav-sidebar:hover {
     width: 16rem;
-    background: hsl(var(--sidebar-background) / 0.95);
+    background: hsl(var(--sidebar-background) / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
   .nav-link {

@@ -5,10 +5,15 @@ import { Textarea } from "@/components/ui/textarea";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen py-20 px-8 md:px-16 lg:px-24">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="mb-16 opacity-0 animate-fade-in-up">
+    <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24">
+      {/* Page Header */}
+      <div className="mb-8 opacity-0 animate-fade-in-up">
+        <h1 className="font-serif text-2xl font-semibold text-foreground">Georgina</h1>
+      </div>
+      
+      <div className="max-w-5xl mx-auto pt-8">
+        {/* Section Header */}
+        <div className="mb-16 opacity-0 animate-fade-in-up animation-delay-100">
           <h2 className="section-title">Get In Touch</h2>
           <p className="section-subtitle">Let's create something amazing together</p>
         </div>
