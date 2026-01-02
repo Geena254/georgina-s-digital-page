@@ -1,5 +1,11 @@
-import { ExternalLink, Github } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Github, X, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Header from "@/components/Header";
 
 const projects = [
@@ -70,6 +76,8 @@ interface ProjectsPageProps {
 }
 
 const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
+
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
@@ -93,14 +101,19 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
               <div className="flex flex-col lg:flex-row gap-6">
                 {/* Thumbnail */}
                 <div className="lg:w-64 flex-shrink-0">
-                  <div className="relative overflow-hidden rounded-lg aspect-video bg-secondary">
+                  <button
+                    onClick={() => setSelectedImage({ src: project.thumbnail.replace('w=600&h=400', 'w=1200&h=800'), title: project.title })}
+                    className="relative overflow-hidden rounded-lg aspect-video bg-secondary w-full cursor-zoom-in group/thumb"
+                  >
                     <img
                       src={project.thumbnail}
                       alt={`${project.title} screenshot`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
+                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <ZoomIn className="w-8 h-8 text-foreground" />
+                    </div>
+                  </button>
                   <span className="text-xs font-mono text-muted-foreground mt-2 block">{project.year}</span>
                 </div>
 
@@ -149,6 +162,35 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl w-full p-0 bg-background/95 backdrop-blur-sm border-border">
+          <DialogTitle className="sr-only">{selectedImage?.title} - Full Size Image</DialogTitle>
+          <div className="relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute top-2 right-2 z-10 bg-background/80 hover:bg-background"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-5 h-5" />
+            </Button>
+            {selectedImage && (
+              <img
+                src={selectedImage.src}
+                alt={`${selectedImage.title} - full size`}
+                className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
+              />
+            )}
+            {selectedImage && (
+              <div className="p-4 text-center">
+                <h3 className="font-serif text-lg font-semibold text-foreground">{selectedImage.title}</h3>
+              </div>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
