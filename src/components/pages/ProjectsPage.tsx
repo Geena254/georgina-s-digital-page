@@ -14,18 +14,25 @@ const projects = [
   {
     title: "SafePulse AI",
     description:
-      "An e-learning platform serving 10,000+ students with interactive courses, live sessions, and progress tracking.",
-    tags: ["Next.js", "TypeScript", "MongoDB", "WebRTC"],
+      "An offline alert system designed to alert close friends & family members as well as community helplines/toll lines.",
+    tags: ["Next.js", "TypeScript", "MongoDB", "Python", "Lisk"],
     role: "Founder & Software Engineer",
-    year: "2023",
+    year: "Sept 2025 - Present",
   },
   {
-    title: "FinTrack Mobile",
+    title: "Ardo Thriving Hub",
     description:
-      "Personal finance management app helping users track expenses, set budgets, and achieve financial goals.",
-    tags: ["React Native", "GraphQL", "Firebase"],
+      "An e-learning platform serving 10,000+ students with interactive courses, live sessions, and progress tracking.",
+    tags: ["Next.js", "TypeScript", "Node.js", "n8n"],
     role: "Fullstack Developer",
-    year: "2022",
+    year: "May 2025",
+  },
+  {
+    title: "Amani Assist",
+    description: "A modern business website ofr Amani Assist that showcases their professional services.",
+    tags: ["Next.js", "TypeScript", "n8n"],
+    role: "Fullstack Developer",
+    year: "Feb 2025",
   },
   {
     title: "M-TREAT Platform",
@@ -34,6 +41,14 @@ const projects = [
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
+  },
+  {
+    title: "FinTrack Mobile",
+    description:
+      "Personal finance management app helping users track expenses, set budgets, and achieve financial goals.",
+    tags: ["React Native", "GraphQL", "Firebase"],
+    role: "Fullstack Developer",
+    year: "2022",
   },
 ];
 
