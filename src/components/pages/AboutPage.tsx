@@ -52,19 +52,19 @@ const certifications = [
     viewUrl: "https://www.coursera.org/account/accomplishments/example",
   },
   {
-    title: "ALX AI For Developers",
+    title: "ALX AI For Developers I",
     issuer: "ALX Africa",
     date: "2022",
     credentialId: "MDB-DEV-2022-3456",
     icon: "🍃",
-    verifyUrl: "https://www.alxafrica.com/verify/example",
+    verifyUrl: "https://savanna.alxafrica.com/verify/example",
     viewUrl: "https://www.alxafrica.com/verify/example",
   },
 ];
 
 const badges = [
   { name: "Google Cloud Engineering", color: "bg-primary" },
-  { name: "Google Developer Expert", color: "bg-primary" },
+  { name: "Google Cloud Computing Foundations", color: "bg-gold" },
   { name: "AWS Community Builder", color: "bg-gold" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
