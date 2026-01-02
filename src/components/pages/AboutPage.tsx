@@ -1,14 +1,29 @@
+import FloatingSkills from "@/components/skills/FloatingSkills";
+
 interface AboutPageProps {
   onNavigate?: (page: string) => void;
 }
 
-const AboutPage = ({ onNavigate }: AboutPageProps) => {
-  const skills = [
-    { category: "Frontend", items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "ShadeCN"] },
-    { category: "Backend", items: ["Node.js", "Python", "PostgreSQL", "MongoDB", "GraphQL", "SQL"] },
-    { category: "Tools & Others", items: ["Git", "Docker", "AWS", "Figma"] },
-  ];
+const allSkills = [
+  // Main 5 skills
+  { name: "React", category: "Frontend" },
+  { name: "TypeScript", category: "Frontend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "PostgreSQL", category: "Backend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  // Additional skills
+  { name: "Next.js", category: "Frontend" },
+  { name: "Vue.js", category: "Frontend" },
+  { name: "Python", category: "Backend" },
+  { name: "MongoDB", category: "Backend" },
+  { name: "GraphQL", category: "Backend" },
+  { name: "Git", category: "Tools" },
+  { name: "Docker", category: "Tools" },
+  { name: "AWS", category: "Tools" },
+  { name: "Figma", category: "Tools" },
+];
 
+const AboutPage = ({ onNavigate }: AboutPageProps) => {
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
@@ -29,9 +44,14 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid md:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid md:grid-cols-12 gap-12 lg:gap-16">
+          {/* Floating Skills - Left Side */}
+          <div className="md:col-span-2 hidden md:flex justify-center opacity-0 animate-fade-in-up animation-delay-200">
+            <FloatingSkills skills={allSkills} mainSkillsCount={5} />
+          </div>
+
           {/* Bio Section */}
-          <div className="md:col-span-3 space-y-6 opacity-0 animate-fade-in-up animation-delay-100">
+          <div className="md:col-span-10 space-y-6 opacity-0 animate-fade-in-up animation-delay-100">
             <p className="text-lg leading-relaxed text-foreground">
               I'm a passionate fullstack developer and founder based in Nairobi, Kenya. With 1.5 years of experience in
               web development, I've had the privilege of working with startups, enterprises, and everything in between.
@@ -61,24 +81,14 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                 <p className="text-sm text-muted-foreground mt-1">Mentees Guided</p>
               </div>
             </div>
-          </div>
 
-          {/* Skills Section */}
-          <div className="md:col-span-2 space-y-8 opacity-0 animate-fade-in-up animation-delay-200">
-            <h3 className="font-serif text-2xl font-semibold text-foreground">Skills</h3>
-
-            {skills.map((skillGroup, index) => (
-              <div key={skillGroup.category} className="space-y-3">
-                <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">{skillGroup.category}</h4>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill) => (
-                    <span key={skill} className="badge-item">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+            {/* Mobile Skills View */}
+            <div className="md:hidden pt-8 border-t border-border">
+              <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Skills</h3>
+              <div className="flex justify-center">
+                <FloatingSkills skills={allSkills} mainSkillsCount={5} />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

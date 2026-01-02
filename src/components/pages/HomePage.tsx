@@ -30,13 +30,22 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
   return (
     <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
       {/* Header */}
-      <div className="mb-8 opacity-0 animate-fade-in-up">
+      <div className="mb-8 opacity-0 animate-fade-in-up flex items-center justify-between">
         <h1
           onClick={() => onNavigate("home")}
           className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
         >
           Georgina
         </h1>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={() => onNavigate("contact")}
+          className="group"
+        >
+          Contact Me
+          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Button>
       </div>
 
       <div className="flex-1 flex items-center justify-center">
