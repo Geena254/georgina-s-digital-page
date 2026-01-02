@@ -13,11 +13,12 @@ const experiences = [
     company: "SafePulse AI",
     location: "Nairobi, Kenya",
     period: "Sept 2025 - Present",
-    description: "",
+    description:
+      "Building an AI-powered safety and emergency response platform to enhance personal security through intelligent threat detection and rapid response systems.",
     highlights: [
-      "Led a team of developers on a major product redesign",
-      "Improved application performance by 40%",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Architecting AI/ML pipelines for real-time threat detection",
+      "Developing mobile-first emergency response features",
+      "Leading product strategy and technical roadmap",
     ],
   },
   {
@@ -26,11 +27,12 @@ const experiences = [
     company: "Power Learn Project",
     location: "Nairobi, Kenya",
     period: "June 2025 - Present",
-    description: "",
+    description:
+      "Mentoring aspiring developers through Africa's largest tech skills program, providing guidance on software development best practices and career growth.",
     highlights: [
-      "Led a team of developers on a major product redesign",
-      "Improved application performance by 40%",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Mentoring 50+ students in web development fundamentals",
+      "Providing technical support and code reviews",
+      "Creating educational content and learning resources",
     ],
   },
   {
@@ -39,11 +41,12 @@ const experiences = [
     company: "AfyaSoko Technologies Ltd",
     location: "Nairobi, Kenya",
     period: "May 2025 - Present",
-    description: "",
+    description:
+      "Co-founded a healthcare technology startup focused on connecting patients with medical services and pharmaceutical solutions across Kenya.",
     highlights: [
-      "Led a team of developers on a major product redesign",
-      "Improved application performance by 40%",
-      "Implemented CI/CD pipelines reducing deployment time by 60%",
+      "Built the core frontend architecture using React and TypeScript",
+      "Designed and implemented intuitive healthcare booking interfaces",
+      "Integrated payment gateways for seamless transactions",
     ],
   },
   {
@@ -53,11 +56,11 @@ const experiences = [
     location: "Nairobi, Kenya",
     period: "2021 - 2023",
     description:
-      "Developed and maintained multiple client-facing applications. Worked closely with design team to implement responsive UI components.",
+      "Developed and maintained a telemedicine platform connecting patients with healthcare providers for virtual consultations and medical services.",
     highlights: [
       "Built RESTful APIs serving 100k+ daily requests",
-      "Developed mobile-responsive dashboards",
-      "Integrated third-party payment systems",
+      "Developed mobile-responsive patient dashboards",
+      "Integrated M-Pesa and card payment systems",
     ],
   },
   {
