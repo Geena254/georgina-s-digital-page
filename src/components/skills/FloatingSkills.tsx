@@ -30,11 +30,10 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
   const [isExpanded, setIsExpanded] = useState(false);
   
   const mainSkills = skills.slice(0, mainSkillsCount);
-  const remainingSkills = skills.slice(mainSkillsCount);
-  const remainingCount = remainingSkills.length;
+  const remainingCount = skills.length - mainSkillsCount;
 
-  // Group remaining skills by category
-  const groupedSkills = remainingSkills.reduce((acc, skill) => {
+  // Group ALL skills by category for the modal
+  const groupedSkills = skills.reduce((acc, skill) => {
     const category = skill.category.toLowerCase();
     if (!acc[category]) {
       acc[category] = [];
