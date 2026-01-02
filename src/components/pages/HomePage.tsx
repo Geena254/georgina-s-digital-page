@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
-import { SiLinkedin, SiGithub, SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
+import SocialLinks from "@/components/SocialLinks";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -39,31 +39,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           Georgina
         </h1>
         <div className="flex items-center gap-3">
-          {/* Social Links */}
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-          >
-            <SiLinkedin className="w-4 h-4" />
-          </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-          >
-            <SiGithub className="w-4 h-4" />
-          </a>
-          <a
-            href="https://x.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300 hover:scale-110"
-          >
-            <SiX className="w-4 h-4" />
-          </a>
+          <SocialLinks variant="header" />
           
           <div className="w-px h-6 bg-border mx-1" />
           
