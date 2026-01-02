@@ -65,7 +65,7 @@ const certifications = [
 const badges = [
   { name: "Google Cloud Engineering", color: "bg-primary" },
   { name: "Google Cloud Computing Foundations", color: "bg-gold" },
-  { name: "AWS Community Builder", color: "bg-gold" },
+  { name: "The Basics of Google Cloud Compute Skill", color: "bg-accent" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
   { name: "Certified Scrum Master", color: "bg-accent" },
