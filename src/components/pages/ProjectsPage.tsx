@@ -4,29 +4,33 @@ import Header from "@/components/Header";
 
 const projects = [
   {
-    title: "TechHub Africa",
-    description: "A platform connecting African developers with global opportunities. Features job listings, mentorship programs, and community forums.",
+    title: "AfyaSoko Technologies Ltd",
+    description:
+      "A platform connecting African developers with global opportunities. Features job listings, mentorship programs, and community forums.",
     tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-    role: "Founder & Lead Developer",
-    year: "2023",
+    role: "Co-Founder & Lead Frontend Developer",
+    year: "May 2025 - Present",
   },
   {
-    title: "EduLearn Platform",
-    description: "An e-learning platform serving 10,000+ students with interactive courses, live sessions, and progress tracking.",
+    title: "SafePulse AI",
+    description:
+      "An e-learning platform serving 10,000+ students with interactive courses, live sessions, and progress tracking.",
     tags: ["Next.js", "TypeScript", "MongoDB", "WebRTC"],
-    role: "Technical Lead",
+    role: "Founder & Software Engineer",
     year: "2023",
   },
   {
     title: "FinTrack Mobile",
-    description: "Personal finance management app helping users track expenses, set budgets, and achieve financial goals.",
+    description:
+      "Personal finance management app helping users track expenses, set budgets, and achieve financial goals.",
     tags: ["React Native", "GraphQL", "Firebase"],
     role: "Fullstack Developer",
     year: "2022",
   },
   {
     title: "HealthConnect",
-    description: "Telemedicine platform enabling remote consultations between patients and healthcare providers across East Africa.",
+    description:
+      "Telemedicine platform enabling remote consultations between patients and healthcare providers across East Africa.",
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
     role: "Backend Architect",
     year: "2022",
@@ -42,7 +46,7 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
       <Header onNavigate={onNavigate} />
-      
+
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
         <div className="mb-16 opacity-0 animate-fade-in-up animation-delay-100">
@@ -61,9 +65,7 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 {/* Year */}
                 <div className="md:w-24 flex-shrink-0">
-                  <span className="text-sm font-mono text-muted-foreground">
-                    {project.year}
-                  </span>
+                  <span className="text-sm font-mono text-muted-foreground">{project.year}</span>
                 </div>
 
                 {/* Content */}
@@ -72,22 +74,15 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                     <h3 className="font-serif text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {project.title}
                     </h3>
-                    <span className="text-sm text-primary font-medium">
-                      {project.role}
-                    </span>
+                    <span className="text-sm text-primary font-medium">{project.role}</span>
                   </div>
 
-                  <p className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </p>
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded-sm"
-                      >
+                      <span key={tag} className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded-sm">
                         {tag}
                       </span>
                     ))}
