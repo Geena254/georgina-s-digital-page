@@ -18,10 +18,13 @@ const categoryLabels: Record<string, string> = {
   languages: "Languages",
   databases: "Databases",
   tools: "Tools",
+  devops: "DevOps",
+  cloud: "Cloud",
+  frameworks: "Frameworks",
   apis: "APIs",
 };
 
-const categoryOrder = ["frontend", "backend", "languages", "databases", "tools", "apis"];
+const categoryOrder = ["frontend", "backend", "frameworks", "languages", "databases", "devops", "cloud", "tools", "apis"];
 
 const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -98,22 +101,38 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
         )}
       </div>
 
+      {/* Background overlay with blur */}
+      {isExpanded && (
+        <div 
+          className="fixed inset-0 bg-background/60 backdrop-blur-sm z-10 animate-fade-in"
+          onClick={() => setIsExpanded(false)}
+        />
+      )}
+
       {/* Expanded skills panel - grouped by category */}
       {isExpanded && (
         <div 
-          className="absolute left-0 md:left-full top-full md:top-0 mt-4 md:mt-0 md:ml-6 bg-card border border-border rounded-xl p-4 shadow-xl
-                     animate-fade-in-up min-w-[280px] md:min-w-[320px] z-20 max-h-[60vh] overflow-y-auto"
+          className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-card border border-border rounded-xl p-6 shadow-xl
+                     animate-fade-in-up min-w-[320px] md:min-w-[480px] z-20 max-h-[70vh] overflow-y-auto"
         >
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-primary mb-4">
-            All Skills
-          </h4>
-          <div className="space-y-4">
+          <div className="flex items-center justify-between mb-4">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
+              All Skills
+            </h4>
+            <button
+              onClick={() => setIsExpanded(false)}
+              className="p-1 rounded-lg hover:bg-primary/10 transition-colors"
+            >
+              <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+            </button>
+          </div>
+          <div className="space-y-5">
             {sortedCategories.map((category) => (
               <div key={category}>
-                <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
+                <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2 border-b border-border/50 pb-1">
                   {categoryLabels[category] || category}
                 </h5>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                   {groupedSkills[category].map((skill, index) => (
                     <div
                       key={skill.name}
