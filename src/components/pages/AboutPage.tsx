@@ -68,9 +68,9 @@ const badges = [
   { name: "The Basics of Google Cloud Compute Skill", color: "bg-accent" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
-  { name: "Certified Scrum Master", color: "bg-accent" },
   { name: "Women in Tech Africa Leader", color: "bg-primary" },
-  { name: "DevOps Foundation Certified", color: "bg-gold" },
+  { name: "Deploy Kubernetes on google Cloud Skill", color: "bg-gold" },
+  { name: "Implement Load Balancing on Compute Engine Skill", color: "bg-accent" },
 ];
 
 const AboutPage = ({ onNavigate }: AboutPageProps) => {
