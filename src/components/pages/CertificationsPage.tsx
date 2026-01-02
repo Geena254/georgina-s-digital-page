@@ -4,9 +4,9 @@ import SocialLinks from "@/components/SocialLinks";
 
 const certifications = [
   {
-    title: "AWS Solutions Architect Professional",
-    issuer: "Amazon Web Services",
-    date: "2023",
+    title: "Google Cloud Professional Developer",
+    issuer: "Google Cloud X ALX Africa",
+    date: "Nov 2025 - Jan 2026",
     credentialId: "AWS-SAP-2023-1234",
     icon: "🏆",
   },
@@ -34,14 +34,14 @@ const certifications = [
 ];
 
 const badges = [
-  { name: "Google Cloud Engineering", color: "bg-primary" },
-  { name: "Google Cloud Computing Foundations", color: "bg-gold" },
+  { name: "GitHub Arctic Code Vault Contributor", color: "bg-accent" },
+  { name: "Google Developer Expert", color: "bg-primary" },
+  { name: "AWS Community Builder", color: "bg-gold" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
-  { name: "The Basics of Google Cloud Compute Skill", color: "bg-accent" },
+  { name: "Certified Scrum Master", color: "bg-accent" },
   { name: "Women in Tech Africa Leader", color: "bg-primary" },
-  { name: "Deploy Kubernetes on google Cloud Skill", color: "bg-gold" },
-  { name: "Implement Load Balancing on Compute Engine Skill", color: "bg-accent" },
+  { name: "DevOps Foundation Certified", color: "bg-gold" },
 ];
 
 interface CertificationsPageProps {
