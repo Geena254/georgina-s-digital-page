@@ -31,7 +31,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
     <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
       {/* Header */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
-        <h1 
+        <h1
           onClick={() => onNavigate("home")}
           className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
         >
@@ -45,18 +45,20 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             {/* Content */}
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
-              <p className="text-muted-foreground font-sans text-lg tracking-wide opacity-0 animate-fade-in-up">
+              <p className="text-muted-foreground font-sans text-3xl tracking-wide opacity-0 animate-fade-in-up">
                 Hello!
                 <br /> Thank you for being here!
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
               <div className="h-16 flex items-center text-2xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
-                <span 
-                  className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? 'opacity-50' : 'opacity-100'}`}
+                <span
+                  className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? "opacity-50" : "opacity-100"}`}
                 >
                   {currentText}
-                  <span className="animate-pulse ml-1 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">|</span>
+                  <span className="animate-pulse ml-1 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_hsl(var(--primary)/0.4)]">
+                    |
+                  </span>
                 </span>
               </div>
 
