@@ -21,7 +21,7 @@ const experiences = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: "Mentor & Support Team",
     company: "Power Learn Project",
     location: "Nairobi, Kenya",
@@ -34,7 +34,7 @@ const experiences = [
     ],
   },
   {
-    id: 1,
+    id: 3,
     title: "Co-Founder & Lead Frontend Engineer",
     company: "AfyaSoko Technologies Ltd",
     location: "Nairobi, Kenya",
@@ -47,7 +47,7 @@ const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     title: "Fullstack Developer",
     company: "M-TREAT Platform",
     location: "Nairobi, Kenya",
@@ -61,7 +61,7 @@ const experiences = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     title: "Junior Developer",
     company: "Agency XYZ",
     location: "Nairobi, Kenya",
