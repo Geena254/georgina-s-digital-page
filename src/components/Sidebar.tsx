@@ -1,6 +1,5 @@
-import { Home, User, Briefcase, Award, Mail, Clock, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
-import SocialLinks from "@/components/SocialLinks";
+import { Home, User, Briefcase, Mail, Clock } from "lucide-react";
+import { useEffect } from "react";
 
 interface SidebarProps {
   currentPage: string;
@@ -29,11 +28,6 @@ const navItems = [
     icon: Briefcase,
   },
   {
-    id: "certifications",
-    label: "Certs",
-    icon: Award,
-  },
-  {
     id: "contact",
     label: "Contact",
     icon: Mail,
@@ -41,8 +35,6 @@ const navItems = [
 ];
 
 const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   // Force dark mode on mount
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -62,7 +54,7 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 className={`nav-link ${currentPage === item.id ? "active" : ""}`}
               >
                 <item.icon className="w-5 h-5 flex-shrink-0" />
-                <span className="nav-label">{item.label === "Certs" ? "Certifications" : item.label}</span>
+                <span className="nav-label">{item.label}</span>
               </button>
             ))}
           </div>
@@ -128,52 +120,8 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
               </button>
             );
           })}
-          
-          {/* Hamburger Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="relative flex flex-col items-center gap-0.5 min-w-[2.5rem] group"
-          >
-            <div className="relative p-1.5 rounded-lg transition-all duration-300 bg-background/50 group-hover:bg-background/70">
-              <Menu className="w-4 h-4 text-foreground/70 group-hover:text-foreground transition-colors" />
-            </div>
-            <span className="text-[9px] font-medium text-foreground/60 group-hover:text-foreground/80">
-              More
-            </span>
-          </button>
         </div>
       </nav>
-
-      {/* Mobile Menu Overlay */}
-      {mobileMenuOpen && (
-        <div 
-          className="fixed inset-0 z-[60] md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        >
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-          <div 
-            className="absolute bottom-20 left-4 right-4 bg-card border border-border rounded-2xl p-6 shadow-2xl animate-fade-in-up"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-foreground">Connect</h3>
-              <button 
-                onClick={() => setMobileMenuOpen(false)}
-                className="p-2 rounded-full hover:bg-secondary transition-colors"
-              >
-                <X className="w-5 h-5 text-muted-foreground" />
-              </button>
-            </div>
-            
-            <div className="flex flex-col gap-4">
-              <div>
-                <p className="text-sm text-muted-foreground mb-3">Follow me on social media</p>
-                <SocialLinks variant="footer" />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 };

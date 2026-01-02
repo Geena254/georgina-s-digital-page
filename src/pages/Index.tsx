@@ -6,12 +6,11 @@ import HomePage from "@/components/pages/HomePage";
 import AboutPage from "@/components/pages/AboutPage";
 import ExperiencePage from "@/components/pages/ExperiencePage";
 import ProjectsPage from "@/components/pages/ProjectsPage";
-import CertificationsPage from "@/components/pages/CertificationsPage";
 import ContactPage from "@/components/pages/ContactPage";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useSwipe } from "@/hooks/use-swipe";
 
-const pageOrder = ["home", "about", "experience", "projects", "certifications", "contact"];
+const pageOrder = ["home", "about", "experience", "projects", "contact"];
 
 const Index = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -54,8 +53,6 @@ const Index = () => {
         return <ExperiencePage onNavigate={handleNavigate} />;
       case "projects":
         return <ProjectsPage onNavigate={handleNavigate} />;
-      case "certifications":
-        return <CertificationsPage onNavigate={handleNavigate} />;
       case "contact":
         return <ContactPage onNavigate={handleNavigate} />;
       default:
