@@ -1,4 +1,4 @@
-import { Award, BadgeCheck, ExternalLink } from "lucide-react";
+import { Award, BadgeCheck, ExternalLink, Eye } from "lucide-react";
 import FloatingSkills from "@/components/skills/FloatingSkills";
 import Header from "@/components/Header";
 
@@ -30,6 +30,8 @@ const certifications = [
     date: "2023",
     credentialId: "AWS-SAP-2023-1234",
     icon: "🏆",
+    verifyUrl: "https://www.credly.com/badges/example-aws",
+    viewUrl: "https://www.credly.com/badges/example-aws",
   },
   {
     title: "Google Cloud Professional Developer",
@@ -37,6 +39,8 @@ const certifications = [
     date: "2023",
     credentialId: "GCP-PD-2023-5678",
     icon: "☁️",
+    verifyUrl: "https://www.credential.net/example-gcp",
+    viewUrl: "https://www.credential.net/example-gcp",
   },
   {
     title: "Meta Frontend Developer Professional",
@@ -44,6 +48,8 @@ const certifications = [
     date: "2022",
     credentialId: "META-FE-2022-9012",
     icon: "⚛️",
+    verifyUrl: "https://www.coursera.org/account/accomplishments/example",
+    viewUrl: "https://www.coursera.org/account/accomplishments/example",
   },
   {
     title: "ALX AI For Developers",
@@ -51,6 +57,8 @@ const certifications = [
     date: "2022",
     credentialId: "MDB-DEV-2022-3456",
     icon: "🍃",
+    verifyUrl: "https://www.alxafrica.com/verify/example",
+    viewUrl: "https://www.alxafrica.com/verify/example",
   },
 ];
 
@@ -150,10 +158,26 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                     <p className="text-muted-foreground">{cert.issuer}</p>
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Issued: {cert.date}</span>
-                      <button className="flex items-center gap-1 text-primary hover:underline">
-                        <ExternalLink className="w-3 h-3" />
-                        Verify
-                      </button>
+                      <div className="flex items-center gap-3">
+                        <a
+                          href={cert.viewUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          <Eye className="w-3 h-3" />
+                          View
+                        </a>
+                        <a
+                          href={cert.verifyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-primary hover:underline"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          Verify
+                        </a>
+                      </div>
                     </div>
                     <p className="text-xs text-muted-foreground font-mono">
                       ID: {cert.credentialId}
