@@ -1,9 +1,10 @@
-import { Mail, MapPin, ArrowRight } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import SocialLinks from "@/components/SocialLinks";
 import { CONTACT_INFO } from "@/lib/constants";
+import Header from "@/components/Header";
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
@@ -13,29 +14,7 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
-      <div className="mb-8 opacity-0 animate-fade-in-up flex items-center justify-between">
-        <h1 
-          onClick={() => onNavigate?.("home")}
-          className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
-        >
-          Georgina
-        </h1>
-        <div className="flex items-center gap-3">
-          <SocialLinks variant="header" />
-          
-          <div className="w-px h-6 bg-border mx-1" />
-          
-          <Button 
-            variant="outline" 
-            size="sm" 
-            onClick={() => onNavigate?.("contact")}
-            className="group"
-          >
-            Contact Me
-            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
-      </div>
+      <Header onNavigate={onNavigate} />
       
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
