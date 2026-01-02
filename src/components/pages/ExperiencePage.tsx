@@ -9,13 +9,39 @@ interface ExperiencePageProps {
 const experiences = [
   {
     id: 1,
-    title: "Senior Fullstack Developer",
-    company: "Tech Company",
+    title: "Founder & Software Engineer",
+    company: "SafePulse AI",
     location: "Nairobi, Kenya",
-    period: "2023 - Present",
-    description: "Leading development of web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
+    period: "Sept 2025 - Present",
+    description: "",
     highlights: [
-      "Led a team of 5 developers on a major product redesign",
+      "Led a team of developers on a major product redesign",
+      "Improved application performance by 40%",
+      "Implemented CI/CD pipelines reducing deployment time by 60%",
+    ],
+  },
+  {
+    id: 1,
+    title: "Mentor & Support Team",
+    company: "Power Learn Project",
+    location: "Nairobi, Kenya",
+    period: "June 2025 - Present",
+    description: "",
+    highlights: [
+      "Led a team of developers on a major product redesign",
+      "Improved application performance by 40%",
+      "Implemented CI/CD pipelines reducing deployment time by 60%",
+    ],
+  },
+  {
+    id: 1,
+    title: "Co-Founder & Lead Frontend Engineer",
+    company: "AfyaSoko Technologies Ltd",
+    location: "Nairobi, Kenya",
+    period: "May 2025 - Present",
+    description: "",
+    highlights: [
+      "Led a team of developers on a major product redesign",
       "Improved application performance by 40%",
       "Implemented CI/CD pipelines reducing deployment time by 60%",
     ],
@@ -23,10 +49,11 @@ const experiences = [
   {
     id: 2,
     title: "Fullstack Developer",
-    company: "Startup Inc",
+    company: "M-TREAT Platform",
     location: "Nairobi, Kenya",
     period: "2021 - 2023",
-    description: "Developed and maintained multiple client-facing applications. Worked closely with design team to implement responsive UI components.",
+    description:
+      "Developed and maintained multiple client-facing applications. Worked closely with design team to implement responsive UI components.",
     highlights: [
       "Built RESTful APIs serving 100k+ daily requests",
       "Developed mobile-responsive dashboards",
@@ -39,7 +66,8 @@ const experiences = [
     company: "Agency XYZ",
     location: "Nairobi, Kenya",
     period: "2019 - 2021",
-    description: "Started my professional journey building websites and web applications for various clients across different industries.",
+    description:
+      "Started my professional journey building websites and web applications for various clients across different industries.",
     highlights: [
       "Delivered 20+ client projects on time",
       "Learned agile development methodologies",
@@ -59,9 +87,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
         <div className="max-w-4xl mx-auto">
           {/* Page Title */}
           <div className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">
-              Experience
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">Experience</h2>
             <p className="text-muted-foreground text-lg max-w-2xl">
               My professional journey as a developer, building innovative solutions and growing with each project.
             </p>
@@ -78,7 +104,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                 <div
                   key={exp.id}
                   className="relative pl-8 md:pl-20 opacity-0 animate-fade-in-up"
-                  style={{ animationDelay: `${200 + index * 100}ms`, animationFillMode: 'forwards' }}
+                  style={{ animationDelay: `${200 + index * 100}ms`, animationFillMode: "forwards" }}
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
@@ -88,9 +114,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     {/* Header */}
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
                       <div>
-                        <h3 className="text-xl font-semibold text-foreground mb-1">
-                          {exp.title}
-                        </h3>
+                        <h3 className="text-xl font-semibold text-foreground mb-1">{exp.title}</h3>
                         <div className="flex items-center gap-2 text-primary">
                           <Building className="w-4 h-4" />
                           <span className="font-medium">{exp.company}</span>
@@ -109,9 +133,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground mb-4">
-                      {exp.description}
-                    </p>
+                    <p className="text-muted-foreground mb-4">{exp.description}</p>
 
                     {/* Highlights */}
                     <ul className="space-y-2">
@@ -130,9 +152,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
 
           {/* CTA Section */}
           <div className="mt-16 text-center opacity-0 animate-fade-in-up animation-delay-500">
-            <p className="text-muted-foreground mb-6">
-              Interested in working together?
-            </p>
+            <p className="text-muted-foreground mb-6">Interested in working together?</p>
             <Button size="lg" onClick={() => onNavigate("contact")} className="group">
               Get In Touch
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
