@@ -7,6 +7,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import Header from "@/components/Header";
+import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
 
 const projects = [
   {
@@ -37,7 +38,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "May 2025",
     liveUrl: "https://ardothrivinghub.org",
-    thumbnail: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
+    thumbnail: ardoThrivingHubImg,
   },
   {
     title: "Amani Assist",
@@ -227,7 +228,9 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
 
             {selectedProject && (
               <img
-                src={selectedProject.thumbnail.replace('w=600&h=400', 'w=1200&h=800')}
+                src={typeof selectedProject.thumbnail === 'string' && selectedProject.thumbnail.includes('unsplash') 
+                  ? selectedProject.thumbnail.replace('w=600&h=400', 'w=1200&h=800') 
+                  : selectedProject.thumbnail}
                 alt={`${selectedProject.title} - full size`}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />
