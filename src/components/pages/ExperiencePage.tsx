@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Building, ArrowRight } from "lucide-react";
+import { Calendar, MapPin, Building, ArrowRight, ShieldCheck, GraduationCap, HeartPulse, Stethoscope, Code, LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 
@@ -6,7 +6,19 @@ interface ExperiencePageProps {
   onNavigate: (page: string) => void;
 }
 
-const experiences = [
+interface Experience {
+  id: number;
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  icon: LucideIcon;
+  iconBg: string;
+}
+
+const experiences: Experience[] = [
   {
     id: 1,
     title: "Founder & Software Engineer",
@@ -20,6 +32,8 @@ const experiences = [
       "Developing mobile-first emergency response features",
       "Leading product strategy and technical roadmap",
     ],
+    icon: ShieldCheck,
+    iconBg: "bg-blue-500/20 text-blue-400",
   },
   {
     id: 2,
@@ -34,6 +48,8 @@ const experiences = [
       "Providing technical support and code reviews",
       "Creating educational content and learning resources",
     ],
+    icon: GraduationCap,
+    iconBg: "bg-purple-500/20 text-purple-400",
   },
   {
     id: 3,
@@ -48,6 +64,8 @@ const experiences = [
       "Designed and implemented intuitive healthcare booking interfaces",
       "Integrated payment gateways for seamless transactions",
     ],
+    icon: HeartPulse,
+    iconBg: "bg-rose-500/20 text-rose-400",
   },
   {
     id: 4,
@@ -62,6 +80,8 @@ const experiences = [
       "Developed mobile-responsive patient dashboards",
       "Integrated M-Pesa and card payment systems",
     ],
+    icon: Stethoscope,
+    iconBg: "bg-emerald-500/20 text-emerald-400",
   },
   {
     id: 5,
@@ -76,6 +96,8 @@ const experiences = [
       "Learned agile development methodologies",
       "Contributed to open-source projects",
     ],
+    icon: Code,
+    iconBg: "bg-amber-500/20 text-amber-400",
   },
 ];
 
@@ -115,20 +137,26 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                   {/* Content Card */}
                   <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
                     {/* Header */}
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-4">
-                      <div>
-                        <h3 className="text-xl font-semibold text-foreground mb-1">{exp.title}</h3>
-                        <div className="flex items-center gap-2 text-primary">
-                          <Building className="w-4 h-4" />
-                          <span className="font-medium">{exp.company}</span>
+                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                      <div className="flex items-start gap-4">
+                        {/* Company Icon */}
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${exp.iconBg}`}>
+                          <exp.icon className="w-6 h-6" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-foreground mb-1">{exp.title}</h3>
+                          <div className="flex items-center gap-2 text-primary">
+                            <Building className="w-4 h-4" />
+                            <span className="font-medium">{exp.company}</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex flex-col gap-1 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
+                      <div className="flex flex-col gap-1 text-sm text-muted-foreground sm:text-right">
+                        <div className="flex items-center gap-2 sm:justify-end">
                           <Calendar className="w-4 h-4" />
                           <span>{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 sm:justify-end">
                           <MapPin className="w-4 h-4" />
                           <span>{exp.location}</span>
                         </div>
