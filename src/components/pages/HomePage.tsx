@@ -11,18 +11,23 @@ const roles = ["Founder", "Fullstack Developer", "Mentor"];
 const roleColors = ["border-primary", "border-accent", "border-gold"];
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
-  const { currentText, currentTextIndex } = useTypingAnimation({
+  const { currentText, currentTextIndex, isFading } = useTypingAnimation({
     texts: roles,
-    typingSpeed: 100,
-    deletingSpeed: 50,
-    pauseTime: 2000,
+    typingSpeed: 80,
+    deletingSpeed: 40,
+    pauseTime: 2500,
   });
 
   return (
     <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
       {/* Header */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
-        <h1 className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer">Georgina</h1>
+        <h1 
+          onClick={() => onNavigate("home")}
+          className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
+        >
+          Georgina
+        </h1>
       </div>
 
       <div className="flex-1 flex items-center justify-center">
@@ -37,10 +42,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               </p>
 
               {/* Roles - Typing Animation */}
-              <div className="h-10 flex items-center text-base sm:text-lg md:text-xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
-                <span className={`border-b-2 ${roleColors[currentTextIndex]} pb-1 text-foreground`}>
+              <div className="h-16 flex items-center text-2xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
+                <span 
+                  className={`border-b-3 ${roleColors[currentTextIndex]} pb-2 text-foreground font-medium transition-all duration-300 ${isFading ? 'opacity-50' : 'opacity-100'}`}
+                >
                   {currentText}
-                  <span className="animate-pulse ml-0.5">|</span>
+                  <span className="animate-pulse ml-1 text-primary">|</span>
                 </span>
               </div>
 
