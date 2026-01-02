@@ -8,8 +8,14 @@ interface HomePageProps {
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 py-8">
-      <div className="max-w-5xl w-full">
+    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8">
+      {/* Header */}
+      <div className="mb-8 opacity-0 animate-fade-in-up">
+        <h1 className="font-serif text-2xl font-semibold text-foreground">Georgina</h1>
+      </div>
+      
+      <div className="flex-1 flex items-center justify-center">
+        <div className="max-w-5xl w-full">
         <div className="grid lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div className="lg:col-span-3 space-y-8">
@@ -81,6 +87,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           <div className="text-9xl font-serif text-border/30 select-none">
             &ldquo;
           </div>
+        </div>
         </div>
       </div>
     </div>
