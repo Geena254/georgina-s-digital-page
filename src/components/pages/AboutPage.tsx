@@ -14,34 +14,36 @@ const allSkills = [
   { name: "TypeScript", category: "Languages" },
   { name: "Node.js", category: "Backend" },
   { name: "PostgreSQL", category: "Databases" },
-  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "Python", category: "Languages" },
 
   // Frontend
   { name: "Next.js", category: "Frontend" },
   { name: "Vue.js", category: "Frontend" },
-  { name: "Angular", category: "Frontend" },
-  { name: "Redux", category: "Frontend" },
+  { name: "React", category: "Frontend" },
+  { name: "React Native", category: "Frontend" },
 
   // Backend
   { name: "Express.js", category: "Backend" },
   { name: "Django DRF", category: "Backend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Flask", category: "Backend" },
   { name: "GraphQL", category: "Backend" },
-
-  // Frameworks
-  { name: "Next.js", category: "Frameworks" },
-  { name: "Express.js", category: "Frameworks" },
-  { name: "Django DRF", category: "Frameworks" },
+  { name: "FastAPI", category: "Backend" },
 
   // Languages
+  { name: "JavaScript", category: "Languages" },
   { name: "Python", category: "Languages" },
   { name: "HTML5", category: "Languages" },
   { name: "CSS3", category: "Languages" },
+  { name: "C", category: "Languages" },
 
   // Databases
   { name: "MongoDB", category: "Databases" },
   { name: "MySQL", category: "Databases" },
+  { name: "PostgreSQL", category: "Databases" },
   { name: "Redis", category: "Databases" },
   { name: "Firebase", category: "Databases" },
+  { name: "Supabase", category: "Databases" },
 
   // DevOps
   { name: "Docker", category: "DevOps" },
@@ -55,23 +57,26 @@ const allSkills = [
   { name: "Google Cloud", category: "Cloud" },
   { name: "Vercel", category: "Cloud" },
   { name: "Netlify", category: "Cloud" },
-  { name: "Heroku", category: "Cloud" },
 
   // Tools
   { name: "Git", category: "Tools" },
   { name: "Figma", category: "Tools" },
   { name: "Nginx", category: "Tools" },
+  { name: "n8n", category: "Tools" },
 
   // APIs
+  { name: "REST APIs", category: "APIs" },
   { name: "Stripe", category: "APIs" },
   { name: "Twilio", category: "APIs" },
+  { name: "MPESA", category: "APIs" },
+  { name: "Whatsapp", category: "APIs" },
 ];
 
 const certifications = [
   {
     title: "ALX Ventures Founders Academy",
     issuer: "ALX Africa X Mastercard Foundation",
-    date: "2025",
+    date: "Oct 2025 - Nov 2025",
     credentialId: "",
     icon: "🚀",
     verifyUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
@@ -107,7 +112,7 @@ const certifications = [
   {
     title: "Meta Frontend Developer Professional",
     issuer: "Meta",
-    date: "2022",
+    date: "2023",
     credentialId: "META-FE-2022-9012",
     icon: "⚛️",
     verifyUrl: "https://www.coursera.org/account/accomplishments/example",
@@ -130,7 +135,7 @@ const badges = [
   { name: "The Basics of Google Cloud Compute Skill", color: "bg-accent" },
   { name: "Tech Women Speaker", color: "bg-terracotta" },
   { name: "Open Source Contributor", color: "bg-navy" },
-  { name: "Women in Tech Africa Leader", color: "bg-primary" },
+  { name: "Women in Tech Kenya Leader", color: "bg-primary" },
   { name: "Deploy Kubernetes on google Cloud Skill", color: "bg-gold" },
   { name: "Implement Load Balancing on Compute Engine Skill", color: "bg-accent" },
 ];
