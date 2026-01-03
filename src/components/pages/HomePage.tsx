@@ -52,13 +52,13 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             {/* Content */}
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
-              <p className="text-muted-foreground font-sans text-2xl tracking-wide opacity-0 animate-fade-in-up">
+              <p className="text-muted-foreground font-sans text-3xl tracking-wide opacity-0 animate-fade-in-up">
                 Hey there!
                 <br /> I am <span className={"font-bold text-3xl"}>Georgina Kimani!</span>
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
-              <div className="h-20 flex items-center text-4xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
+              <div className="h-18 flex items-center text-4xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
                 <span
                   className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? "opacity-50" : "opacity-100"}`}
                 >
@@ -71,7 +71,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-fade-in-up animation-delay-400">
-                <Button size="lg" className="group" onClick={() => onNavigate("projects")}>
+                <Button size="md" className="group" onClick={() => onNavigate("projects")}>
                   View My Work
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
