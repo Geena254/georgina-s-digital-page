@@ -1,6 +1,7 @@
 import { Award, BadgeCheck, ExternalLink, Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import FloatingSkills from "@/components/skills/FloatingSkills";
 import Header from "@/components/Header";
+import profilePhoto from "@/assets/profile-photo.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -161,39 +162,51 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
           </div>
 
           {/* Bio Section */}
-          <div className="md:col-span-10 space-y-6 opacity-0 animate-fade-in-up animation-delay-100">
-            <p className="text-lg leading-relaxed text-foreground">
-              I'm a passionate fullstack developer and founder based in Nairobi, Kenya. With 1.5 years of experience in
-              web development, I've had the privilege of working with startups, enterprises, and everything in between.
-            </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              My journey began with a simple curiosity about how websites work. That curiosity evolved into a career
-              dedicated to creating accessible, performant, and beautiful digital experiences. Today, I lead a team of
-              talented developers while continuing to mentor the next generation of African tech talent.
-            </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              When I'm not coding, you'll find me speaking at tech conferences/summits, contributing to open-source
-              projects, or enjoying a cup of Kenyan coffee while reading about the latest web technologies.
-            </p>
+          <div className="md:col-span-10 opacity-0 animate-fade-in-up animation-delay-100">
+            <div className="grid md:grid-cols-5 gap-8 items-start">
+              {/* Text Content */}
+              <div className="md:col-span-3 space-y-6">
+                <p className="text-lg leading-relaxed text-foreground">
+                  Fullstack developer and founder based in Nairobi, Kenya. I build accessible, performant web experiences and mentor the next generation of African tech talent.
+                </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  Beyond coding, I speak at tech conferences and contribute to open-source projects.
+                </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
-              <div>
-                <p className="text-4xl font-serif font-semibold text-primary">1+</p>
-                <p className="text-sm text-muted-foreground mt-1">Years Experience</p>
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                  <div>
+                    <p className="text-3xl font-serif font-semibold text-primary">1+</p>
+                    <p className="text-sm text-muted-foreground mt-1">Years</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-serif font-semibold text-accent">10+</p>
+                    <p className="text-sm text-muted-foreground mt-1">Projects</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-serif font-semibold text-gold">200+</p>
+                    <p className="text-sm text-muted-foreground mt-1">Mentees</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <p className="text-4xl font-serif font-semibold text-accent">10+</p>
-                <p className="text-sm text-muted-foreground mt-1">Projects Delivered</p>
-              </div>
-              <div>
-                <p className="text-4xl font-serif font-semibold text-gold">200+</p>
-                <p className="text-sm text-muted-foreground mt-1">Mentees Guided</p>
+
+              {/* Profile Picture */}
+              <div className="md:col-span-2 flex justify-center md:justify-end">
+                <div className="relative group">
+                  <div className="absolute -inset-3 bg-gradient-to-br from-primary/20 via-accent/10 to-gold/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl group-hover:border-primary/40 transition-all duration-500">
+                    <img
+                      src={profilePhoto}
+                      alt="Georgina Kimani"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Mobile Skills View */}
-            <div className="md:hidden pt-8 border-t border-border">
+            <div className="md:hidden pt-8 mt-8 border-t border-border">
               <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Skills</h3>
               <div className="flex justify-center">
                 <FloatingSkills skills={allSkills} mainSkillsCount={5} />
