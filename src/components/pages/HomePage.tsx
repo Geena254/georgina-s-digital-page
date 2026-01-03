@@ -42,19 +42,19 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent overflow-x-hidden">
+    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
       {/* Header */}
       <Header onNavigate={onNavigate} />
 
       <div className="flex-1 flex items-center justify-center">
-        <div className="max-w-5xl w-full overflow-hidden">
+        <div className="max-w-5xl w-full">
           <div className="grid lg:grid-cols-5 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Content */}
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
-              <p className="text-muted-foreground font-sans text-3xl tracking-wide opacity-0 animate-fade-in-up">
+              <p className="text-muted-foreground font-sans text-2xl tracking-wide opacity-0 animate-fade-in-up">
                 Hey there!
-                <br /> I am <span className={"font-bold text-3xl"}>Georgina Kimani!</span>
+                <br /> I am <span className={"font-bold text-2xl"}>Georgina Kimani!</span>
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
@@ -71,11 +71,11 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-fade-in-up animation-delay-400">
-                <Button size="default" className="group" onClick={() => onNavigate("projects")}>
+                <Button size="lg" className="group" onClick={() => onNavigate("projects")}>
                   View My Work
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="default" onClick={() => onNavigate("contact")}>
+                <Button variant="outline" size="lg" onClick={() => onNavigate("contact")}>
                   Get In Touch
                 </Button>
               </div>
