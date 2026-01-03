@@ -105,25 +105,27 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 />
               </div>
 
-              {/* Companies/Clients Logo Gallery */}
-              <div className="w-full max-w-sm">
+              {/* Companies/Clients Logo Gallery - Marquee */}
+              <div className="w-full max-w-sm overflow-hidden">
                 <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-widest">
                   Worked With
                 </p>
-                <div className="grid grid-cols-4 gap-4">
-                  {companies.map((company) => (
-                    <div
-                      key={company.name}
-                      className="bg-card/50 backdrop-blur-sm rounded-lg p-2 flex items-center justify-center hover:bg-card/80 transition-colors duration-300 border border-border/50 hover:border-primary/30"
-                      title={company.name}
-                    >
-                      <img
-                        src={company.logo}
-                        alt={company.name}
-                        className="w-12 h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      />
-                    </div>
-                  ))}
+                <div className="relative">
+                  <div className="flex animate-marquee gap-6">
+                    {[...companies, ...companies].map((company, index) => (
+                      <div
+                        key={`${company.name}-${index}`}
+                        className="bg-card/50 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center border border-border/50 flex-shrink-0"
+                        title={company.name}
+                      >
+                        <img
+                          src={company.logo}
+                          alt={company.name}
+                          className="w-12 h-12 object-contain"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
