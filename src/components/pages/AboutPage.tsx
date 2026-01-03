@@ -276,7 +276,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
             "Continuous learning is the minimum requirement for success in any field."
           </p>
           <p className="text-center text-sm text-muted-foreground mt-4">
-            — Actively pursuing certifications in AI/ML and Blockchain technologies
+            ~ Actively pursuing certifications in AI/ML and Blockchain technologies
           </p>
         </div>
       </div>
