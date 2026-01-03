@@ -16,14 +16,14 @@ interface HomePageProps {
 
 const roles = ["Software Engineer", "Founder", "Mentor"];
 const roleGradients = [
-  "bg-gradient-to-r from-primary via-accent to-gold",
-  "bg-gradient-to-r from-accent via-gold to-primary",
-  "bg-gradient-to-r from-gold via-primary to-accent",
+  "bg-gradient-to-r from-primary via-amber-700 to-amber-900",
+  "bg-gradient-to-r from-amber-800 via-primary to-amber-700",
+  "bg-gradient-to-r from-amber-900 via-amber-700 to-primary",
 ];
 const roleGlows = [
   "drop-shadow-[0_0_25px_hsl(var(--primary)/0.5)]",
-  "drop-shadow-[0_0_25px_hsl(var(--accent)/0.5)]",
-  "drop-shadow-[0_0_25px_hsl(var(--gold)/0.5)]",
+  "drop-shadow-[0_0_25px_hsl(35,80%,35%,0.5)]",
+  "drop-shadow-[0_0_25px_hsl(35,70%,25%,0.5)]",
 ];
 
 const companies = [
