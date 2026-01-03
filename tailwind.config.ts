@@ -95,11 +95,22 @@ export default {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "pulse-glow": {
+          "0%, 100%": { 
+            opacity: "0.25",
+            filter: "brightness(1) blur(0px)",
+          },
+          "50%": { 
+            opacity: "0.4",
+            filter: "brightness(1.3) blur(1px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee": "marquee 15s linear infinite",
+        "pulse-glow": "pulse-glow 4s ease-in-out infinite",
       },
     },
   },
