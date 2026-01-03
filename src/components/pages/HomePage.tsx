@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profilePhoto from "@/assets/home-profile.jpg";
+import profilePhoto from "@/assets/home-profile-optimized.jpg";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import Header from "@/components/Header";
 

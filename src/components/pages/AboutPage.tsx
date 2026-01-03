@@ -1,7 +1,7 @@
 import { Award, BadgeCheck, ExternalLink, Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import FloatingSkills from "@/components/skills/FloatingSkills";
 import Header from "@/components/Header";
-import profilePhoto from "@/assets/about-profile.jpg";
+import profilePhoto from "@/assets/about-profile-optimized.jpg";
 import {
   Carousel,
   CarouselContent,
