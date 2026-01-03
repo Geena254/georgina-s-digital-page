@@ -149,7 +149,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
         {/* Content Grid */}
         <div className="grid md:grid-cols-12 gap-12 lg:gap-16">
           {/* Floating Skills - Left Side */}
-          <div className="md:col-span-2 hidden md:flex justify-center opacity-0 animate-fade-in-up animation-delay-200">
+          <div className="md:col-span-2 hidden md:flex justify-center">
             <FloatingSkills skills={allSkills} mainSkillsCount={5} />
           </div>
 

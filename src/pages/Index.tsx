@@ -69,7 +69,7 @@ const Index = () => {
       <Sidebar currentPage={currentPage} onNavigate={handleNavigate} />
 
       {/* Main Content with Page Transitions */}
-      <main className="md:ml-16 pb-20 md:pb-0 min-h-screen relative z-10 page-translucent">
+      <main className="md:ml-20 pb-20 md:pb-0 min-h-screen relative z-10 page-translucent">
         <PageTransition pageKey={currentPage}>
           {renderPage()}
         </PageTransition>
