@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import SkillIcon from "./SkillIcon";
 
@@ -31,6 +31,18 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
   
   const mainSkills = skills.slice(0, mainSkillsCount);
   const remainingCount = skills.length - mainSkillsCount;
+
+  // Handle escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isExpanded) {
+        setIsExpanded(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [isExpanded]);
 
   // Group ALL skills by category for the modal
   const groupedSkills = skills.reduce((acc, skill) => {
@@ -79,9 +91,10 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
         {remainingCount > 0 && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center
+            className={`w-10 h-10 md:w-14 md:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center
                        transition-all duration-300 hover:scale-110 hover:bg-primary/20 hover:border-primary
-                       animate-fade-in-up opacity-0 group relative"
+                       animate-fade-in-up opacity-0 group relative
+                       ${!isExpanded ? 'animate-[pulse_2s_ease-in-out_infinite]' : ''}`}
             style={{ animationDelay: `${200 + mainSkillsCount * 100}ms`, animationFillMode: 'forwards' }}
           >
             {isExpanded ? (
