@@ -69,12 +69,6 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 </span>
               </div>
 
-              {/* Description */}
-              <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed font-sans opacity-0 animate-fade-in-up animation-delay-300">
-                Crafting digital experiences that bridge innovation and accessibility. Building the future of web, one
-                line of code at a time.
-              </p>
-
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-fade-in-up animation-delay-400">
                 <Button size="lg" className="group" onClick={() => onNavigate("projects")}>
@@ -107,9 +101,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
 
               {/* Companies/Clients Logo Gallery - Marquee */}
               <div className="w-full max-w-sm overflow-hidden group/marquee">
-                <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-widest">
-                  Worked With
-                </p>
+                <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-widest">Worked With</p>
                 <div className="relative">
                   <div className="flex animate-marquee gap-6 group-hover/marquee:[animation-play-state:paused]">
                     {[...companies, ...companies].map((company, index) => (
@@ -118,11 +110,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                         className="bg-card/50 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center border border-border/50 flex-shrink-0"
                         title={company.name}
                       >
-                        <img
-                          src={company.logo}
-                          alt={company.name}
-                          className="w-12 h-12 object-contain"
-                        />
+                        <img src={company.logo} alt={company.name} className="w-12 h-12 object-contain" />
                       </div>
                     ))}
                   </div>
