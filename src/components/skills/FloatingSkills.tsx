@@ -102,49 +102,45 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
 
       {/* Fullscreen popup overlay - using portal-like fixed positioning */}
       {isExpanded && (
-        <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center"
-          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
-        >
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
           {/* Background overlay with blur */}
           <div 
-            className="fixed inset-0 bg-background/80 backdrop-blur-md animate-fade-in"
-            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+            className="absolute inset-0 bg-background/90 backdrop-blur-xl"
             onClick={() => setIsExpanded(false)}
           />
 
           {/* Centered popup modal */}
           <div 
-            className="relative bg-card border border-border rounded-2xl p-6 shadow-2xl
-                       animate-fade-in-up w-[90vw] max-w-4xl max-h-[85vh] overflow-y-auto z-[10000]"
+            className="relative bg-card/95 border border-border rounded-2xl p-6 md:p-8 shadow-2xl
+                       animate-scale-in w-full max-w-3xl max-h-[80vh] overflow-y-auto"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
+            <div className="flex items-center justify-between mb-6">
+              <h4 className="text-lg font-semibold uppercase tracking-wider text-primary">
                 All Skills
               </h4>
               <button
                 onClick={() => setIsExpanded(false)}
-                className="p-1 rounded-lg hover:bg-primary/10 transition-colors"
+                className="p-2 rounded-lg hover:bg-primary/10 transition-colors"
               >
-                <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
+                <X className="w-6 h-6 text-muted-foreground hover:text-foreground" />
               </button>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-6">
               {sortedCategories.map((category) => (
                 <div key={category}>
-                  <h5 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2 border-b border-border/50 pb-1">
+                  <h5 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">
                     {categoryLabels[category] || category}
                   </h5>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                     {groupedSkills[category].map((skill, index) => (
                       <div
                         key={skill.name}
-                        className="flex items-center gap-2 p-2 rounded-lg bg-background/50 hover:bg-primary/10 
-                                   transition-all duration-200 animate-fade-in-up opacity-0"
+                        className="flex items-center gap-3 p-3 rounded-lg bg-background/80 border border-border/50 hover:bg-primary/10 hover:border-primary/30
+                                   transition-all duration-200 animate-fade-in opacity-0"
                         style={{ animationDelay: `${index * 30}ms`, animationFillMode: 'forwards' }}
                       >
-                        <SkillIcon skill={skill.name} className="w-4 h-4 text-muted-foreground" />
-                        <span className="text-xs text-foreground truncate">{skill.name}</span>
+                        <SkillIcon skill={skill.name} className="w-5 h-5 text-foreground" />
+                        <span className="text-sm text-foreground truncate">{skill.name}</span>
                       </div>
                     ))}
                   </div>
