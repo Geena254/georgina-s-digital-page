@@ -70,12 +70,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-fade-in-up animation-delay-400">
-                <Button size="lg" className="group" onClick={() => onNavigate("projects")}>
+              <div className="flex flex-wrap gap-3 sm:gap-4 pt-4 opacity-0 animate-fade-in-up animation-delay-400">
+                <Button size="sm" className="group sm:h-11 sm:px-8 sm:text-sm" onClick={() => onNavigate("projects")}>
                   View My Work
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="lg" onClick={() => onNavigate("contact")}>
+                <Button variant="outline" size="sm" className="sm:h-11 sm:px-8 sm:text-sm" onClick={() => onNavigate("contact")}>
                   Get In Touch
                 </Button>
               </div>
