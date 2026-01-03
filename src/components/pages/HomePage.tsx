@@ -52,7 +52,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             {/* Content */}
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
-              <p className="text-muted-foreground font-sans text-2xl tracking-wide opacity-0 animate-fade-in-up">
+              <p className="text-muted-foreground font-sans text-xl tracking-wide opacity-0 animate-fade-in-up">
                 Hey there!
                 <br /> I am <span className={"font-bold text-2xl"}>Georgina Kimani!</span>
               </p>
