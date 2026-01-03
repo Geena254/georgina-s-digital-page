@@ -53,12 +53,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <div className="lg:col-span-3 space-y-8">
               {/* Greeting */}
               <p className="text-muted-foreground font-sans text-3xl tracking-wide opacity-0 animate-fade-in-up">
-                Hi!
+                Hey there!
                 <br /> I am <span className={"font-bold text-3xl"}>Georgina Kimani!</span>
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
-              <div className="h-16 flex items-center text-4xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
+              <div className="h-24 flex items-center text-4xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
                 <span
                   className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? "opacity-50" : "opacity-100"}`}
                 >
