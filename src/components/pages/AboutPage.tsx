@@ -67,6 +67,15 @@ const allSkills = [
 
 const certifications = [
   {
+    title: "ALX Ventures Founders Academy",
+    issuer: "ALX Africa X Mastercard Foundation",
+    date: "2025",
+    credentialId: "",
+    icon: "🚀",
+    verifyUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+    viewUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+  },
+  {
     title: "Google Cloud Professional Developer",
     issuer: "Google Cloud X ALX Africa",
     date: "Nov 2025 - Jan 2026",
@@ -74,6 +83,24 @@ const certifications = [
     icon: "☁️",
     verifyUrl: "https://www.credential.net/example-gcp",
     viewUrl: "https://www.credential.net/example-gcp",
+  },
+  {
+    title: "ALX AI For Developers II",
+    issuer: "ALX Africa",
+    date: "September 2025",
+    credentialId: "",
+    icon: "🤖",
+    verifyUrl: "",
+    viewUrl: "",
+  },
+  {
+    title: "ALX AI For Developers I",
+    issuer: "ALX Africa",
+    date: "June 2025",
+    credentialId: "",
+    icon: "🧠",
+    verifyUrl: "",
+    viewUrl: "",
   },
   {
     title: "Meta Frontend Developer Professional",
@@ -85,13 +112,13 @@ const certifications = [
     viewUrl: "https://www.coursera.org/account/accomplishments/example",
   },
   {
-    title: "ALX AI For Developers I",
+    title: "ALX Software Engineering Programme",
     issuer: "ALX Africa",
-    date: "2022",
-    credentialId: "MDB-DEV-2022-3456",
-    icon: "🍃",
-    verifyUrl: "https://savanna.alxafrica.com/verify/example",
-    viewUrl: "https://www.alxafrica.com/verify/example",
+    date: "May 2023 - October 2024",
+    credentialId: "",
+    icon: "💻",
+    verifyUrl: "",
+    viewUrl: "",
   },
 ];
 
@@ -192,27 +219,33 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                     <div className="flex items-center justify-between text-sm">
                       <span className="text-muted-foreground">Issued: {cert.date}</span>
                       <div className="flex items-center gap-3">
-                        <a
-                          href={cert.viewUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
-                        >
-                          <Eye className="w-3 h-3" />
-                          View
-                        </a>
-                        <a
-                          href={cert.verifyUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-primary hover:underline"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          Verify
-                        </a>
+                        {cert.viewUrl && (
+                          <a
+                            href={cert.viewUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            <Eye className="w-3 h-3" />
+                            View
+                          </a>
+                        )}
+                        {cert.verifyUrl && (
+                          <a
+                            href={cert.verifyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-primary hover:underline"
+                          >
+                            <ExternalLink className="w-3 h-3" />
+                            Verify
+                          </a>
+                        )}
                       </div>
                     </div>
-                    <p className="text-xs text-muted-foreground font-mono">ID: {cert.credentialId}</p>
+                    {cert.credentialId && (
+                      <p className="text-xs text-muted-foreground font-mono">ID: {cert.credentialId}</p>
+                    )}
                   </div>
                 </div>
               </div>
