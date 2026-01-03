@@ -72,8 +72,8 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
             <div 
               className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-card border border-border flex items-center justify-center
                          transition-all duration-300 hover:scale-110 hover:border-primary hover:shadow-lg
-                         hover:-translate-y-1 animate-fade-in-up opacity-0"
-              style={{ animationDelay: `${200 + index * 100}ms`, animationFillMode: 'forwards' }}
+                         hover:-translate-y-1 motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
+              style={{ animationDelay: `${200 + index * 100}ms` }}
             >
               <SkillIcon skill={skill.name} className="w-5 h-5 md:w-7 md:h-7 text-foreground transition-colors group-hover:text-primary" />
             </div>
@@ -93,9 +93,9 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
             onClick={() => setIsExpanded(!isExpanded)}
             className={`w-10 h-10 md:w-14 md:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center
                        transition-all duration-300 hover:scale-110 hover:bg-primary/20 hover:border-primary
-                       animate-fade-in-up opacity-0 group relative
+                       motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 group relative
                        ${!isExpanded ? 'animate-[pulse_2s_ease-in-out_infinite]' : ''}`}
-            style={{ animationDelay: `${200 + mainSkillsCount * 100}ms`, animationFillMode: 'forwards' }}
+            style={{ animationDelay: `${200 + mainSkillsCount * 100}ms` }}
           >
             {isExpanded ? (
               <X className="w-5 h-5 md:w-6 md:h-6 text-primary" />
@@ -115,7 +115,7 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
 
       {/* Fullscreen popup overlay - using portal-like fixed positioning */}
       {isExpanded && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-fade-in">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 motion-safe:animate-in motion-safe:fade-in">
           {/* Background overlay with blur */}
           <div 
             className="absolute inset-0 bg-background/90 backdrop-blur-xl transition-all duration-500"
@@ -143,8 +143,8 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
               {sortedCategories.map((category, catIndex) => (
                 <div 
                   key={category}
-                  className="animate-fade-in opacity-0"
-                  style={{ animationDelay: `${catIndex * 100}ms`, animationFillMode: 'forwards' }}
+                  className="motion-safe:animate-in motion-safe:fade-in"
+                  style={{ animationDelay: `${catIndex * 100}ms` }}
                 >
                   <h5 className="text-sm font-medium uppercase tracking-wider text-muted-foreground mb-3 border-b border-border/50 pb-2">
                     {categoryLabels[category] || category}
@@ -154,8 +154,8 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
                       <div
                         key={skill.name}
                         className="flex items-center gap-3 p-3 rounded-lg bg-background/80 border border-border/50 hover:bg-primary/10 hover:border-primary/30
-                                   transition-all duration-200 animate-fade-in opacity-0"
-                        style={{ animationDelay: `${catIndex * 100 + index * 30}ms`, animationFillMode: 'forwards' }}
+                                   transition-all duration-200 motion-safe:animate-in motion-safe:fade-in"
+                        style={{ animationDelay: `${catIndex * 100 + index * 30}ms` }}
                       >
                         <SkillIcon skill={skill.name} className="w-5 h-5 text-foreground" />
                         <span className="text-sm text-foreground truncate">{skill.name}</span>
