@@ -106,12 +106,12 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               </div>
 
               {/* Companies/Clients Logo Gallery - Marquee */}
-              <div className="w-full max-w-sm overflow-hidden">
+              <div className="w-full max-w-sm overflow-hidden group/marquee">
                 <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-widest">
                   Worked With
                 </p>
                 <div className="relative">
-                  <div className="flex animate-marquee gap-6">
+                  <div className="flex animate-marquee gap-6 group-hover/marquee:[animation-play-state:paused]">
                     {[...companies, ...companies].map((company, index) => (
                       <div
                         key={`${company.name}-${index}`}
