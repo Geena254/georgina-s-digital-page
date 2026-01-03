@@ -42,7 +42,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
+    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent overflow-x-hidden">
       {/* Header */}
       <Header onNavigate={onNavigate} />
 
@@ -58,7 +58,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
               </p>
 
               {/* Roles - Typing Animation with Gradient */}
-              <div className="h-18 flex items-center text-4xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
+              <div className="h-18 flex items-center text-2xl sm:text-3xl md:text-4xl font-sans opacity-0 animate-fade-in-up animation-delay-200">
                 <span
                   className={`pb-2 font-medium transition-all duration-500 ${roleGradients[currentTextIndex]} ${roleGlows[currentTextIndex]} bg-clip-text text-transparent ${isFading ? "opacity-50" : "opacity-100"}`}
                 >
