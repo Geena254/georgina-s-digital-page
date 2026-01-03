@@ -44,9 +44,9 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
 
   return (
     <div className="relative min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent overflow-x-hidden">
-      {/* Background Image */}
+      {/* Background Image with Pulse Glow */}
       <div 
-        className="absolute inset-0 z-0 opacity-30"
+        className="absolute inset-0 z-0 animate-pulse-glow"
         style={{
           backgroundImage: `url(${mapConnectBg})`,
           backgroundSize: 'cover',
