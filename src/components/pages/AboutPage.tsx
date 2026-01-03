@@ -174,7 +174,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                 </p>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                {/* <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                   <div>
                     <p className="text-3xl font-serif font-semibold text-primary">1+</p>
                     <p className="text-sm text-muted-foreground mt-1">Years</p>
@@ -187,7 +187,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                     <p className="text-3xl font-serif font-semibold text-gold">200+</p>
                     <p className="text-sm text-muted-foreground mt-1">Mentees</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               {/* Profile Picture */}
