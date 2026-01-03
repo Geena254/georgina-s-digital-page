@@ -21,7 +21,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
 
   return (
     <div className="mb-8 opacity-0 animate-fade-in-up">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between sm:bg-card/30 sm:backdrop-blur-md sm:border sm:border-border/50 sm:rounded-xl sm:px-6 sm:py-3 sm:shadow-lg">
         <h1
           onClick={() => onNavigate?.("home")}
           className="font-serif text-2xl font-semibold text-foreground relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left cursor-pointer"
