@@ -4,6 +4,12 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import Header from "@/components/Header";
 
+// Company logos
+import powerLearnLogo from "@/assets/logos/power-learn-project.png";
+import afyasokoLogo from "@/assets/logos/afyasoko.png";
+import shangaTatuLogo from "@/assets/logos/shanga-tatu.jpg";
+import ardoThriveLogo from "@/assets/logos/ardo-thrive.png";
+
 interface HomePageProps {
   onNavigate: (page: string) => void;
 }
@@ -18,6 +24,13 @@ const roleGlows = [
   "drop-shadow-[0_0_25px_hsl(var(--primary)/0.5)]",
   "drop-shadow-[0_0_25px_hsl(var(--accent)/0.5)]",
   "drop-shadow-[0_0_25px_hsl(var(--gold)/0.5)]",
+];
+
+const companies = [
+  { name: "Power Learn Project", logo: powerLearnLogo },
+  { name: "AfyaSoko", logo: afyasokoLogo },
+  { name: "Shanga Tatu", logo: shangaTatuLogo },
+  { name: "Ardo Thrive Hub", logo: ardoThriveLogo },
 ];
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
@@ -75,7 +88,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             </div>
 
             {/* Profile Photo */}
-            <div className="lg:col-span-2 flex justify-center lg:justify-end opacity-0 animate-fade-in-up animation-delay-200">
+            <div className="lg:col-span-2 flex flex-col items-center lg:items-end gap-8 opacity-0 animate-fade-in-up animation-delay-200">
               <div className="relative group">
                 <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-accent/10 to-gold/20 rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl group-hover:border-primary/40 transition-all duration-500 group-hover:scale-105">
@@ -90,6 +103,28 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                   className="absolute -inset-2 border-2 border-dashed border-primary/30 rounded-full animate-spin-slow"
                   style={{ animationDuration: "20s" }}
                 />
+              </div>
+
+              {/* Companies/Clients Logo Gallery */}
+              <div className="w-full max-w-sm">
+                <p className="text-xs text-muted-foreground text-center mb-4 uppercase tracking-widest">
+                  Worked With
+                </p>
+                <div className="grid grid-cols-4 gap-4">
+                  {companies.map((company) => (
+                    <div
+                      key={company.name}
+                      className="bg-card/50 backdrop-blur-sm rounded-lg p-2 flex items-center justify-center hover:bg-card/80 transition-colors duration-300 border border-border/50 hover:border-primary/30"
+                      title={company.name}
+                    >
+                      <img
+                        src={company.logo}
+                        alt={company.name}
+                        className="w-12 h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
