@@ -2,13 +2,7 @@ import { Award, BadgeCheck, ExternalLink, Eye, ChevronLeft, ChevronRight } from 
 import FloatingSkills from "@/components/skills/FloatingSkills";
 import Header from "@/components/Header";
 import profilePhoto from "@/assets/about-profile-optimized.jpg";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 interface AboutPageProps {
   onNavigate?: (page: string) => void;
@@ -167,10 +161,18 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
               {/* Text Content */}
               <div className="md:col-span-3 space-y-6">
                 <p className="text-lg leading-relaxed text-foreground">
-                  Fullstack developer and founder based in Nairobi, Kenya. I build accessible, performant web experiences and mentor the next generation of African tech talent.
+                  Hey there! I am Georgina Kimani, a Software Engineer and founder based in Nairobi, Kenya. I've had the
+                  privilege of working with startups, enterprises, and everything in between.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  Beyond coding, I speak at tech conferences and contribute to open-source projects.
+                  My journey began with a simple curiosity about how websites work, that evolved into a career dedicated
+                  to creating accessible, performant, and beautiful digital experiences. Today, I lead a team of
+                  talented developers while continuing to mentor the next generation of African tech talent.
+                </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  When I'm not coding, you'll find me attending or speaking at tech conferences/summits, contributing to
+                  open-source projects, or enjoying a cup of Kenyan coffee while reading about the latest web
+                  technologies.
                 </p>
 
                 {/* Stats */}
@@ -195,11 +197,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
                 <div className="relative group">
                   <div className="absolute -inset-3 bg-gradient-to-br from-primary/20 via-accent/10 to-gold/20 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-xl group-hover:border-primary/40 transition-all duration-500">
-                    <img
-                      src={profilePhoto}
-                      alt="Georgina Kimani"
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={profilePhoto} alt="Georgina Kimani" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -228,9 +226,7 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
               <CarouselContent className="-ml-2">
                 {certifications.map((cert, index) => (
                   <CarouselItem key={cert.title} className="pl-2 basis-[85%]">
-                    <div
-                      className="certification-card group h-full"
-                    >
+                    <div className="certification-card group h-full">
                       <div className="flex gap-4">
                         <div className="text-4xl flex-shrink-0 cert-icon">{cert.icon}</div>
                         <div className="flex-1 space-y-2">
