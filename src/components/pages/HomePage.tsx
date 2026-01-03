@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/home-profile-optimized.jpg";
 import { useTypingAnimation } from "@/hooks/use-typing-animation";
 import Header from "@/components/Header";
+import mapConnectBg from "@/assets/map-connect-bg.webp";
 
 // Company logos
 import powerLearnLogo from "@/assets/logos/power-learn-project.png";
@@ -42,8 +43,21 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
   });
 
   return (
-    <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent overflow-x-hidden">
+    <div className="relative min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent overflow-x-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 opacity-30"
+        style={{
+          backgroundImage: `url(${mapConnectBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 z-0 bg-background/60" />
       {/* Header */}
+      <div className="relative z-10 flex flex-col flex-1">
       <Header onNavigate={onNavigate} />
 
       <div className="flex-1 flex items-center justify-center">
@@ -124,6 +138,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             <div className="text-9xl font-serif text-border/30 select-none">&ldquo;</div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
