@@ -19,7 +19,7 @@ const navItems = [
   },
   {
     id: "experience",
-    label: "Exp",
+    label: "Experience",
     icon: Clock,
   },
   {
@@ -37,7 +37,7 @@ const navItems = [
 const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
   // Force dark mode on mount
   useEffect(() => {
-    document.documentElement.classList.add('dark');
+    document.documentElement.classList.add("dark");
   }, []);
 
   return (
@@ -58,7 +58,6 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
               </button>
             ))}
           </div>
-
         </div>
       </nav>
 
@@ -66,7 +65,7 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
       <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden safe-area-bottom">
         {/* Transparent background with subtle blur */}
         <div className="absolute inset-0 backdrop-blur-sm bg-background/80" />
-        
+
         <div className="relative flex items-center justify-around px-2 py-3">
           {navItems.map((item) => {
             const isActive = currentPage === item.id;
@@ -77,42 +76,32 @@ const Sidebar = ({ currentPage, onNavigate }: SidebarProps) => {
                 className="relative flex flex-col items-center gap-0.5 min-w-[2.5rem] group"
               >
                 {/* Active indicator pill */}
-                <div 
+                <div
                   className={`absolute -top-1 w-6 h-1 rounded-full transition-all duration-300 ${
-                    isActive 
-                      ? "bg-primary opacity-100 scale-100" 
-                      : "opacity-0 scale-0"
-                  }`} 
+                    isActive ? "bg-primary opacity-100 scale-100" : "opacity-0 scale-0"
+                  }`}
                 />
-                
+
                 {/* Icon container with glow effect */}
-                <div 
+                <div
                   className={`relative p-1.5 rounded-lg transition-all duration-300 ${
-                    isActive 
-                      ? "bg-primary/20 scale-110" 
-                      : "bg-background/50 group-hover:bg-background/70"
+                    isActive ? "bg-primary/20 scale-110" : "bg-background/50 group-hover:bg-background/70"
                   }`}
                 >
-                  <item.icon 
+                  <item.icon
                     className={`w-4 h-4 transition-all duration-300 ${
-                      isActive 
-                        ? "text-primary" 
-                        : "text-foreground/70 group-hover:text-foreground"
-                    }`} 
+                      isActive ? "text-primary" : "text-foreground/70 group-hover:text-foreground"
+                    }`}
                   />
-                  
+
                   {/* Glow effect for active item */}
-                  {isActive && (
-                    <div className="absolute inset-0 bg-primary/30 rounded-lg blur-md -z-10" />
-                  )}
+                  {isActive && <div className="absolute inset-0 bg-primary/30 rounded-lg blur-md -z-10" />}
                 </div>
-                
+
                 {/* Label */}
-                <span 
+                <span
                   className={`text-[9px] font-medium transition-all duration-300 ${
-                    isActive 
-                      ? "text-primary" 
-                      : "text-foreground/60 group-hover:text-foreground/80"
+                    isActive ? "text-primary" : "text-foreground/60 group-hover:text-foreground/80"
                   }`}
                 >
                   {item.label}
