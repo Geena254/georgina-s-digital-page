@@ -91,10 +91,9 @@ const FloatingSkills = ({ skills, mainSkillsCount = 5 }: FloatingSkillsProps) =>
         {remainingCount > 0 && (
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`w-10 h-10 md:w-14 md:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center
+            className="w-10 h-10 md:w-14 md:h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center
                        transition-all duration-300 hover:scale-110 hover:bg-primary/20 hover:border-primary
-                       motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 group relative
-                       ${!isExpanded ? 'animate-[pulse_2s_ease-in-out_infinite]' : ''}`}
+                       motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 group relative"
             style={{ animationDelay: `${200 + mainSkillsCount * 100}ms` }}
           >
             {isExpanded ? (

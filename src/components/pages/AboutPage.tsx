@@ -1,6 +1,13 @@
-import { Award, BadgeCheck, ExternalLink, Eye } from "lucide-react";
+import { Award, BadgeCheck, ExternalLink, Eye, ChevronLeft, ChevronRight } from "lucide-react";
 import FloatingSkills from "@/components/skills/FloatingSkills";
 import Header from "@/components/Header";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface AboutPageProps {
   onNavigate?: (page: string) => void;
@@ -202,7 +209,64 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
             <h3 className="font-serif text-2xl font-semibold">Certifications</h3>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* Mobile Carousel */}
+          <div className="md:hidden">
+            <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+              <CarouselContent className="-ml-2">
+                {certifications.map((cert, index) => (
+                  <CarouselItem key={cert.title} className="pl-2 basis-[85%]">
+                    <div
+                      className="certification-card group h-full"
+                    >
+                      <div className="flex gap-4">
+                        <div className="text-4xl flex-shrink-0 cert-icon">{cert.icon}</div>
+                        <div className="flex-1 space-y-2">
+                          <h4 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {cert.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                          <div className="flex items-center justify-between text-sm">
+                            <span className="text-muted-foreground">Issued: {cert.date}</span>
+                          </div>
+                          <div className="flex items-center gap-3 pt-1">
+                            {cert.viewUrl && (
+                              <a
+                                href={cert.viewUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-muted-foreground hover:text-primary transition-colors text-sm"
+                              >
+                                <Eye className="w-3 h-3" />
+                                View
+                              </a>
+                            )}
+                            {cert.verifyUrl && (
+                              <a
+                                href={cert.verifyUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-primary hover:underline text-sm"
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                                Verify
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-4">
+                <CarouselPrevious className="static translate-y-0" />
+                <CarouselNext className="static translate-y-0" />
+              </div>
+            </Carousel>
+          </div>
+
+          {/* Desktop Grid */}
+          <div className="hidden md:grid md:grid-cols-2 gap-6">
             {certifications.map((cert, index) => (
               <div
                 key={cert.title}
