@@ -161,18 +161,16 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
               {/* Text Content */}
               <div className="md:col-span-3 space-y-6">
                 <p className="text-lg leading-relaxed text-foreground">
-                  Hey there! I am Georgina Kimani, a Software Engineer and founder based in Nairobi, Kenya. I've had the
-                  privilege of working with startups, enterprises, and everything in between.
+                  I’m Georgina Kimani, a Kenyan-based Software Engineer and Founder. From curious beginner to tech
+                  leader, I focus on building accessible, high-performance digital experiences.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  My journey began with a simple curiosity about how websites work, that evolved into a career dedicated
-                  to creating accessible, performant, and beautiful digital experiences. Today, I lead a team of
-                  talented developers while continuing to mentor the next generation of African tech talent.
+                  With a background spanning startups to enterprises, I now lead a development team and mentor rising
+                  African tech talent.
                 </p>
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  When I'm not coding, you'll find me attending or speaking at tech conferences/summits, contributing to
-                  open-source projects, or enjoying a cup of Kenyan coffee while reading about the latest web
-                  technologies.
+                  Beyond the IDE, I’m an open-source contributor, tech speaker, and lifelong learner ~ usually with a
+                  cup of Kenyan coffee in hand.
                 </p>
 
                 {/* Stats */}
