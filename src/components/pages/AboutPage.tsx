@@ -13,53 +13,53 @@ const allSkills = [
   { name: "Node.js", category: "Backend" },
   { name: "PostgreSQL", category: "Databases" },
   { name: "Tailwind CSS", category: "Frontend" },
-  
+
   // Frontend
   { name: "Next.js", category: "Frontend" },
   { name: "Vue.js", category: "Frontend" },
   { name: "Angular", category: "Frontend" },
   { name: "Redux", category: "Frontend" },
-  
+
   // Backend
   { name: "Express.js", category: "Backend" },
   { name: "Django DRF", category: "Backend" },
   { name: "GraphQL", category: "Backend" },
-  
+
   // Frameworks
   { name: "Next.js", category: "Frameworks" },
   { name: "Express.js", category: "Frameworks" },
   { name: "Django DRF", category: "Frameworks" },
-  
+
   // Languages
   { name: "Python", category: "Languages" },
   { name: "HTML5", category: "Languages" },
   { name: "CSS3", category: "Languages" },
-  
+
   // Databases
   { name: "MongoDB", category: "Databases" },
   { name: "MySQL", category: "Databases" },
   { name: "Redis", category: "Databases" },
   { name: "Firebase", category: "Databases" },
-  
+
   // DevOps
   { name: "Docker", category: "DevOps" },
   { name: "Kubernetes", category: "DevOps" },
   { name: "GitHub Actions", category: "DevOps" },
   { name: "Terraform", category: "DevOps" },
   { name: "Jenkins", category: "DevOps" },
-  
+
   // Cloud
   { name: "AWS", category: "Cloud" },
   { name: "Google Cloud", category: "Cloud" },
   { name: "Vercel", category: "Cloud" },
   { name: "Netlify", category: "Cloud" },
   { name: "Heroku", category: "Cloud" },
-  
+
   // Tools
   { name: "Git", category: "Tools" },
   { name: "Figma", category: "Tools" },
   { name: "Nginx", category: "Tools" },
-  
+
   // APIs
   { name: "Stripe", category: "APIs" },
   { name: "Twilio", category: "APIs" },
@@ -90,8 +90,8 @@ const certifications = [
     date: "September 2025",
     credentialId: "",
     icon: "🤖",
-    verifyUrl: "",
-    viewUrl: "",
+    verifyUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+    viewUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
   },
   {
     title: "ALX AI For Developers I",
@@ -99,8 +99,8 @@ const certifications = [
     date: "June 2025",
     credentialId: "",
     icon: "🧠",
-    verifyUrl: "",
-    viewUrl: "",
+    verifyUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+    viewUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
   },
   {
     title: "Meta Frontend Developer Professional",
@@ -117,8 +117,8 @@ const certifications = [
     date: "May 2023 - October 2024",
     credentialId: "",
     icon: "💻",
-    verifyUrl: "",
-    viewUrl: "",
+    verifyUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
+    viewUrl: "https://savanna.alxafrica.com/certificates/sJ73MYm8er",
   },
 ];
 
