@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
+import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
