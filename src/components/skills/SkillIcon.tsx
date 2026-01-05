@@ -46,8 +46,13 @@ import {
   SiPrometheus,
   SiGrafana,
   SiElasticsearch,
+  SiJavascript,
+  SiC,
+  SiFastapi,
+  SiN8N,
+  SiWhatsapp,
 } from "react-icons/si";
-import { Database, Cloud } from "lucide-react";
+import { Database, Smartphone, Globe, CreditCard } from "lucide-react";
 
 type SkillIconProps = {
   skill: string;
@@ -57,6 +62,7 @@ type SkillIconProps = {
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   // Frontend
   "React": SiReact,
+  "React Native": SiReact,
   "TypeScript": SiTypescript,
   "Next.js": SiNextdotjs,
   "Tailwind CSS": SiTailwindcss,
@@ -72,12 +78,15 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   "Express.js": SiExpress,
   "Django DRF": SiDjango,
   "Flask": SiFlask,
+  "FastAPI": SiFastapi,
   "Spring Boot": SiSpring,
   "Laravel": SiLaravel,
   "Ruby on Rails": SiRubyonrails,
   
   // Languages
   "Python": SiPython,
+  "JavaScript": SiJavascript,
+  "C": SiC,
   
   // Databases
   "PostgreSQL": SiPostgresql,
@@ -94,6 +103,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   "Docker": SiDocker,
   "Figma": SiFigma,
   "Nginx": SiNginx,
+  "n8n": SiN8N,
   
   // DevOps
   "Kubernetes": SiKubernetes,
@@ -109,7 +119,6 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   // Cloud
   "AWS": SiAmazon,
   "Google Cloud": SiGooglecloud,
-  
   "DigitalOcean": SiDigitalocean,
   "Heroku": SiHeroku,
   "Vercel": SiVercel,
@@ -118,6 +127,9 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   // APIs
   "Stripe": SiStripe,
   "Twilio": SiTwilio,
+  "REST APIs": Globe,
+  "MPESA": CreditCard,
+  "Whatsapp": SiWhatsapp,
 };
 
 const SkillIcon = ({ skill, className = "w-6 h-6" }: SkillIconProps) => {
