@@ -149,8 +149,11 @@ const AboutPage = ({ onNavigate }: AboutPageProps) => {
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
         <div className="mb-16 opacity-0 animate-fade-in-up animation-delay-100">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">The story behind the code</p>
+          <span className="text-primary text-sm font-medium tracking-wider uppercase mb-2 block">Get To Know Me</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
+            About <span className="text-primary">Me</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">The story behind the code</p>
         </div>
 
         {/* Content Grid */}
