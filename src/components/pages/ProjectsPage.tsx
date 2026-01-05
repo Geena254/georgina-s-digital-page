@@ -3,13 +3,7 @@ import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight } from "luci
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
 import appyDropImg from "@/assets/projects/appydrop.webp";
 import amaniAssistImg from "@/assets/projects/amani-assist.webp";
@@ -392,6 +386,15 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* CTA Section */}
+      <div className="mt-16 text-center opacity-0 animate-fade-in-up animation-delay-500">
+        <p className="text-muted-foreground mb-6">Interested in working together?</p>
+        <Button size="lg" onClick={() => onNavigate("contact")} className="group">
+          Get In Touch
+          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Button>
+      </div>
     </div>
   );
 };
