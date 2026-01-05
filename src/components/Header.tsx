@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X, Download, Eye } from "lucide-react";
+import { ArrowRight, Menu, X, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -10,12 +10,6 @@ interface HeaderProps {
 const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Georgina_Kimani_CV.pdf';
-    link.download = 'Georgina_Kimani_CV.pdf';
-    link.click();
-  };
 
   const handleViewResume = () => {
     window.open('/Georgina_Kimani_CV.pdf', '_blank');
@@ -47,15 +41,6 @@ const Header = ({ onNavigate }: HeaderProps) => {
             View Resume
           </Button>
           
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={handleDownloadResume}
-            className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
-          >
-            <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-            Download
-          </Button>
           
           <Button 
             variant="outline" 
@@ -102,18 +87,6 @@ const Header = ({ onNavigate }: HeaderProps) => {
               >
                 <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 View Resume
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={() => {
-                  handleDownloadResume();
-                  setMenuOpen(false);
-                }}
-                className="group w-full justify-start"
-              >
-                <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                Download Resume
               </Button>
               <Button 
                 variant="outline" 
