@@ -189,17 +189,28 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
 
           {/* Mobile Carousel View */}
           <div className="md:hidden opacity-0 animate-fade-in-up animation-delay-200">
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-2">
+            <Carousel 
+              className="w-full"
+              opts={{
+                align: "start",
+                dragFree: false,
+                skipSnaps: false,
+                duration: 25,
+              }}
+            >
+              <CarouselContent className="-ml-2 transition-transform duration-300 ease-out">
                 {experiences.map((exp) => (
-                  <CarouselItem key={exp.id} className="pl-2 basis-[85%]">
+                  <CarouselItem 
+                    key={exp.id} 
+                    className="pl-2 basis-[85%] transition-all duration-300 ease-out active:scale-[0.98]"
+                  >
                     <ExperienceCard exp={exp} />
                   </CarouselItem>
                 ))}
               </CarouselContent>
               <div className="flex justify-center gap-2 mt-4">
-                <CarouselPrevious className="static translate-y-0" />
-                <CarouselNext className="static translate-y-0" />
+                <CarouselPrevious className="static translate-y-0 transition-transform duration-200 hover:scale-110 active:scale-95" />
+                <CarouselNext className="static translate-y-0 transition-transform duration-200 hover:scale-110 active:scale-95" />
               </div>
             </Carousel>
           </div>
