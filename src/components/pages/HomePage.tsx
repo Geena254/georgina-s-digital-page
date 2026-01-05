@@ -138,7 +138,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                       {[...companies, ...companies].map((company, index) => (
                         <div
                           key={`${company.name}-${index}`}
-                          className="bg-card/50 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center border border-border/50 flex-shrink-0 transition-transform duration-300 hover:scale-110 hover:border-primary/50 cursor-pointer"
+                          className="bg-card/50 backdrop-blur-sm rounded-lg p-3 flex items-center justify-center border border-border/50 flex-shrink-0 transition-all duration-300 hover:scale-110 hover:border-primary/50 hover:shadow-[0_0_20px_hsl(var(--primary)/0.3)] cursor-pointer"
                           title={company.name}
                         >
                           <img src={company.logo} alt={company.name} className="w-12 h-12 object-contain" />
