@@ -38,7 +38,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
             className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
           >
             <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-            View Resume
+            Resume
           </Button>
           
           
@@ -86,7 +86,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 className="group w-full justify-start"
               >
                 <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                View Resume
+                Resume
               </Button>
               <Button 
                 variant="outline" 
