@@ -237,8 +237,11 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
         <div className="mb-12 md:mb-16 opacity-0 animate-fade-in-up animation-delay-100">
-          <h2 className="section-title">Projects</h2>
-          <p className="section-subtitle">Selected works from my portfolio</p>
+          <span className="text-primary text-sm font-medium tracking-wider uppercase mb-2 block">My Work</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
+            Featured <span className="text-primary">Projects</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">Selected works from my portfolio</p>
         </div>
 
         {/* Mobile Carousel View */}

@@ -19,8 +19,11 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
         <div className="mb-16 opacity-0 animate-fade-in-up animation-delay-100">
-          <h2 className="section-title">Get In Touch</h2>
-          <p className="section-subtitle">Let's create something amazing together</p>
+          <span className="text-primary text-sm font-medium tracking-wider uppercase mb-2 block">Contact</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
+            Get In <span className="text-primary">Touch</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">Let's create something amazing together</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
