@@ -1,4 +1,15 @@
-import { Calendar, MapPin, Building, ArrowRight, ShieldCheck, GraduationCap, HeartPulse, Stethoscope, Code, LucideIcon } from "lucide-react";
+import {
+  Calendar,
+  MapPin,
+  Building,
+  ArrowRight,
+  ShieldCheck,
+  GraduationCap,
+  HeartPulse,
+  Stethoscope,
+  Code,
+  LucideIcon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 
@@ -72,7 +83,7 @@ const experiences: Experience[] = [
     title: "Fullstack Developer",
     company: "M-TREAT Platform",
     location: "Nairobi, Kenya",
-    period: "2021 - 2023",
+    period: "Jan 2025 - April 2025",
     description:
       "Developed and maintained a telemedicine platform connecting patients with healthcare providers for virtual consultations and medical services.",
     highlights: [
@@ -85,10 +96,10 @@ const experiences: Experience[] = [
   },
   {
     id: 5,
-    title: "Junior Developer",
-    company: "Agency XYZ",
+    title: "Fullstack Developer",
+    company: "Gebra Enterprises",
     location: "Nairobi, Kenya",
-    period: "2019 - 2021",
+    period: "2024 - Present",
     description:
       "Started my professional journey building websites and web applications for various clients across different industries.",
     highlights: [
@@ -140,11 +151,15 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
                       <div className="flex items-start gap-4">
                         {/* Company Icon */}
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${exp.iconBg}`}>
+                        <div
+                          className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${exp.iconBg}`}
+                        >
                           <exp.icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary">{exp.title}</h3>
+                          <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary">
+                            {exp.title}
+                          </h3>
                           <div className="flex items-center gap-2 text-primary">
                             <Building className="w-4 h-4" />
                             <span className="font-medium">{exp.company}</span>
@@ -169,7 +184,10 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     {/* Highlights */}
                     <ul className="space-y-2">
                       {exp.highlights.map((highlight, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80 transition-all duration-200 hover:text-foreground hover:translate-x-1">
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-foreground/80 transition-all duration-200 hover:text-foreground hover:translate-x-1"
+                        >
                           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-125" />
                           {highlight}
                         </li>
