@@ -10,6 +10,9 @@ import powerLearnLogo from "@/assets/logos/power-learn-project.png";
 import afyasokoLogo from "@/assets/logos/afyasoko.png";
 import shangaTatuLogo from "@/assets/logos/shanga-tatu.jpg";
 import ardoThriveLogo from "@/assets/logos/ardo-thrive.png";
+import mTreatLogo from "@/assets/logos/m-treat.png";
+import chachaLogo from "@/assets/logos/chacha.png";
+import amaniAssistLogo from "@/assets/logos/amani-assist.png";
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -32,7 +35,8 @@ const companies = [
   { name: "AfyaSoko", logo: afyasokoLogo },
   { name: "Shanga Tatu", logo: shangaTatuLogo },
   { name: "Ardo Thrive Hub", logo: ardoThriveLogo },
-  { name: "M-Treat", logo: m - treatLogo },
+  { name: "M-Treat", logo: mTreatLogo },
+  { name: "Chacha", logo: chachaLogo },
   { name: "Amani Assist", logo: amaniAssistLogo },
 ];
 
