@@ -7,7 +7,8 @@ import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
 import appyDropImg from "@/assets/projects/appydrop.webp";
 import amaniAssistImg from "@/assets/projects/amani-assist.webp";
 import afyaSokoImg from "@/assets/projects/afyasoko.webp";
-import shangaTatuImg from "@/assets/logos/shanga-tatu.jpg";
+import bloombodyImg from "@/assets/projects/bloombody.webp";
+import shangaTatuImg from "@/assets/projects/shangatatu.webp";
 
 const projects = [
   {
@@ -38,7 +39,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "2025",
     liveUrl: "https://bloombody.app",
-    thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+    thumbnail: bloombodyImg,
   },
   {
     title: "Ardo Thriving Hub",
