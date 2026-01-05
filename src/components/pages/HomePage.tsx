@@ -130,7 +130,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                     Worked With
                   </p>
                   <div className="relative">
-                    <div className="flex animate-marquee gap-6 group-hover/marquee:[animation-play-state:paused]">
+                    <div className="flex animate-marquee gap-6 group-hover/marquee:[animation-play-state:paused] w-max">
                       {[...companies, ...companies].map((company, index) => (
                         <div
                           key={`${company.name}-${index}`}
