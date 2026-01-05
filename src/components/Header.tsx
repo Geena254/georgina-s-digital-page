@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X, Eye } from "lucide-react";
+import { ArrowRight, Menu, X, Eye, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface HeaderProps {
   onNavigate?: (page: string) => void;
@@ -11,7 +18,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
 
-  const handleViewResume = () => {
+  const handleOpenNewTab = () => {
     window.open('/Georgina_Kimani_CV.pdf', '_blank');
   };
 
@@ -31,15 +38,37 @@ const Header = ({ onNavigate }: HeaderProps) => {
           
           <div className="w-px h-6 bg-border mx-1" />
           
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            onClick={handleViewResume}
-            className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
-          >
-            <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-            Resume
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
+              >
+                <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                Resume
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0">
+              <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
+                <DialogTitle>Resume</DialogTitle>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  onClick={handleOpenNewTab}
+                  className="mr-8"
+                >
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Open in new tab
+                </Button>
+              </DialogHeader>
+              <iframe 
+                src="/Georgina_Kimani_CV.pdf" 
+                className="w-full h-full rounded-b-lg"
+                title="Resume Preview"
+              />
+            </DialogContent>
+          </Dialog>
           
           
           <Button 
@@ -76,18 +105,38 @@ const Header = ({ onNavigate }: HeaderProps) => {
               <SocialLinks variant="footer" />
             </div>
             <div className="flex flex-col gap-2">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={() => {
-                  handleViewResume();
-                  setMenuOpen(false);
-                }}
-                className="group w-full justify-start"
-              >
-                <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-                Resume
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={() => setMenuOpen(false)}
+                    className="group w-full justify-start"
+                  >
+                    <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                    Resume
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0">
+                  <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
+                    <DialogTitle>Resume</DialogTitle>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      onClick={handleOpenNewTab}
+                      className="mr-8"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Open in new tab
+                    </Button>
+                  </DialogHeader>
+                  <iframe 
+                    src="/Georgina_Kimani_CV.pdf" 
+                    className="w-full h-full rounded-b-lg"
+                    title="Resume Preview"
+                  />
+                </DialogContent>
+              </Dialog>
               <Button 
                 variant="outline" 
                 size="sm" 
