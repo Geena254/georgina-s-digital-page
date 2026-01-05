@@ -74,7 +74,7 @@ const projects = [
   {
     title: "Shanga Tatu",
     description:
-      "A portfolio website showcasing creative works with an elegant and modern design aesthetic.",
+      "A dynamic DJ portfolio website elevating the electronic music scene with cutting-edge house and techno beats from Kenya to the world. Features event bookings, mixes, and artistry showcases.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     role: "Frontend Developer",
     year: "2024",
