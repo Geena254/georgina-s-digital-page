@@ -19,20 +19,17 @@ const allSkills = [
   // Frontend
   { name: "Next.js", category: "Frontend" },
   { name: "Vue.js", category: "Frontend" },
-  { name: "React", category: "Frontend" },
   { name: "React Native", category: "Frontend" },
 
   // Backend
   { name: "Express.js", category: "Backend" },
   { name: "Django DRF", category: "Backend" },
-  { name: "Node.js", category: "Backend" },
   { name: "Flask", category: "Backend" },
   { name: "GraphQL", category: "Backend" },
   { name: "FastAPI", category: "Backend" },
 
   // Languages
   { name: "JavaScript", category: "Languages" },
-  { name: "Python", category: "Languages" },
   { name: "HTML5", category: "Languages" },
   { name: "CSS3", category: "Languages" },
   { name: "C", category: "Languages" },
@@ -40,7 +37,6 @@ const allSkills = [
   // Databases
   { name: "MongoDB", category: "Databases" },
   { name: "MySQL", category: "Databases" },
-  { name: "PostgreSQL", category: "Databases" },
   { name: "Redis", category: "Databases" },
   { name: "Firebase", category: "Databases" },
   { name: "Supabase", category: "Databases" },
