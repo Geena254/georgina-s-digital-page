@@ -9,6 +9,7 @@ import amaniAssistImg from "@/assets/projects/amani-assist.webp";
 import afyaSokoImg from "@/assets/projects/afyasoko.webp";
 import bloombodyImg from "@/assets/projects/bloombody.webp";
 import shangaTatuImg from "@/assets/projects/shangatatu.webp";
+import safePulseImg from "@/assets/projects/safepulse.webp";
 
 const projects = [
   {
@@ -19,7 +20,7 @@ const projects = [
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    thumbnail: safePulseImg,
   },
   {
     title: "AfyaSoko Technologies Ltd",
