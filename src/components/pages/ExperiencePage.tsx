@@ -81,22 +81,6 @@ const experiences: Experience[] = [
   {
     id: 4,
     title: "Fullstack Developer",
-    company: "M-TREAT Platform",
-    location: "Nairobi, Kenya",
-    period: "Jan 2025 - April 2025",
-    description:
-      "Developed and maintained a telemedicine platform connecting patients with healthcare providers for virtual consultations and medical services.",
-    highlights: [
-      "Built RESTful APIs serving 100k+ daily requests",
-      "Developed mobile-responsive patient dashboards",
-      "Integrated M-Pesa and card payment systems",
-    ],
-    icon: Stethoscope,
-    iconBg: "bg-emerald-500/20 text-emerald-400",
-  },
-  {
-    id: 5,
-    title: "Fullstack Developer",
     company: "Gebra Enterprises",
     location: "Nairobi, Kenya",
     period: "2024 - Present",
@@ -109,6 +93,22 @@ const experiences: Experience[] = [
     ],
     icon: Code,
     iconBg: "bg-amber-500/20 text-amber-400",
+  },
+  {
+    id: 5,
+    title: "Fullstack Developer",
+    company: "M-TREAT Platform",
+    location: "Nairobi, Kenya",
+    period: "Jan 2025 - April 2025",
+    description:
+      "Developed and maintained a telemedicine platform connecting patients with healthcare providers for virtual consultations and medical services.",
+    highlights: [
+      "Built RESTful APIs serving 100k+ daily requests",
+      "Developed mobile-responsive patient dashboards",
+      "Integrated M-Pesa and card payment systems",
+    ],
+    icon: Stethoscope,
+    iconBg: "bg-emerald-500/20 text-emerald-400",
   },
 ];
 
