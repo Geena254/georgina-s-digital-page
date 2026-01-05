@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Menu, X, Eye, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
@@ -21,6 +21,17 @@ const Header = ({ onNavigate }: HeaderProps) => {
   const handleOpenNewTab = () => {
     window.open('/Georgina_Kimani_CV.pdf', '_blank');
   };
+
+  // Escape key to exit fullscreen
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isFullscreen]);
 
   return (
     <div className="mb-8 opacity-0 animate-fade-in-up">
@@ -50,7 +61,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
               </Button>
             </DialogTrigger>
             <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
-              <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
+              <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between">
                 <DialogTitle>Resume</DialogTitle>
                 <div className="flex items-center gap-2 mr-8">
                   <Button 
@@ -127,7 +138,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                   </Button>
                 </DialogTrigger>
                 <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
-                  <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
+                  <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between">
                     <DialogTitle>Resume</DialogTitle>
                     <div className="flex items-center gap-2 mr-8">
                       <Button 
