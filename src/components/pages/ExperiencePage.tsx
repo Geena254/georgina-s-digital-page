@@ -181,8 +181,11 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
         <div className="max-w-4xl mx-auto">
           {/* Page Title */}
           <div className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-foreground mb-4">Experience</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl">
+            <span className="text-primary text-sm font-medium tracking-wider uppercase mb-2 block">Career Journey</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
+              Work <span className="text-primary">Experience</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
               My professional journey as a developer, building innovative solutions and growing with each project.
             </p>
           </div>
