@@ -38,7 +38,7 @@ const projects = [
     tags: ["React", "TypeScript", "TensorFlow.js", "Node.js", "MongoDB"],
     role: "Fullstack Developer",
     year: "2025",
-    liveUrl: "https://bloombody.app",
+    liveUrl: "https://bloombody.vercel.app",
     thumbnail: bloombodyImg,
   },
   {
@@ -63,11 +63,12 @@ const projects = [
   },
   {
     title: "Amani Assist",
-    description: "A modern business website for Amani Assist that showcases their professional support services with a focus on discreet, reliable, and professional assistance.",
+    description:
+      "A modern business website for Amani Assist that showcases their professional support services with a focus on discreet, reliable, and professional assistance.",
     tags: ["Next.js", "TypeScript", "n8n"],
     role: "Fullstack Developer",
     year: "Feb 2025",
-    liveUrl: "https://amaniassist.com",
+    liveUrl: "https://amaniassist.vercel.app",
     githubUrl: "https://github.com/Geena254/amaniassist",
     thumbnail: amaniAssistImg,
   },
@@ -75,10 +76,10 @@ const projects = [
     title: "Shanga Tatu",
     description:
       "A dynamic DJ portfolio website elevating the electronic music scene with cutting-edge house and techno beats from Kenya to the world. Features event bookings, mixes, and artistry showcases.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "n8n"],
     role: "Frontend Developer",
-    year: "2024",
-    liveUrl: "https://shangatatu.com",
+    year: "August 2025",
+    liveUrl: "https://shangatatu.vercel.app",
     thumbnail: shangaTatuImg,
   },
   {
@@ -88,7 +89,7 @@ const projects = [
     tags: ["Vue.js", "Python", "Docker", "Kubernetes"],
     role: "Lead Frontend Developer",
     year: "Jan 2025 - April 2025",
-    liveUrl: "https://mtreat.health",
+    liveUrl: "https://mtreat.com",
     thumbnail: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
   },
   {
@@ -97,7 +98,7 @@ const projects = [
       "Personal finance management app helping users track expenses, set budgets, and achieve financial goals.",
     tags: ["React Native", "GraphQL", "Firebase"],
     role: "Fullstack Developer",
-    year: "2022",
+    year: "2023",
     liveUrl: "https://fintrack.app",
     thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
   },
