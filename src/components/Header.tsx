@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X, Eye, ExternalLink } from "lucide-react";
+import { ArrowRight, Menu, X, Eye, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 import {
@@ -16,7 +16,7 @@ interface HeaderProps {
 
 const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const handleOpenNewTab = () => {
     window.open('/Georgina_Kimani_CV.pdf', '_blank');
@@ -49,18 +49,27 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 Resume
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0">
+            <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
               <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
                 <DialogTitle>Resume</DialogTitle>
-                <Button 
-                  variant="ghost" 
-                  size="sm" 
-                  onClick={handleOpenNewTab}
-                  className="mr-8"
-                >
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Open in new tab
-                </Button>
+                <div className="flex items-center gap-2 mr-8">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={() => setIsFullscreen(!isFullscreen)}
+                  >
+                    {isFullscreen ? <Minimize2 className="w-4 h-4 mr-2" /> : <Maximize2 className="w-4 h-4 mr-2" />}
+                    {isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    onClick={handleOpenNewTab}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Open in new tab
+                  </Button>
+                </div>
               </DialogHeader>
               <iframe 
                 src="/Georgina_Kimani_CV.pdf" 
@@ -117,18 +126,27 @@ const Header = ({ onNavigate }: HeaderProps) => {
                     Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl w-[95vw] h-[90vh] p-0">
+                <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
                   <DialogHeader className="p-4 pb-0 flex flex-row items-center justify-between">
                     <DialogTitle>Resume</DialogTitle>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      onClick={handleOpenNewTab}
-                      className="mr-8"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Open in new tab
-                    </Button>
+                    <div className="flex items-center gap-2 mr-8">
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={() => setIsFullscreen(!isFullscreen)}
+                      >
+                        {isFullscreen ? <Minimize2 className="w-4 h-4 mr-2" /> : <Maximize2 className="w-4 h-4 mr-2" />}
+                        {isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+                      </Button>
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={handleOpenNewTab}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Open in new tab
+                      </Button>
+                    </div>
                   </DialogHeader>
                   <iframe 
                     src="/Georgina_Kimani_CV.pdf" 
