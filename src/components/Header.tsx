@@ -39,7 +39,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
             variant="ghost" 
             size="sm" 
             onClick={handleDownloadResume}
-            className="group"
+            className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
           >
             <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
             Resume
@@ -49,7 +49,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
             variant="outline" 
             size="sm" 
             onClick={() => onNavigate?.("contact")}
-            className="group"
+            className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
           >
             Contact Me
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

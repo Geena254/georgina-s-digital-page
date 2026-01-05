@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
 import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
+import appyDropImg from "@/assets/projects/appydrop.webp";
+import amaniAssistImg from "@/assets/projects/amani-assist.webp";
+import afyaSokoImg from "@/assets/projects/afyasoko.webp";
+import shangaTatuImg from "@/assets/logos/shanga-tatu.jpg";
 
 const projects = [
   {
@@ -14,7 +18,7 @@ const projects = [
     role: "Co-Founder & Lead Frontend Engineer",
     year: "May 2025 - Present",
     liveUrl: "https://afyasoko.com",
-    thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
+    thumbnail: afyaSokoImg,
   },
   {
     title: "SafePulse AI",
@@ -25,6 +29,16 @@ const projects = [
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  },
+  {
+    title: "Bloombody",
+    description:
+      "An AI-powered body composition tracker that helps users monitor their fitness journey with intelligent analysis and personalized insights.",
+    tags: ["React", "TypeScript", "TensorFlow.js", "Node.js", "MongoDB"],
+    role: "Fullstack Developer",
+    year: "2025",
+    liveUrl: "https://bloombody.app",
+    thumbnail: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
   },
   {
     title: "Ardo Thriving Hub",
@@ -39,22 +53,32 @@ const projects = [
   {
     title: "AppyDrop Delivery",
     description:
-      "A women-led, dynamic, and comprehensive space designed to empower both individuals and businesses to thrive.",
+      "A premium drinks delivery platform offering fast 15-45 minute delivery of craft beers, fine wines, cocktails, spirits, and non-alcoholic options.",
     tags: ["Next.js", "TypeScript", "Python", "Django Rest Framework", "Supabase"],
     role: "Fullstack Developer",
     year: "May 2025",
     liveUrl: "https://appydrop.netlify.app",
-    thumbnail: ardoThrivingHubImg,
+    thumbnail: appyDropImg,
   },
   {
     title: "Amani Assist",
-    description: "A modern business website for Amani Assist that showcases their professional services.",
+    description: "A modern business website for Amani Assist that showcases their professional support services with a focus on discreet, reliable, and professional assistance.",
     tags: ["Next.js", "TypeScript", "n8n"],
     role: "Fullstack Developer",
     year: "Feb 2025",
     liveUrl: "https://amaniassist.com",
     githubUrl: "https://github.com/Geena254/amaniassist",
-    thumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    thumbnail: amaniAssistImg,
+  },
+  {
+    title: "Shanga Tatu",
+    description:
+      "A portfolio website showcasing creative works with an elegant and modern design aesthetic.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    role: "Frontend Developer",
+    year: "2024",
+    liveUrl: "https://shangatatu.com",
+    thumbnail: shangaTatuImg,
   },
   {
     title: "M-TREAT Platform",
