@@ -11,11 +11,9 @@ const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleDownloadResume = () => {
-    // Create a link to download the resume
-    // For now, this will trigger a download - you can replace with actual resume URL
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
-    link.download = 'Georgina_Resume.pdf';
+    link.href = '/Georgina_Kimani_CV.pdf';
+    link.download = 'Georgina_Kimani_CV.pdf';
     link.click();
   };
 
