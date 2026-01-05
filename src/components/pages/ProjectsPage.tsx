@@ -37,6 +37,16 @@ const projects = [
     thumbnail: ardoThrivingHubImg,
   },
   {
+    title: "AppyDrop Delivery",
+    description:
+      "A women-led, dynamic, and comprehensive space designed to empower both individuals and businesses to thrive.",
+    tags: ["Next.js", "TypeScript", "Python", "Django Rest Framework", "Supabase"],
+    role: "Fullstack Developer",
+    year: "May 2025",
+    liveUrl: "https://appydrop.netlify.app",
+    thumbnail: ardoThrivingHubImg,
+  },
+  {
     title: "Amani Assist",
     description: "A modern business website for Amani Assist that showcases their professional services.",
     tags: ["Next.js", "TypeScript", "n8n"],
