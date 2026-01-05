@@ -12,16 +12,6 @@ import shangaTatuImg from "@/assets/projects/shangatatu.webp";
 
 const projects = [
   {
-    title: "AfyaSoko Technologies Ltd",
-    description:
-      "A platform connecting patients to healthcare providers & wellness vendors. Features an e-commerce platform and live consultation sessions.",
-    tags: ["Next.js", "Node.js", "PostgreSQL", "AWS", "MongoDB"],
-    role: "Co-Founder & Lead Frontend Engineer",
-    year: "May 2025 - Present",
-    liveUrl: "https://afyasoko.com",
-    thumbnail: afyaSokoImg,
-  },
-  {
     title: "SafePulse AI",
     description:
       "An offline alert system designed to alert close friends & family members as well as community helplines/toll lines.",
@@ -30,6 +20,16 @@ const projects = [
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
     thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+  },
+  {
+    title: "AfyaSoko Technologies Ltd",
+    description:
+      "A platform connecting patients to healthcare providers & wellness vendors. Features an e-commerce platform and live consultation sessions.",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "AWS", "MongoDB"],
+    role: "Co-Founder & Lead Frontend Engineer",
+    year: "May 2025 - Present",
+    liveUrl: "https://afyasoko.com",
+    thumbnail: afyaSokoImg,
   },
   {
     title: "Bloombody",
