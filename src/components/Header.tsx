@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Menu, X, Download } from "lucide-react";
+import { ArrowRight, Menu, X, Download, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
 
@@ -15,6 +15,10 @@ const Header = ({ onNavigate }: HeaderProps) => {
     link.href = '/Georgina_Kimani_CV.pdf';
     link.download = 'Georgina_Kimani_CV.pdf';
     link.click();
+  };
+
+  const handleViewResume = () => {
+    window.open('/Georgina_Kimani_CV.pdf', '_blank');
   };
 
   return (
@@ -36,11 +40,21 @@ const Header = ({ onNavigate }: HeaderProps) => {
           <Button 
             variant="ghost" 
             size="sm" 
+            onClick={handleViewResume}
+            className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
+          >
+            <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+            View Resume
+          </Button>
+          
+          <Button 
+            variant="ghost" 
+            size="sm" 
             onClick={handleDownloadResume}
             className="group transition-all duration-300 hover:shadow-[0_0_15px_hsl(var(--primary)/0.4)]"
           >
             <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
-            Resume
+            Download
           </Button>
           
           <Button 
@@ -77,6 +91,18 @@ const Header = ({ onNavigate }: HeaderProps) => {
               <SocialLinks variant="footer" />
             </div>
             <div className="flex flex-col gap-2">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                onClick={() => {
+                  handleViewResume();
+                  setMenuOpen(false);
+                }}
+                className="group w-full justify-start"
+              >
+                <Eye className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
+                View Resume
+              </Button>
               <Button 
                 variant="ghost" 
                 size="sm" 
