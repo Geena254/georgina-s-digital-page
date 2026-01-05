@@ -1,11 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
 import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
 
@@ -14,8 +10,8 @@ const projects = [
     title: "AfyaSoko Technologies Ltd",
     description:
       "A platform connecting patients to healthcare providers & wellness vendors. Features an e-commerce platform and live consultation sessions.",
-    tags: ["React", "Node.js", "PostgreSQL", "AWS"],
-    role: "Co-Founder & Lead Frontend Developer",
+    tags: ["Next.js", "Node.js", "PostgreSQL", "AWS", "MongoDB"],
+    role: "Co-Founder & Lead Frontend Engineer",
     year: "May 2025 - Present",
     liveUrl: "https://afyasoko.com",
     thumbnail: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop",
@@ -96,7 +92,7 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return;
-      
+
       if (e.key === "ArrowRight") {
         goToNext();
       } else if (e.key === "ArrowLeft") {
@@ -228,9 +224,11 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
 
             {selectedProject && (
               <img
-                src={typeof selectedProject.thumbnail === 'string' && selectedProject.thumbnail.includes('unsplash') 
-                  ? selectedProject.thumbnail.replace('w=600&h=400', 'w=1200&h=800') 
-                  : selectedProject.thumbnail}
+                src={
+                  typeof selectedProject.thumbnail === "string" && selectedProject.thumbnail.includes("unsplash")
+                    ? selectedProject.thumbnail.replace("w=600&h=400", "w=1200&h=800")
+                    : selectedProject.thumbnail
+                }
                 alt={`${selectedProject.title} - full size`}
                 className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
               />
