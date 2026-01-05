@@ -12,6 +12,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ExperiencePageProps {
   onNavigate: (page: string) => void;
@@ -112,6 +119,57 @@ const experiences: Experience[] = [
   },
 ];
 
+const ExperienceCard = ({ exp }: { exp: Experience }) => (
+  <div className="group bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 h-full">
+    {/* Header */}
+    <div className="flex flex-col gap-4 mb-4">
+      <div className="flex items-start gap-4">
+        {/* Company Icon */}
+        <div
+          className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${exp.iconBg}`}
+        >
+          <exp.icon className="w-6 h-6" />
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold text-foreground mb-1 transition-colors duration-300 group-hover:text-primary">
+            {exp.title}
+          </h3>
+          <div className="flex items-center gap-2 text-primary">
+            <Building className="w-4 h-4" />
+            <span className="font-medium">{exp.company}</span>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-1 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <Calendar className="w-4 h-4" />
+          <span>{exp.period}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <MapPin className="w-4 h-4" />
+          <span>{exp.location}</span>
+        </div>
+      </div>
+    </div>
+
+    {/* Description */}
+    <p className="text-muted-foreground mb-4 text-sm">{exp.description}</p>
+
+    {/* Highlights */}
+    <ul className="space-y-2">
+      {exp.highlights.map((highlight, i) => (
+        <li
+          key={i}
+          className="flex items-start gap-2 text-sm text-foreground/80 transition-all duration-200 hover:text-foreground hover:translate-x-1"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0 transition-transform duration-200 group-hover:scale-125" />
+          {highlight}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
 const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
   return (
     <div className="min-h-screen flex flex-col px-4 sm:px-8 md:px-16 lg:px-24 py-8 bg-transparent">
@@ -129,21 +187,38 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
             </p>
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
+          {/* Mobile Carousel View */}
+          <div className="md:hidden opacity-0 animate-fade-in-up animation-delay-200">
+            <Carousel className="w-full">
+              <CarouselContent className="-ml-2">
+                {experiences.map((exp) => (
+                  <CarouselItem key={exp.id} className="pl-2 basis-[85%]">
+                    <ExperienceCard exp={exp} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center gap-2 mt-4">
+                <CarouselPrevious className="static translate-y-0" />
+                <CarouselNext className="static translate-y-0" />
+              </div>
+            </Carousel>
+          </div>
+
+          {/* Desktop Timeline View */}
+          <div className="hidden md:block relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-border" />
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-border" />
 
             {/* Experience Items */}
             <div className="space-y-12">
               {experiences.map((exp, index) => (
                 <div
                   key={exp.id}
-                  className="relative pl-8 md:pl-20 opacity-0 animate-fade-in-up"
+                  className="relative pl-20 opacity-0 animate-fade-in-up"
                   style={{ animationDelay: `${200 + index * 100}ms`, animationFillMode: "forwards" }}
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-0 md:left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
+                  <div className="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background shadow-lg" />
 
                   {/* Content Card */}
                   <div className="group bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 hover:scale-[1.02]">
