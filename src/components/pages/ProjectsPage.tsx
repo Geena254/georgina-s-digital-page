@@ -3,6 +3,13 @@ import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight } from "luci
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import Header from "@/components/Header";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
 import appyDropImg from "@/assets/projects/appydrop.webp";
 import amaniAssistImg from "@/assets/projects/amani-assist.webp";
@@ -109,6 +116,93 @@ interface ProjectsPageProps {
   onNavigate?: (page: string) => void;
 }
 
+interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  role: string;
+  year: string;
+  liveUrl: string;
+  githubUrl?: string;
+  thumbnail: string;
+}
+
+const ProjectCard = ({
+  project,
+  index,
+  onImageClick,
+}: {
+  project: Project;
+  index: number;
+  onImageClick: (index: number) => void;
+}) => (
+  <article className="group certification-card h-full flex flex-col">
+    {/* Thumbnail */}
+    <div className="flex-shrink-0">
+      <button
+        onClick={() => onImageClick(index)}
+        className="relative overflow-hidden rounded-lg aspect-video bg-secondary w-full cursor-zoom-in group/thumb"
+      >
+        <img
+          src={project.thumbnail}
+          alt={`${project.title} screenshot`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-background/60 opacity-0 group-hover/thumb:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <ZoomIn className="w-8 h-8 text-foreground" />
+        </div>
+      </button>
+      <span className="text-xs font-mono text-muted-foreground mt-2 block">{project.year}</span>
+    </div>
+
+    {/* Content */}
+    <div className="flex-1 space-y-3 mt-4">
+      <div className="flex flex-col gap-1">
+        <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+          {project.title}
+        </h3>
+        <span className="text-sm text-primary font-medium">{project.role}</span>
+      </div>
+
+      <p className="text-muted-foreground leading-relaxed text-sm line-clamp-3">{project.description}</p>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-1.5">
+        {project.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-sm">
+            {tag}
+          </span>
+        ))}
+        {project.tags.length > 3 && (
+          <span className="text-xs px-2 py-0.5 bg-secondary text-secondary-foreground rounded-sm">
+            +{project.tags.length - 3}
+          </span>
+        )}
+      </div>
+
+      {/* Actions */}
+      <div className="flex gap-2 pt-1">
+        {project.githubUrl && (
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+              <Github className="w-4 h-4 mr-1" />
+              Code
+            </a>
+          </Button>
+        )}
+        {project.liveUrl && (
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="w-4 h-4 mr-1" />
+              Live
+            </a>
+          </Button>
+        )}
+      </div>
+    </div>
+  </article>
+);
+
 const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -142,19 +236,36 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
   }, [selectedIndex, goToNext, goToPrev]);
 
   return (
-    <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
+    <div className="min-h-screen py-8 px-4 sm:px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
       <Header onNavigate={onNavigate} />
 
       <div className="max-w-5xl mx-auto pt-8">
         {/* Section Header */}
-        <div className="mb-16 opacity-0 animate-fade-in-up animation-delay-100">
+        <div className="mb-12 md:mb-16 opacity-0 animate-fade-in-up animation-delay-100">
           <h2 className="section-title">Projects</h2>
           <p className="section-subtitle">Selected works from my portfolio</p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="space-y-8">
+        {/* Mobile Carousel View */}
+        <div className="md:hidden opacity-0 animate-fade-in-up animation-delay-200">
+          <Carousel className="w-full">
+            <CarouselContent className="-ml-2">
+              {projects.map((project, index) => (
+                <CarouselItem key={project.title} className="pl-2 basis-[85%]">
+                  <ProjectCard project={project} index={index} onImageClick={setSelectedIndex} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious className="static translate-y-0" />
+              <CarouselNext className="static translate-y-0" />
+            </div>
+          </Carousel>
+        </div>
+
+        {/* Desktop Grid View */}
+        <div className="hidden md:block space-y-8">
           {projects.map((project, index) => (
             <article
               key={project.title}
