@@ -12,18 +12,9 @@ import bloombodyImg from "@/assets/projects/bloombody.webp";
 import shangaTatuImg from "@/assets/projects/shangatatu.webp";
 import safePulseImg from "@/assets/projects/safepulse.webp";
 import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
+import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
 
 const projects = [
-  {
-    title: "EcoPulse",
-    description:
-      "An environmental tracking platform empowering Kenyans to track environmental impact, report violations, and connect with a community dedicated to conservation for a greener future.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-    role: "Hackathon Project",
-    year: "Dec 2024",
-    liveUrl: "https://eco-vibes-ai-play-1.onrender.com",
-    thumbnail: ecoPulseImg,
-  },
   {
     title: "SafePulse AI",
     description:
@@ -33,6 +24,26 @@ const projects = [
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
     thumbnail: safePulseImg,
+  },
+  {
+    title: "NASA BioExplorer",
+    description:
+      "AI-powered Bio-Agro Resilience Dashboard connecting NASA's bioscience research with Earth Observation data to understand and predict drought and flood resilience in Kenya's crops.",
+    tags: ["React", "TypeScript", "NASA API", "AI/ML", "Data Visualization"],
+    role: "Hackathon Project",
+    year: "2024",
+    liveUrl: "#",
+    thumbnail: nasaBioExplorerImg,
+  },
+  {
+    title: "EcoPulse",
+    description:
+      "An environmental tracking platform empowering Kenyans to track environmental impact, report violations, and connect with a community dedicated to conservation for a greener future.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    role: "Hackathon Project",
+    year: "Dec 2024",
+    liveUrl: "https://eco-vibes-ai-play-1.onrender.com",
+    thumbnail: ecoPulseImg,
   },
   {
     title: "AfyaSoko Technologies Ltd",
