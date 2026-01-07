@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import ardoThrivingHubImg from "@/assets/ardo-thriving-hub.png";
@@ -34,6 +35,7 @@ const projects = [
     year: "Oct 2025",
     liveUrl: "https://astro-bio-vista.lovable.app",
     thumbnail: nasaBioExplorerImg,
+    isHackathon: true,
   },
   {
     title: "EcoPulse",
@@ -44,6 +46,7 @@ const projects = [
     year: "Nov 2024",
     liveUrl: "https://eco-vibes-ai-play-1.onrender.com",
     thumbnail: ecoPulseImg,
+    isHackathon: true,
   },
   {
     title: "AfyaSoko Technologies Ltd",
@@ -141,6 +144,7 @@ interface Project {
   liveUrl: string;
   githubUrl?: string;
   thumbnail: string;
+  isHackathon?: boolean;
 }
 
 const ProjectCard = ({
@@ -174,9 +178,17 @@ const ProjectCard = ({
     {/* Content */}
     <div className="flex-1 space-y-3 mt-4">
       <div className="flex flex-col gap-1">
-        <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-          {project.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          {project.isHackathon && (
+            <Badge variant="secondary" className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-[10px] px-1.5 py-0">
+              <Trophy className="w-3 h-3 mr-1" />
+              Hackathon
+            </Badge>
+          )}
+        </div>
         <span className="text-sm text-primary font-medium">{project.role}</span>
       </div>
 
@@ -324,9 +336,17 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                 {/* Content */}
                 <div className="flex-1 space-y-4">
                   <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
-                    <h3 className="font-serif text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-serif text-2xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      {project.isHackathon && (
+                        <Badge variant="secondary" className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-xs px-2 py-0.5">
+                          <Trophy className="w-3 h-3 mr-1" />
+                          Hackathon
+                        </Badge>
+                      )}
+                    </div>
                     <span className="text-sm text-primary font-medium">{project.role}</span>
                   </div>
 
