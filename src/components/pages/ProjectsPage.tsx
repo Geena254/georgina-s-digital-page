@@ -32,7 +32,7 @@ const projects = [
     tags: ["React", "TypeScript", "NASA API", "AI/ML", "Data Visualization"],
     role: "Hackathon Project",
     year: "2024",
-    liveUrl: "#",
+    liveUrl: "https://astro-bio-vista.lovable.app",
     thumbnail: nasaBioExplorerImg,
   },
   {
@@ -268,7 +268,7 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
 
         {/* Mobile Carousel View */}
         <div className="md:hidden opacity-0 animate-fade-in-up animation-delay-200">
-          <Carousel 
+          <Carousel
             className="w-full"
             opts={{
               align: "start",
@@ -279,8 +279,8 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
           >
             <CarouselContent className="-ml-2 transition-transform duration-300 ease-out">
               {projects.map((project, index) => (
-                <CarouselItem 
-                  key={project.title} 
+                <CarouselItem
+                  key={project.title}
                   className="pl-2 basis-[85%] transition-all duration-300 ease-out active:scale-[0.98]"
                 >
                   <ProjectCard project={project} index={index} onImageClick={setSelectedIndex} />
