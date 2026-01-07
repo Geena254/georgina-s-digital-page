@@ -11,8 +11,19 @@ import afyaSokoImg from "@/assets/projects/afyasoko.webp";
 import bloombodyImg from "@/assets/projects/bloombody.webp";
 import shangaTatuImg from "@/assets/projects/shangatatu.webp";
 import safePulseImg from "@/assets/projects/safepulse.webp";
+import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
 
 const projects = [
+  {
+    title: "EcoPulse",
+    description:
+      "An environmental tracking platform empowering Kenyans to track environmental impact, report violations, and connect with a community dedicated to conservation for a greener future.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+    role: "Hackathon Project",
+    year: "Dec 2024",
+    liveUrl: "https://eco-vibes-ai-play-1.onrender.com",
+    thumbnail: ecoPulseImg,
+  },
   {
     title: "SafePulse AI",
     description:
