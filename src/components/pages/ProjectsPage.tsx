@@ -20,7 +20,7 @@ const projects = [
     title: "SafePulse AI",
     description:
       "An offline alert system designed to alert close friends & family members as well as community helplines/toll lines.",
-    tags: ["Next.js", "TypeScript", "MongoDB", "Python", "Lisk"],
+    tags: ["Next.js", "TypeScript", "FastAPI", "Python", "Lisk", "n8n"],
     role: "Founder & Software Engineer",
     year: "Sept 2025 - Present",
     liveUrl: "https://safepulseai.vercel.app",
@@ -183,7 +183,10 @@ const ProjectCard = ({
             {project.title}
           </h3>
           {project.isHackathon && (
-            <Badge variant="secondary" className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-[10px] px-1.5 py-0">
+            <Badge
+              variant="secondary"
+              className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-[10px] px-1.5 py-0"
+            >
               <Trophy className="w-3 h-3 mr-1" />
               Hackathon
             </Badge>
@@ -341,7 +344,10 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                         {project.title}
                       </h3>
                       {project.isHackathon && (
-                        <Badge variant="secondary" className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-xs px-2 py-0.5">
+                        <Badge
+                          variant="secondary"
+                          className="bg-amber-500/20 text-amber-600 dark:text-amber-400 border-amber-500/30 text-xs px-2 py-0.5"
+                        >
                           <Trophy className="w-3 h-3 mr-1" />
                           Hackathon
                         </Badge>
