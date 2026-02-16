@@ -106,7 +106,7 @@ const projects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "n8n"],
     role: "Frontend Developer",
     year: "August 2025",
-    liveUrl: "https://shangatatu.vercel.app",
+    liveUrl: "https://shangatatu.net",
     thumbnail: shangaTatuImg,
   },
   {
