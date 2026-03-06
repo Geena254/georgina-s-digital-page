@@ -9,6 +9,7 @@ import {
   Stethoscope,
   Code,
   LucideIcon,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -34,6 +35,7 @@ interface Experience {
   highlights: string[];
   icon: LucideIcon;
   iconBg: string;
+  websiteUrl?: string;
 }
 
 const experiences: Experience[] = [
@@ -52,6 +54,7 @@ const experiences: Experience[] = [
     ],
     icon: Code,
     iconBg: "bg-teal-500/20 text-teal-400",
+    websiteUrl: "https://ginilog.com",
   },
   {
     id: 1,
