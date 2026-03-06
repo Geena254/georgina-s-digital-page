@@ -38,6 +38,22 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    id: 0,
+    title: "CTO & Co-Founder",
+    company: "Ginilog",
+    location: "Nairobi, Kenya",
+    period: "2025 - Present",
+    description:
+      "Co-founded Ginilog, driving technical strategy and product development as Chief Technology Officer.",
+    highlights: [
+      "Leading technical architecture and engineering team",
+      "Defining product roadmap and technology stack",
+      "Building scalable infrastructure and systems",
+    ],
+    icon: Code,
+    iconBg: "bg-teal-500/20 text-teal-400",
+  },
+  {
     id: 1,
     title: "Founder & Software Engineer",
     company: "SafePulse AI",
