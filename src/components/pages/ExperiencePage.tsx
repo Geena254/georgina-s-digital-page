@@ -189,14 +189,12 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
 
     {/* Website Link */}
     {exp.websiteUrl && (
-      <div className="mt-auto">
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
-          <a href={exp.websiteUrl} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="w-4 h-4 mr-1" />
-            Visit Website
-          </a>
-        </Button>
-      </div>
+      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+        <a href={exp.websiteUrl} target="_blank" rel="noopener noreferrer">
+          <ExternalLink className="w-4 h-4 mr-1" />
+          Visit Website
+        </a>
+      </Button>
     )}
   </div>
 );
