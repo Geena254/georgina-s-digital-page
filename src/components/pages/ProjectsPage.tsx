@@ -17,6 +17,16 @@ import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
 
 const projects = [
   {
+    title: "Hub Hardware",
+    description:
+      "A modern hardware store platform offering a seamless shopping experience for tools, equipment, and building materials.",
+    tags: ["React", "TypeScript", "Tailwind CSS"],
+    role: "Fullstack Developer",
+    year: "2025",
+    liveUrl: "https://hubhardware.vercel.app",
+    thumbnail: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop",
+  },
+  {
     title: "SafePulse AI",
     description:
       "An offline alert system designed to alert close friends & family members as well as community helplines/toll lines.",
@@ -126,7 +136,7 @@ const projects = [
     tags: ["React Native", "GraphQL", "Firebase"],
     role: "Fullstack Developer",
     year: "2023",
-    liveUrl: "https://fintrack.app",
+    liveUrl: "https://fin-mobile.vercel.app",
     thumbnail: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
   },
 ];
