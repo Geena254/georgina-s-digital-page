@@ -198,7 +198,6 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
     )}
   </div>
 );
-);
 
 const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
   return (
@@ -315,7 +314,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
 
                     {/* Website Link */}
                     {exp.websiteUrl && (
-                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2 mt-2" asChild>
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
                         <a href={exp.websiteUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="w-4 h-4 mr-1" />
                           Visit Website
