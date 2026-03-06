@@ -9,6 +9,7 @@ import {
   Stethoscope,
   Code,
   LucideIcon,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -34,6 +35,7 @@ interface Experience {
   highlights: string[];
   icon: LucideIcon;
   iconBg: string;
+  websiteUrl?: string;
 }
 
 const experiences: Experience[] = [
@@ -52,6 +54,7 @@ const experiences: Experience[] = [
     ],
     icon: Code,
     iconBg: "bg-teal-500/20 text-teal-400",
+    websiteUrl: "https://ginilog.com",
   },
   {
     id: 1,
@@ -136,7 +139,7 @@ const experiences: Experience[] = [
 ];
 
 const ExperienceCard = ({ exp }: { exp: Experience }) => (
-  <div className="group bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 h-full">
+  <div className="group bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 h-full flex flex-col">
     {/* Header */}
     <div className="flex flex-col gap-4 mb-4">
       <div className="flex items-start gap-4">
@@ -172,7 +175,7 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
     <p className="text-muted-foreground mb-4 text-sm">{exp.description}</p>
 
     {/* Highlights */}
-    <ul className="space-y-2">
+    <ul className="space-y-2 mb-4">
       {exp.highlights.map((highlight, i) => (
         <li
           key={i}
@@ -183,6 +186,16 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
         </li>
       ))}
     </ul>
+
+    {/* Website Link */}
+    {exp.websiteUrl && (
+      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+        <a href={exp.websiteUrl} target="_blank" rel="noopener noreferrer">
+          <ExternalLink className="w-4 h-4 mr-1" />
+          Visit Website
+        </a>
+      </Button>
+    )}
   </div>
 );
 
@@ -287,7 +300,7 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                     <p className="text-muted-foreground mb-4">{exp.description}</p>
 
                     {/* Highlights */}
-                    <ul className="space-y-2">
+                    <ul className="space-y-2 mb-4">
                       {exp.highlights.map((highlight, i) => (
                         <li
                           key={i}
@@ -298,6 +311,16 @@ const ExperiencePage = ({ onNavigate }: ExperiencePageProps) => {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Website Link */}
+                    {exp.websiteUrl && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+                        <a href={exp.websiteUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="w-4 h-4 mr-1" />
+                          Visit Website
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
               ))}

@@ -11,9 +11,10 @@ import amaniAssistImg from "@/assets/projects/amani-assist.webp";
 import afyaSokoImg from "@/assets/projects/afyasoko.webp";
 import bloombodyImg from "@/assets/projects/bloombody.webp";
 import shangaTatuImg from "@/assets/projects/shangatatu.webp";
-import safePulseImg from "@/assets/projects/safepulse.webp";
+import safePulseImg from "@/assets/projects/safepulse-hero.png";
 import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
 import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
+import hardwareHubImg from "@/assets/projects/hardware-hub.jpg";
 
 const projects = [
   {
@@ -24,7 +25,7 @@ const projects = [
     role: "Fullstack Developer",
     year: "2025",
     liveUrl: "https://hubhardware.vercel.app",
-    thumbnail: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop",
+    thumbnail: hardwareHubImg,
   },
   {
     title: "SafePulse AI",
