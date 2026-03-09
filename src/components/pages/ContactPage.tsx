@@ -104,42 +104,45 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
 
           {/* Contact Form */}
           <div className="opacity-0 animate-fade-in-up animation-delay-200">
-            <form className="space-y-6 certification-card">
+            <form onSubmit={handleSubmit} className="space-y-6 certification-card">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-foreground">
-                  Your Name
+                  Your Name *
                 </label>
-                <Input id="name" placeholder="John Doe" className="bg-background border-border" />
+                <Input id="name" placeholder="John Doe" className="bg-background border-border" value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} required />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">
-                  Email Address
+                  Email Address *
                 </label>
-                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" />
+                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} required />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium text-foreground">
                   Subject
                 </label>
-                <Input id="subject" placeholder="Project inquiry" className="bg-background border-border" />
+                <Input id="subject" placeholder="Project inquiry" className="bg-background border-border" value={formData.subject} onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))} />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-foreground">
-                  Message
+                  Message *
                 </label>
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
                   rows={5}
                   className="bg-background border-border resize-none"
+                  value={formData.message}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                  required
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full">
-                Send Message
+              <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Send Message"}
               </Button>
             </form>
           </div>
