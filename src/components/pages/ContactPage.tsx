@@ -64,12 +64,14 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
     setErrors({});
     setIsSubmitting(true);
     try {
-      await fetch(N8N_WEBHOOK_URL, {
+      const response = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(result.data),
       });
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
+      }
       setIsSuccess(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setIsSuccess(false), 5000);
