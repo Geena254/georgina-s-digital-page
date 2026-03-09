@@ -1,16 +1,46 @@
-import { Mail, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Mail, MapPin, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import SocialLinks from "@/components/SocialLinks";
 import { CONTACT_INFO } from "@/lib/constants";
 import Header from "@/components/Header";
+import { useToast } from "@/hooks/use-toast";
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
 }
 
+const N8N_WEBHOOK_URL = "https://nairobiaicommunity.app.n8n.cloud/webhook/form-submission";
+
 const ContactPage = ({ onNavigate }: ContactPageProps) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({ title: "Please fill in all required fields", variant: "destructive" });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      toast({ title: "Message sent!", description: "I'll get back to you soon." });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      toast({ title: "Failed to send message", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
@@ -74,42 +104,45 @@ const ContactPage = ({ onNavigate }: ContactPageProps) => {
 
           {/* Contact Form */}
           <div className="opacity-0 animate-fade-in-up animation-delay-200">
-            <form className="space-y-6 certification-card">
+            <form onSubmit={handleSubmit} className="space-y-6 certification-card">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-foreground">
-                  Your Name
+                  Your Name *
                 </label>
-                <Input id="name" placeholder="John Doe" className="bg-background border-border" />
+                <Input id="name" placeholder="John Doe" className="bg-background border-border" value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} required />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium text-foreground">
-                  Email Address
+                  Email Address *
                 </label>
-                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" />
+                <Input id="email" type="email" placeholder="john@example.com" className="bg-background border-border" value={formData.email} onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))} required />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium text-foreground">
                   Subject
                 </label>
-                <Input id="subject" placeholder="Project inquiry" className="bg-background border-border" />
+                <Input id="subject" placeholder="Project inquiry" className="bg-background border-border" value={formData.subject} onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))} />
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-foreground">
-                  Message
+                  Message *
                 </label>
                 <Textarea
                   id="message"
                   placeholder="Tell me about your project..."
                   rows={5}
                   className="bg-background border-border resize-none"
+                  value={formData.message}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                  required
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full">
-                Send Message
+              <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? <><Loader2 className="w-4 h-4 mr-2 animate-spin" /> Sending...</> : "Send Message"}
               </Button>
             </form>
           </div>
