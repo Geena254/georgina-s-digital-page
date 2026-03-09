@@ -1,16 +1,46 @@
-import { Mail, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Mail, MapPin, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import SocialLinks from "@/components/SocialLinks";
 import { CONTACT_INFO } from "@/lib/constants";
 import Header from "@/components/Header";
+import { useToast } from "@/hooks/use-toast";
 
 interface ContactPageProps {
   onNavigate?: (page: string) => void;
 }
 
+const N8N_WEBHOOK_URL = "https://nairobiaicommunity.app.n8n.cloud/webhook/form-submission";
+
 const ContactPage = ({ onNavigate }: ContactPageProps) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({ title: "Please fill in all required fields", variant: "destructive" });
+      return;
+    }
+    setIsSubmitting(true);
+    try {
+      const res = await fetch(N8N_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      toast({ title: "Message sent!", description: "I'll get back to you soon." });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      toast({ title: "Failed to send message", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen py-8 px-8 md:px-16 lg:px-24 bg-transparent">
       {/* Page Header */}
