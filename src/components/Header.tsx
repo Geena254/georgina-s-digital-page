@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, Menu, X, Eye, ExternalLink, Maximize2, Minimize2 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { ArrowRight, Menu, X, Eye, Download, Maximize2, Minimize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SocialLinks from "@/components/SocialLinks";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import ResumePage from "@/components/ResumePage";
 import {
   Dialog,
   DialogContent,
@@ -17,12 +19,12 @@ interface HeaderProps {
 const Header = ({ onNavigate }: HeaderProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const resumeRef = useRef<HTMLDivElement>(null);
 
-  const handleOpenNewTab = () => {
-    window.open('/Georgina_Kimani_CV.pdf', '_blank');
+  const handleDownloadPDF = () => {
+    window.print();
   };
 
-  // Escape key to exit fullscreen
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isFullscreen) {
@@ -32,6 +34,37 @@ const Header = ({ onNavigate }: HeaderProps) => {
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isFullscreen]);
+
+  const ResumeDialogContent = () => (
+    <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
+      <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between print:hidden">
+        <DialogTitle>Resume</DialogTitle>
+        <div className="flex items-center gap-2 mr-8">
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={() => setIsFullscreen(!isFullscreen)}
+          >
+            {isFullscreen ? <Minimize2 className="w-4 h-4 mr-2" /> : <Maximize2 className="w-4 h-4 mr-2" />}
+            {isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+          </Button>
+          <Button 
+            variant="ghost" 
+            size="sm" 
+            onClick={handleDownloadPDF}
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download PDF
+          </Button>
+        </div>
+      </DialogHeader>
+      <ScrollArea className="h-full">
+        <div ref={resumeRef}>
+          <ResumePage />
+        </div>
+      </ScrollArea>
+    </DialogContent>
+  );
 
   return (
     <div className="mb-8 opacity-0 animate-fade-in-up">
@@ -60,36 +93,8 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 Resume
               </Button>
             </DialogTrigger>
-            <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
-              <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between">
-                <DialogTitle>Resume</DialogTitle>
-                <div className="flex items-center gap-2 mr-8">
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={() => setIsFullscreen(!isFullscreen)}
-                  >
-                    {isFullscreen ? <Minimize2 className="w-4 h-4 mr-2" /> : <Maximize2 className="w-4 h-4 mr-2" />}
-                    {isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={handleOpenNewTab}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Open in new tab
-                  </Button>
-                </div>
-              </DialogHeader>
-              <iframe 
-                src="/Georgina_Kimani_CV.pdf" 
-                className="w-full h-full rounded-b-lg"
-                title="Resume Preview"
-              />
-            </DialogContent>
+            <ResumeDialogContent />
           </Dialog>
-          
           
           <Button 
             variant="outline" 
@@ -137,34 +142,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                     Resume
                   </Button>
                 </DialogTrigger>
-                <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
-                  <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between">
-                    <DialogTitle>Resume</DialogTitle>
-                    <div className="flex items-center gap-2 mr-8">
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        onClick={() => setIsFullscreen(!isFullscreen)}
-                      >
-                        {isFullscreen ? <Minimize2 className="w-4 h-4 mr-2" /> : <Maximize2 className="w-4 h-4 mr-2" />}
-                        {isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
-                      </Button>
-                      <Button 
-                        variant="ghost" 
-                        size="sm" 
-                        onClick={handleOpenNewTab}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Open in new tab
-                      </Button>
-                    </div>
-                  </DialogHeader>
-                  <iframe 
-                    src="/Georgina_Kimani_CV.pdf" 
-                    className="w-full h-full rounded-b-lg"
-                    title="Resume Preview"
-                  />
-                </DialogContent>
+                <ResumeDialogContent />
               </Dialog>
               <Button 
                 variant="outline" 
