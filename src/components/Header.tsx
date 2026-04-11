@@ -35,7 +35,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isFullscreen]);
 
-  const ResumeDialogContent = () => (
+  const resumeDialogContent = (
     <DialogContent className={`p-0 transition-all duration-300 ${isFullscreen ? 'max-w-[100vw] w-[100vw] h-[100vh] rounded-none' : 'max-w-4xl w-[95vw] h-[90vh]'}`}>
       <DialogHeader className="px-4 py-2 flex flex-row items-center justify-between print:hidden">
         <DialogTitle>Resume</DialogTitle>
