@@ -93,7 +93,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                 Resume
               </Button>
             </DialogTrigger>
-            <ResumeDialogContent />
+            {resumeDialogContent}
           </Dialog>
           
           <Button 
@@ -142,7 +142,7 @@ const Header = ({ onNavigate }: HeaderProps) => {
                     Resume
                   </Button>
                 </DialogTrigger>
-                <ResumeDialogContent />
+                {resumeDialogContent}
               </Dialog>
               <Button 
                 variant="outline" 
