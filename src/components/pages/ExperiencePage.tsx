@@ -40,21 +40,20 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: 0,
-    title: "CTO & Co-Founder",
-    company: "Ginilog",
+    id: 4,
+    title: "Fullstack Developer",
+    company: "Gebra Enterprises",
     location: "Nairobi, Kenya",
-    period: "2025 - Present",
+    period: "2024 - Present",
     description:
-      "Co-founded Ginilog, driving technical strategy and product development as Chief Technology Officer.",
+      "Started my professional journey building websites and web applications for various clients across different industries.",
     highlights: [
-      "Leading technical architecture and engineering team",
-      "Defining product roadmap and technology stack",
-      "Building scalable infrastructure and systems",
+      "Delivered 20+ client projects on time",
+      "Learned agile development methodologies",
+      "Contributed to open-source projects",
     ],
     icon: Code,
-    iconBg: "bg-teal-500/20 text-teal-400",
-    websiteUrl: "https://ginilog.com",
+    iconBg: "bg-amber-500/20 text-amber-400",
   },
   {
     id: 1,
@@ -73,11 +72,28 @@ const experiences: Experience[] = [
     iconBg: "bg-blue-500/20 text-blue-400",
   },
   {
+    id: 0,
+    title: "CTO & Co-Founder",
+    company: "Ginilog",
+    location: "Nairobi, Kenya",
+    period: "Feb 2026 - July 2026",
+    description:
+      "Co-founded Ginilog, driving technical strategy and product development as Chief Technology Officer.",
+    highlights: [
+      "Leading technical architecture and engineering team",
+      "Defining product roadmap and technology stack",
+      "Building scalable infrastructure and systems",
+    ],
+    icon: Code,
+    iconBg: "bg-teal-500/20 text-teal-400",
+    websiteUrl: "https://ginilog.com",
+  },
+  {
     id: 2,
     title: "Mentor & Support Team",
     company: "Power Learn Project",
     location: "Nairobi, Kenya",
-    period: "June 2025 - Present",
+    period: "June 2025 - April 2026",
     description:
       "Mentoring aspiring developers through Africa's largest tech skills program, providing guidance on software development best practices and career growth.",
     highlights: [
@@ -93,7 +109,7 @@ const experiences: Experience[] = [
     title: "Co-Founder & Lead Frontend Engineer",
     company: "AfyaSoko Technologies Ltd",
     location: "Nairobi, Kenya",
-    period: "May 2025 - Present",
+    period: "May 2025 - Dec 2025",
     description:
       "Co-founded a healthcare technology startup focused on connecting patients with medical services and pharmaceutical solutions across Kenya.",
     highlights: [
@@ -103,22 +119,6 @@ const experiences: Experience[] = [
     ],
     icon: HeartPulse,
     iconBg: "bg-rose-500/20 text-rose-400",
-  },
-  {
-    id: 4,
-    title: "Fullstack Developer",
-    company: "Gebra Enterprises",
-    location: "Nairobi, Kenya",
-    period: "2024 - Present",
-    description:
-      "Started my professional journey building websites and web applications for various clients across different industries.",
-    highlights: [
-      "Delivered 20+ client projects on time",
-      "Learned agile development methodologies",
-      "Contributed to open-source projects",
-    ],
-    icon: Code,
-    iconBg: "bg-amber-500/20 text-amber-400",
   },
   {
     id: 5,
