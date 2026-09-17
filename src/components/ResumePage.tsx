@@ -75,7 +75,7 @@ const ResumePage = () => {
             <ExperienceEntry
               title="Support Team & Mentor"
               company="Power Learn Project Africa"
-              date="June 2025 - Present"
+              date="June 2025 - April 2026"
               location="Nairobi, Kenya · Hybrid · Full-time"
               bullets={[
                 "Assist in organizing and executing both online and offline events, offering on-ground and virtual support to enhance engagement with learners and prospective participants",
