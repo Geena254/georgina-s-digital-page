@@ -40,7 +40,7 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    id: 4,
+    id: 0,
     title: "Fullstack Developer",
     company: "Gebra Enterprises",
     location: "Nairobi, Kenya",
@@ -72,7 +72,7 @@ const experiences: Experience[] = [
     iconBg: "bg-blue-500/20 text-blue-400",
   },
   {
-    id: 0,
+    id: 2,
     title: "CTO & Co-Founder",
     company: "Ginilog",
     location: "Nairobi, Kenya",
@@ -89,7 +89,7 @@ const experiences: Experience[] = [
     websiteUrl: "https://ginilog.com",
   },
   {
-    id: 2,
+    id: 3,
     title: "Mentor & Support Team",
     company: "Power Learn Project",
     location: "Nairobi, Kenya",
@@ -105,7 +105,7 @@ const experiences: Experience[] = [
     iconBg: "bg-purple-500/20 text-purple-400",
   },
   {
-    id: 3,
+    id: 4,
     title: "Co-Founder & Lead Frontend Engineer",
     company: "AfyaSoko Technologies Ltd",
     location: "Nairobi, Kenya",

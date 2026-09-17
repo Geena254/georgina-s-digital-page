@@ -20,6 +20,11 @@ const allSkills = [
   { name: "Next.js", category: "Frontend" },
   { name: "Vue.js", category: "Frontend" },
   { name: "React Native", category: "Frontend" },
+  { name: "React", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "Bootstrap", category: "Frontend" },
+  { name: "Material UI", category: "Frontend" },
+  { name: "Chakra UI", category: "Frontend" },
 
   // Backend
   { name: "Express.js", category: "Backend" },
@@ -27,6 +32,7 @@ const allSkills = [
   { name: "Flask", category: "Backend" },
   { name: "GraphQL", category: "Backend" },
   { name: "FastAPI", category: "Backend" },
+  { name: "Django", category: "Backend" },
 
   // Languages
   { name: "JavaScript", category: "Languages" },
