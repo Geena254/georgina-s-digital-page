@@ -166,6 +166,7 @@ interface Project {
   year: string;
   liveUrl: string;
   githubUrl?: string;
+  contactEmail?: string;
   thumbnail: string;
   isHackathon?: boolean;
 }
