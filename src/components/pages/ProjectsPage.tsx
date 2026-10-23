@@ -15,8 +15,20 @@ import safePulseImg from "@/assets/projects/safepulse-hero.png";
 import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
 import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
 import hardwareHubImg from "@/assets/projects/hardware-hub.jpg";
+import plpHackathonImg from "@/assets/projects/plp-hackathon.webp";
 
 const projects = [
+  {
+    title: "PLP Hackathon Platform",
+    description:
+      "A hackathon platform built for Power Learn Project Africa, enabling hackathon participants and judges to manage submissions and judging across the continent. For judging inquiries: judging@powerlearnprojectafrica.org",
+    tags: ["Hackathon", "Judging", "Power Learn Project Africa"],
+    role: "Hackathon Platform",
+    year: "2026",
+    contactEmail: "judging@powerlearnprojectafrica.org",
+    thumbnail: plpHackathonImg,
+    isHackathon: true,
+  },
   {
     title: "Hub Hardware",
     description:
