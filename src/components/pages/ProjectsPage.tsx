@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Trophy } from "lucide-react";
+import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Trophy, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
