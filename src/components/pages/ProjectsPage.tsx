@@ -409,6 +409,14 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                         </a>
                       </Button>
                     )}
+                    {project.contactEmail && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+                        <a href={`mailto:${project.contactEmail}`}>
+                          <Mail className="w-4 h-4 mr-2" />
+                          Contact
+                        </a>
+                      </Button>
+                    )}
                     {project.liveUrl && (
                       <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
