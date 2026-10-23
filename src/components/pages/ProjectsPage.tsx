@@ -245,6 +245,14 @@ const ProjectCard = ({
             </a>
           </Button>
         )}
+        {project.contactEmail && (
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+            <a href={`mailto:${project.contactEmail}`}>
+              <Mail className="w-4 h-4 mr-1" />
+              Contact
+            </a>
+          </Button>
+        )}
         {project.liveUrl && (
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
