@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Trophy } from "lucide-react";
+import { ExternalLink, Github, X, ZoomIn, ChevronLeft, ChevronRight, ArrowRight, Trophy, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -15,8 +15,20 @@ import safePulseImg from "@/assets/projects/safepulse-hero.png";
 import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
 import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
 import hardwareHubImg from "@/assets/projects/hardware-hub.jpg";
+import plpHackathonImg from "@/assets/projects/plp-hackathon.webp";
 
 const projects = [
+  {
+    title: "PLP Hackathon Platform",
+    description:
+      "A hackathon platform built for Power Learn Project Africa, enabling hackathon participants and judges to manage submissions and judging across the continent. For judging inquiries: judging@powerlearnprojectafrica.org",
+    tags: ["Hackathon", "Judging", "Power Learn Project Africa"],
+    role: "Hackathon Platform",
+    year: "2026",
+    contactEmail: "judging@powerlearnprojectafrica.org",
+    thumbnail: plpHackathonImg,
+    isHackathon: true,
+  },
   {
     title: "Hub Hardware",
     description:
@@ -152,8 +164,9 @@ interface Project {
   tags: string[];
   role: string;
   year: string;
-  liveUrl: string;
+  liveUrl?: string;
   githubUrl?: string;
+  contactEmail?: string;
   thumbnail: string;
   isHackathon?: boolean;
 }
@@ -229,6 +242,14 @@ const ProjectCard = ({
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4 mr-1" />
               Code
+            </a>
+          </Button>
+        )}
+        {project.contactEmail && (
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+            <a href={`mailto:${project.contactEmail}`}>
+              <Mail className="w-4 h-4 mr-1" />
+              Contact
             </a>
           </Button>
         )}
@@ -385,6 +406,14 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4 mr-2" />
                           Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.contactEmail && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+                        <a href={`mailto:${project.contactEmail}`}>
+                          <Mail className="w-4 h-4 mr-2" />
+                          Contact
                         </a>
                       </Button>
                     )}
