@@ -164,7 +164,7 @@ interface Project {
   tags: string[];
   role: string;
   year: string;
-  liveUrl: string;
+  liveUrl?: string;
   githubUrl?: string;
   contactEmail?: string;
   thumbnail: string;
