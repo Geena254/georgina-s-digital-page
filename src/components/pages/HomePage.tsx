@@ -74,7 +74,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
                 {/* Greeting */}
                 <p className="text-muted-foreground font-sans text-xl tracking-wide opacity-0 animate-fade-in-up">
                   Hey there!
-                  <br /> I am <span className={"font-bold text-2xl"}>Georgina Kimani!</span>
+                  <br />I am <span className={"font-bold text-2xl"}>Georgina Kimani</span>
                 </p>
 
                 {/* Roles - Typing Animation with Gradient */}
