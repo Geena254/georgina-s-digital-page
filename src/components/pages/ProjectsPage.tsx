@@ -19,9 +19,9 @@ import hackathonPlatformImg from "@/assets/projects/hackathon-platform.jpg";
 
 const projects = [
   {
-    title: "PLP Hackathon Platform",
+    title: "GavelLab - Hackathon Platform",
     description:
-      "A hackathon platform built for Power Learn Project Africa, enabling hackathon participants and judges to manage submissions and judging across the continent. For judging inquiries: judging@powerlearnprojectafrica.org",
+      "A hackathon platform built for Power Learn Project Africa, enabling hackathon participants and judges to manage submissions and judging across the continent.",
     tags: ["Hackathon", "Judging", "Power Learn Project Africa"],
     role: "Hackathon Platform",
     year: "2026",
