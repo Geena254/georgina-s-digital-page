@@ -26,6 +26,7 @@ const projects = [
     role: "Hackathon Platform",
     year: "2026",
     contactEmail: "judging@powerlearnprojectafrica.org",
+    organizerEmail: "njokikimani001@gmail.com",
     thumbnail: hackathonPlatformImg,
   },
   {
@@ -166,6 +167,7 @@ interface Project {
   liveUrl?: string;
   githubUrl?: string;
   contactEmail?: string;
+  organizerEmail?: string;
   thumbnail: string;
   isHackathon?: boolean;
 }
@@ -249,6 +251,14 @@ const ProjectCard = ({
             <a href={`mailto:${project.contactEmail}`}>
               <Mail className="w-4 h-4 mr-1" />
               Contact
+            </a>
+          </Button>
+        )}
+        {project.organizerEmail && (
+          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
+            <a href={`mailto:${project.organizerEmail}`}>
+              <Mail className="w-4 h-4 mr-1" />
+              Organize
             </a>
           </Button>
         )}
@@ -413,6 +423,14 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                         <a href={`mailto:${project.contactEmail}`}>
                           <Mail className="w-4 h-4 mr-2" />
                           Contact
+                        </a>
+                      </Button>
+                    )}
+                    {project.organizerEmail && (
+                      <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
+                        <a href={`mailto:${project.organizerEmail}`}>
+                          <Mail className="w-4 h-4 mr-2" />
+                          Organize
                         </a>
                       </Button>
                     )}
