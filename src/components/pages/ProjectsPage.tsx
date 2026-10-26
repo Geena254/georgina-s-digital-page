@@ -249,8 +249,8 @@ const ProjectCard = ({
         {project.contactEmail && (
           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground h-8 px-2" asChild>
             <a href={`mailto:${project.contactEmail}`}>
-              <Mail className="w-4 h-4 mr-1" />
-              Contact
+              <ExternalLink className="w-4 h-4 mr-1" />
+              Live Project
             </a>
           </Button>
         )}
@@ -421,8 +421,8 @@ const ProjectsPage = ({ onNavigate }: ProjectsPageProps) => {
                     {project.contactEmail && (
                       <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground" asChild>
                         <a href={`mailto:${project.contactEmail}`}>
-                          <Mail className="w-4 h-4 mr-2" />
-                          Contact
+                          <ExternalLink className="w-4 h-4 mr-2" />
+                          Live Project
                         </a>
                       </Button>
                     )}
