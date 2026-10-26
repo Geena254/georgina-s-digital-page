@@ -15,7 +15,7 @@ import safePulseImg from "@/assets/projects/safepulse-hero.png";
 import ecoPulseImg from "@/assets/projects/ecopulse.jpg";
 import nasaBioExplorerImg from "@/assets/projects/nasa-bioexplorer.png";
 import hardwareHubImg from "@/assets/projects/hardware-hub.jpg";
-import plpHackathonImg from "@/assets/projects/plp-hackathon.webp";
+import hackathonPlatformImg from "@/assets/projects/hackathon-platform.jpg";
 
 const projects = [
   {
@@ -26,8 +26,7 @@ const projects = [
     role: "Hackathon Platform",
     year: "2026",
     contactEmail: "judging@powerlearnprojectafrica.org",
-    thumbnail: plpHackathonImg,
-    isHackathon: true,
+    thumbnail: hackathonPlatformImg,
   },
   {
     title: "Hub Hardware",
